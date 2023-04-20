@@ -1,0 +1,88 @@
+{
+  "name": "shader-doodle",
+  "description": "A friendly web-component for writing and rendering shaders.",
+  "license": "MIT",
+  "author": "halvves <hi@halvves.com>",
+  "homepage": "https://github.com/halvves/shader-doodle",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/halvves/shader-doodle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/halvves/shader-doodle/issues"
+  },
+  "version": "1.0.0-alpha.20",
+  "main": "dist/shader-doodle.cjs.js",
+  "module": "dist/shader-doodle.esm.js",
+  "browser": "dist/shader-doodle.umd.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "precommit": "lint-staged",
+    "dev": "rollup -c -w",
+    "prepublishOnly": "npm run build",
+    "pretty": "npm run pretty-src -- \"src/**/*.js\" && npm run pretty-pkg",
+    "pretty-pkg": "prettier-package-json --write ./package.json",
+    "pretty-src": "prettier --write"
+  },
+  "devDependencies": {
+    "@ampproject/rollup-plugin-closure-compiler": "^0.24.0",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "husky": "^2.7.0",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2",
+    "prettier-package-json": "^2.0.1",
+    "rollup": "^1.25.2",
+    "rollup-plugin-babel": "^4.3.3"
+  },
+  "keywords": [
+    "3d",
+    "WebGL",
+    "canvas",
+    "glsl",
+    "shader-doodle",
+    "shadertoy",
+    "web-components"
+  ],
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 Chrome versions",
+              "last 2 ChromeAndroid versions",
+              "last 2 Safari versions",
+              "last 2 iOS versions",
+              "last 2 Firefox versions",
+              "last 2 FirefoxAndroid versions",
+              "last 2 Edge versions"
+            ]
+          },
+          "modules": false
+        }
+      ]
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "npm run pretty-src --",
+      "git add"
+    ],
+    "package.json": [
+      "prettier-package-json --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5"
+  },
+  "unpkg": "dist/shader-doodle.umd.js"
+}
