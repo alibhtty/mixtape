@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="es/ES">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=0">
+    <meta name="apple-mobile-web-app-title" content="Cyborg">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Haga que el título de la aplicación sea diferente al título de la página. -->
+    <meta name="apple-mobile-web-app-title" content="Cyborg">
+    <!-- Habilitar la detección automática de números de teléfono. -->
+    <meta name="format-detection" content="telephone=yes">
+
+    <title>Cyborg it's ready!</title>
+    <meta name="msapplication-TileColor" content="#2da3ba">
+    <meta name="referrer" content="always" />
+    <meta name="theme-color" content="#000000" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="applicable-device" content="pc,mobile">
+    <!-- FAVICON -->
+    <link rel="apple-touch-startup-image" href="../player/dj/licks/img/cyborg.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/favicon/icon_180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/icon_32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/icon_16.png">
+    <link rel="manifest" href="../../manifest.json">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/icons/icon_192.ico">
+
+    <!-- <link rel="stylesheet" href="../guias/css/style-global.css">
+    <link integrity="" rel="stylesheet" href="../guias/css/style-guias.css"> -->
+    <!-- <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+    <script src="https://use.typekit.net/hoy3lrg.js"></script>
+    <script>try { Typekit.load({ async: true }); } catch (e) { }</script> -->
+
+    <!-- GENEROS SLIDE  -->
+    <!-- <link rel="stylesheet" href="../style-catalogo.css"> -->
+    <link rel="stylesheet" href="../../catalogo/guias/css/guias-swipper.css">
+    <!-- <link rel="preload" href="../../catalogo/guias/css/style-gui.css" as="style" /> -->
+    <!-- <link rel="stylesheet" href="../../catalogo/guias/css/style-gui.css" data-n-g="" /> -->
+    <!-- <link rel="stylesheet" href="../../assets/css/brake.css"> -->
+
+    <!-- ball -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
+
+    <!-- agenda -->
+    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap-grid.css'> -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css'>
+    <link rel="stylesheet" href="./agenda/agenda.css">
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link preload rel="stylesheet" href="./assets/css/audiplay.css">
+    <link rel="stylesheet" href="assets/css/mixtape.css">
+    <link rel="stylesheet" href="./assets/css/player.css">
+    <!-- <link rel="stylesheet" href="./agenda/calendar.css"> -->
+    <link rel="stylesheet" href="./assets/css/arrow.css">
+
+    <style>
+        .float-ban{
+            background-image: linear-gradient( rgba(255,255,255,.1), rgba(0,0,0,.8) 100%), url(https://ali-bhtty.web.app/assets/img/banner/ep015.jpg);
+            filter: saturate(1.1) brightness(1.2);
+        }
+        #background{
+            background-image: linear-gradient(-180deg,rgba(73,74,79,0) 2%,#252525),radial-gradient(80% 137%,rgba(73,74,79,0) 0,#151515 100%), url(https://ali-bhtty.web.app/assets/img/banner/ep015.jpg);  
+        }
+        /* .atras audio{
+            display: hidden;
+
+        } */
+    </style>
+
+</head>
+
+<body translate="no">
+    <div id="wrapper">
+        <div id="iphone">
+            <div id="camera">
+                <span></span>
+                <span></span>
+            </div>
+            <div id="screen">
+                <div id="content-wrap">
+                    <div id="background"></div>
+                    <div id="content">
+                        <div id="header" class="standalone">
+                            <span id="bluetooth-btn">
+                                <div style="width: 1.5rem; position: absolute; display: flex;">
+                                    <!-- <h2>Biblioteca &nbsp</h2> -->
+                                    <img src="../../assets/icons/biblioteca.svg" alt="" class="svg">
+                                </div>
+                            </span> <!-- https://emilcarlsson.se/assets/svg/menu.svg -->
+                            <span id="options-btn">
+
+                                <!-- <a style="width: 1.6rem;height: 1.6rem; background-color: rgba(0,0,0,.2); border-radius: 50%; margin-right: 1rem;" href="#"></a> -->
+                                <div style="display: flex; right: 10vw;">
+                                    <div>
+                                        <h2 style="position: relative; font-size: 15px; padding: 6px 10px; color: #cacaca;">DJ's</h2>
+                                    </div>
+                                    <div style="position: absolute; right: 0;">
+                                        <a style="position: absolute; right: 0px; width: 20px; height: 20px; background-color: rgba(100,100,100, .8); border-radius: 50%; margin: .2rem;">
+                                            <img class="svg" style="width: 20px; height: 20px; padding-bottom: 4px;" src="../../assets/icons/usuarios.svg" alt="Dj's"></a>
+                                    </div>
+                                        <!-- <img class="svg" style="width: auto;" src="../../assets/icons/usuarios.svg" alt="Dj's"> --></a>
+                                </div>
+                            </span> <!-- https://emilcarlsson.se/assets/svg/more.svg -->
+                        </div>
+                        
+                        <!-- <div class="jcarousel">
+                            <ul id="songs">
+                                <li class="song" data-color="#ff6600">
+                                    <img rel="preload" src="https://alibhtty.github.io/cyborg/catalogo/player/calling.jpg">
+                                    <p class="song-title">Calling</p>
+                                    <p class="song-artist">Ali Bhtty, Jalen</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <audio crossorigin>
+                            <source src="" type="audio/mpeg">
+                        </audio>
+                        <div class="jcarousel">
+                            <ul id="songs">
+                                <li class="song" data-audio="https://dl.dropbox.com/s/f2rsaxbus9vh81q/Calling%20-%20Jalen%20%28Ali%20Bhtty%20Remix%29.mp3?dl=0" data-color="#ff6600">
+                                    <img hidden src="https://alibhtty.github.io/cyborg/catalogo/player/calling.jpg">
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="timeline">
+                            <span id="current-time">--:--</span>
+                            <span id="total-time">--:--</span>
+                            <div class="slider" data-direction="horizontal">
+                                <div class="progress">
+                                    <div class="pin" id="progress-pin" data-method="rewind"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sub-controls">
+                            <i class="fa fa-random" aria-hidden="true"></i>
+                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                            <i class="fa fa-bluetooth-b active" id="bluetooth-btn" aria-hidden="true"></i>
+                            <i class="fa fa-heart-o" id="heart-icon" aria-hidden="true"></i>
+                        </div> -->
+
+                        <!-- GENEROS -->
+                        <section class="mb-normal mb-desktop-large catego-margin">
+                            <div class="catego" id="artist-scrollable">
+                                <a class="burbuja" href="./index.html" ><h2>Inicio</h2></a>
+                                <a class="burbuja" href="#"><h2>Descubrir</h2></a>
+                                <a id="options-btn" class="burbuja"><h2>Agenda</h2></a>
+                            </div>
+                        </section>
+
+                        <!-- BANNER -->
+                        <div id="contenidos" class="mixtape-banner sombra-set">
+                            <!-- <div class="set-banner">
+                                <img class="set-img" src="../assets/img/015.jpg" alt="EP. 015">
+                            </div> -->
+                        
+                                <span id="float-ban">
+                                    <div id="#zoom-btn" class="set-data inner colPad left float-ban"> <!--  margin-top: 14rem; -->
+                        
+                                        <!-- <div>
+                                            <img src="../../assets/img/banner/ep015.jpg" alt="Ali Bhtty Music">
+                                        </div> -->
+                                
+                                        <div style="width: 100%; height: auto;"></div>
+                                
+                                
+                                        <div style="position: absolute; top: 1rem; display:inline-flex;">
+                                            <a href="./set/alibhtty/012.html"><img style="width: 45px; box-shadow: 0px 2px 6px 1px rgba(0,0,0,.2); border-radius: 8px; " src="./dj/alibhtty/img/icon-min.jpg" alt=""></a>
+                                            <!-- <h4 class="set-text-min" style="padding: 2px; font-weight: 600;">RADIOSHOW</h4> -->
+                                            <!-- <div class="noti-set">
+                                                <h4 style="padding: 3px 0; font-weight: 600;"> NUEVO </h4> 
+                                            </div> -->
+                                        </div>
+                                        <div style="position: absolute; bottom: 13rem; display:inline-flex;">
+                                            <h4 class="set-text-min present">RADIOSHOW</h4>
+                                            <!-- <div class="noti-set">
+                                                <h4 style="padding: 3px 0; font-weight: 600;"> NUEVO </h4> 
+                                            </div> -->
+                                        </div>
+                                         <h2 class="set-text">Ep. 015 <br> House Sauce</h2>
+                                         
+                                         <p class="set-description">La evolución del House, Kicks <br>y hi-hats clásicos a<br> 128 BPM..</p>
+                                
+                                         <div style="position: absolute; width: fit-content; bottom: 4rem; display: grid;
+                                         grid-auto-flow: column;
+                                         grid-column-gap: .3rem;
+                                         grid-gap: .5rem; margin-bottom: .5rem;">
+                                            <div class="genero-set set-text-min">
+                                                <h4 class="genero-text" href="">&nbsp; HOUSE &nbsp;</h4>
+                                            </div>
+                                            <div class="genero-set set-text-min">
+                                                <h4 class="genero-text"  href="">&nbsp; BASS &nbsp;</h4>
+                                            </div>
+                                            <div class="genero-set set-text-min" style="background: rgba(0,0,0,.5);">
+                                                <h4 class="genero-text" style="color: #cacaca;"  href="">&nbsp; +15 min &nbsp;</h4>
+                                            </div>
+                                         </div>
+                                
+                                         
+                                        <a class="baned">
+                                            <audio controls class="audiplay" nodownload >
+                                                <source id="antes" src="https://dl.dropbox.com/s/z1z6ybtxdd6f77t/Ep.%20015%20House%20Sause%20-%20Ali%20Bhtty.mp3?dl=0" type="audio/mp3" />
+                                            </audio>
+                                        </a>
+                                        
+                                        
+    
+                                        <!-- <script type="text/javascript">
+                                            function ocultar() {
+                                                document.getElementById('mix').style.display = 'none';
+                                            }
+                                        </script> -->
+                                
+                                        <!-- <div id="player-container" style="width: 100%;">
+                                            <div id="player-container" style="height: 30px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 15px; padding: 0px 0px;">
+                                                <div id="play-pause" class="player-btn" style="width: 100%; background-color: rgba(255,255,255, .8); border-radius: 4px;">
+                                                    <div style="display: flex;">
+                                                        <img style="width: 14px; height: 14px; margin: 8px 0 0 20px; left: 15px;" src="../assets/svg/play.svg" alt="">
+                                                        <h2 style="padding: 10px 10px; margin: 0; color: #000000; font-size: 12px; font-family: Ubuntu">Play</h2>
+                                                    </div>
+                                                </div>
+                            
+                                                <div class="player-btn" style="width: 100%; background-color: rgba(60,60,60, 1); border-radius: 4px;">
+                                                    <div style="display: flex;">
+                                                        <img style="width: 15px; height: 15px; margin: 8px 0 0 20px; left: 15px;" src="../assets/svg/info-circle.svg" alt="">
+                                                        <h2 style="padding: 10px 10px; margin: 0; color: #cacaca; font-size: 12px; font-family: Ubuntu">Info</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                            
+                                     </div>
+                                </span>
+                        </div>
+
+                        <!-- <a href="#" id="Python">Python</a>
+	<a href="#" id="Django">Django</a>
+	<a href="#" id="Jython">Jython</a>
+		<br>
+		<table border="1">
+			<tr>
+				<td>
+					Hola gente soy
+				</td>
+				<td id ="contenido">
+				</td>
+			</tr>
+		</table> -->
+                        
+
+                        <!-- MIXTAPE -->
+                        <section class="mb-normal mb-desktop-large mixtape">
+                        
+                        	<div class="roster-lane" id="artist-scrollable">
+                        		<div id="imagen" class="opacy">
+                        			<h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.015</a></h3>
+                        			<a class="buttons aspect-2-3" style="height: 100%;">
+                        				<div id="cont1" class="aspect-2-3"
+                        					style="background:url('../assets/img/015.jpg') no-repeat; background-size: cover; background-position: center center;">
+                        
+                        					<div id="cont2">
+                        						<a id="alibhtty015" href="#">
+                        							<img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt="">
+                        						</a>
+                        					</div>
+                        				</div>
+                        			</a>
+                        		</div>
+                        
+                        		<div id="imagen" class="opacy">
+                        			<h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.014</a></h3>
+                        			<a class="buttons aspect-2-3" style="height: 100%;">
+                        				<div id="cont1" class="aspect-2-3"
+                        					style="background:url('../assets/img/014.jpg') no-repeat; background-size: cover; background-position: center center;">
+                        
+                        					<div id="cont2">
+                        						<a id="alibhtty014" href="#">
+                        							<img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt="">
+                        						</a>
+                        					</div>
+                        				</div>
+                        			</a>
+                        		</div>
+                        
+                        		<div id="imagen" class="opacy">
+                        			<h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.013</a></h3>
+                        			<a class="buttons aspect-2-3" style="height: 100%;">
+                        				<div id="cont1" class="aspect-2-3"
+                        					style="background:url('../assets/img/013.jpg') no-repeat; background-size: cover; background-position: center center;">
+                        				
+                        					<div id="cont2">
+                        						<a id="alibhtty013" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                        					</div>
+                        				</div>
+                        			</a>
+                        		</div>
+                        
+                        		<div id="imagen" class="opacy">
+                        			<h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.012</a></h3>
+                        			<a class="buttons aspect-2-3" style="height: 100%;">
+                        				<div id="cont1" class="aspect-2-3"
+                        					style="background:url('../assets/img/012.jpg') no-repeat; background-size: cover; background-position: center center;">
+                        				
+                        					<div id="cont2">
+                        						<a id="alibhtty012" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                        					</div>
+                        				</div>
+                        			</a>
+                        		</div>
+                        
+                        		<div id="imagen" class="opacy">
+                        			<h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.011</a></h3>
+                        			<a class="buttons aspect-2-3" style="height: 100%;">
+                        				<div id="cont1" class="aspect-2-3"
+                        					style="background:url('../assets/img/011.jpg') no-repeat; background-size: cover; background-position: center center;">
+                        				
+                        					<div id="cont2">
+                        						<a id="alibhtty011" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                        					</div>
+                        				</div>
+                        			</a>
+                        		</div>
+                        
+                        		<div id="imagen" class="opacy">
+                        			<h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.010</a></h3>
+                        			<a class="buttons aspect-2-3" style="height: 100%;">
+                        				<div id="cont1" class="aspect-2-3"
+                        					style="background:url('../assets/img/010.jpg') no-repeat; background-size: cover; background-position: center center;">
+                        				
+                        					<div id="cont2">
+                        						<a id="alibhtty010" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                        					</div>
+                        				</div>
+                        			</a>
+                        		</div>
+                        
+                        		<div id="imagen" class="opacy">
+                        			<h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.009</a></h3>
+                        			<a class="buttons aspect-2-3" style="height: 100%;">
+                        				<div id="cont1" class="aspect-2-3"
+                        					style="background:url('../assets/img/009.jpg') no-repeat; background-size: cover; background-position: center center;">
+                        				
+                        					<div id="cont2">
+                        						<a id="alibhtty009" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                        					</div>
+                        				</div>
+                        			</a>
+                        		</div>
+                        
+                        		<div id="imagen" class="opacy">
+                        			<h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.008</a></h3>
+                        			<a class="buttons aspect-2-3" style="height: 100%;">
+                        				<div id="cont1" class="aspect-2-3"
+                        					style="background:url('../assets/img/008.jpg') no-repeat; background-size: cover; background-position: center center;">
+                        				
+                        					<div id="cont2">
+                        						<a id="alibhtty008" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                        					</div>
+                        				</div>
+                        			</a>
+                        		</div>
+                        
+                        		<div id="imagen" class="opacy">
+                        			<h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.007</a></h3>
+                        			<a class="buttons aspect-2-3" style="height: 100%;">
+                        				<div id="cont1" class="aspect-2-3"
+                        					style="background:url('../assets/img/007.jpg') no-repeat; background-size: cover; background-position: center center;">
+                        				
+                        					<div id="cont2">
+                        						<a href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                        					</div>
+                        				</div>
+                        			</a>
+                        		</div>
+                        
+                        		<div id="imagen" class="opacy">
+                        			<h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.006</a></h3>
+                        			<a class="buttons aspect-2-3" style="height: 100%;">
+                        				<div id="cont1" class="aspect-2-3"
+                        					style="background:url('../assets/img/006.jpg') no-repeat; background-size: cover; background-position: center center;">
+                        				
+                        					<div id="cont2">
+                        						<a href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                        					</div>
+                        				</div>
+                        			</a>
+                        		</div>
+                        
+                        		<div id="imagen" class="opacy">
+                        			<h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.005</a></h3>
+                        			<a class="buttons aspect-2-3" style="height: 100%;">
+                        				<div id="cont1" class="aspect-2-3"
+                        					style="background:url('../assets/img/005.jpg') no-repeat; background-size: cover; background-position: center center;">
+                        				
+                        					<div id="cont2">
+                        						<a href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                        					</div>
+                        				</div>
+                        			</a>
+                        		</div>
+                        
+                        		<div id="imagen" class="opacy">
+                        			<h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.004</a></h3>
+                        			<a class="buttons aspect-2-3" style="height: 100%;">
+                        				<div id="cont1" class="aspect-2-3"
+                        					style="background:url('../assets/img/013.jpg') no-repeat; background-size: cover; background-position: center center;">
+                        				
+                        					<div id="cont2">
+                        						<a href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                        					</div>
+                        				</div>
+                        			</a>
+                        		</div>
+                        
+                        		<div id="imagen" class="opacy">
+                        			<h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.003</a></h3>
+                        			<a class="buttons aspect-2-3" style="height: 100%;">
+                        				<div id="cont1" class="aspect-2-3"
+                        					style="background:url('../assets/img/003.jpg') no-repeat; background-size: cover; background-position: center center;">
+                        				
+                        					<div id="cont2">
+                        						<a href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                        					</div>
+                        				</div>
+                        			</a>
+                        		</div>
+                        
+                        		<div id="imagen" class="opacy">
+                        			<h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.002</a></h3>
+                        			<a class="buttons aspect-2-3" style="height: 100%;">
+                        				<div id="cont1" class="aspect-2-3"
+                        					style="background:url('../assets/img/002.jpg') no-repeat; background-size: cover; background-position: center center;">
+                        				
+                        					<div id="cont2">
+                        						<a href="sesiones/index.html"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                        					</div>
+                        				</div>
+                        			</a>
+                        		</div>
+                        
+                        		<div id="imagen" class="opacy">
+                        			<h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.001</a></h3>
+                        			<a class="buttons aspect-2-3" style="height: 100%;">
+                        				<div id="cont1" class="aspect-2-3"
+                        					style="background:url('../assets/img/001.jpg') no-repeat; background-size: cover; background-position: center center;">
+                        
+                                            <div id="cont2">
+                        						<a href="sesiones/index.html"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                        					</div>
+                        					<!-- <div id="info" style="height: 100%;">
+                        						<a href="https://www.mixcloud.com/alibhtty/dirty-house-mix-ali-bhtty-2014/" id="mas-info" target="_blank"></a>
+                        						<div id="player-containers">
+                        							<div id="play-pauses" class="pausa">
+                        							</div>
+                        						</div>
+                        
+                        						<div class="iframe" style="background:transparent; position: absolute; bottom: 0; left: 0; pointer-events: none;">
+                        							<h4 class="iframe-text">	
+                        								Dirty House <br> by Ali&nbsp;Bhtty
+                        							</h4>
+                        						</div>
+                        						<!-- <iframe style="border-radius:18px; position: absolute; bottom: 0; padding-top: 10px;opacity: .1%;" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&hide_artwork=1&feed=%2Falibhtty%2Fep-011-blackouts-ali-bhtty-live-set%2F" loading="lazy" frameborder="0" ></iframe> - ->
+                        					</div> -->
+                        				</div>
+                        			</a>
+                        		</div>
+                        
+                        	</div>
+                        </section>
+                        
+                        <footer id="menu-btn" class="back-menu centrado" style="overflow: hidden;">
+                            <!-- <div>
+                                <h2 class="quotes">MENÚ</h2>
+                            </div> -->
+                            
+                            <div class="arrow arrow-first"></div>
+                            <div class="arrow arrow-second"></div>
+
+                            <shader-doodle style="position: absolute;display: flex; top: 0; width: 100%; height: 6rem; opacity: 30%; z-index:-1;">
+                                <script type="x-shader/x-fragment">
+                                  float stroke(float x, float s, float w) {
+                                    float d = step(s, x + w * .5) - step(s, x - w * .5);
+                                    return clamp(d, 0., 1.);
+                                  }
+                          
+                                  vec2 rotateUV(vec2 uv, float rotation) {
+                                    float mid = 0.5;
+                                    return vec2(
+                                      cos(rotation) * (uv.x - mid) + sin(rotation) * (uv.y - mid) + mid,
+                                      cos(rotation) * (uv.y - mid) - sin(rotation) * (uv.x - mid) + mid
+                                    );
+                                  }
+                          
+                                  void main() {
+                                    vec2 st = gl_FragCoord.xy / u_resolution;
+                                    vec2 mouse = u_mouse.xy / u_resolution;
+                          
+                                    float grid = 32.;
+                                    // fractional and integer st from grid
+                                    vec2 i_st = floor(st * grid);
+                                    vec2 f_st = fract(st * grid);
+                          
+                                    // diff mouse and int grid centerpoint
+                                    vec2 dm = mouse.xy - ((i_st + .5) / grid);
+                          
+                                    // angle of diff vector
+                                    float d = atan(dm.x, dm.y);
+                                    
+                                    // rotate grid square uv
+                                    f_st = rotateUV(f_st, -d + u_time * .5);
+                          
+                                    vec3 color = vec3(0.);
+                                    
+                                    // draw ten lines
+                                    for (float i = 0.; i <= 10.; i++) {
+                                      color += stroke(f_st.x, -.15 + i * .13, .05);
+                                    }
+                          
+                                    gl_FragColor = vec4(color, 1.);
+                                  }
+                                </script>
+                              </shader-doodle>
+                              <script src='../../catalogo/about/fx.js'></script>
+                        </footer>
+
+
+                        <!-- RECIENTES -->
+                        <!-- <div class="menu-mix">
+                            <div class="menu--wrapper">
+                                <a href="barcelona/la-barceloneta/index.html" class="menu--item">
+                                    <figure>
+                                        <div style="position: absolute; z-index: 99; padding: 5vw; font-size: 19px; font-family: Ubuntu; color: rgba(0, 221, 255, .5); bottom: 1.6vw;">
+                                            <h2> &nbsp; &nbsp; &nbsp; &nbsp; Barceloneta </h2>
+                                        </div>
+                                        <img class="main-baner" src="../assets/img/014.jpg" alt="" />
+                                    </figure>            
+                                </a>
+                    
+                                <a href="#" class="menu--item">
+                                    <figure><img class="main-baner"
+                                            src="../assets/img/013.jpg"
+                                            alt="" /></figure>
+                                </a>
+                    
+                                <a href="#" class="menu--item">
+                                    <figure><img class="main-baner"
+                                            src="../assets/img/012.jpg"
+                                            alt="" /></figure>
+                                </a>
+                    
+                                <a href="#" class="menu--item">
+                                    <figure><img class="main-baner"
+                                            src="../assets/img/011.jpg"
+                                            alt="" /></figure>
+                                </a>
+                    
+                                <a href="#" class="menu--item">
+                                    <figure><img class="main-baner"
+                                            src="../assets/img/010.jpg"
+                                            alt="" /></figure>
+                                </a>
+                    
+                                <a href="#" class="menu--item">
+                                    <figure><img class="main-baner"
+                                            src="../assets/img/009.jpg"
+                                            alt="" /></figure>
+                                </a>
+                            </div>
+                        </div> -->
+
+
+                        <!-- <div id="controls">
+                            <span id="previous-btn"><i class="fa fa-step-backward fa-fw" aria-hidden="true"></i></span>
+                            <span id="play-btn"><i class="fa fa-play fa-fw" aria-hidden="true"></i></span>
+                            <span id="next-btn"><i class="fa fa-step-forward fa-fw" aria-hidden="true"></i></span>
+                        </div> -->
+                        
+                    </div>
+                    <div id="overlay"></div>
+                </div>
+
+                <div id="sidemenu">
+                    
+                    <ul>
+                        <a class="menu-item">
+                            <input type="text" id="buscar" onkeyup="buscar()" placeholder="Buscar" title="Empieza a escribir para buscar">
+                        </a>
+                        <!-- <a href="../../catalogo/index.html" class="menu-item">
+                            <i class="fa fa-search fa-fw" aria-hidden="true"></i> &nbsp;
+                            Catálogo
+                        </a>
+                        <a href="../sesiones/index.html" class="menu-item">
+                            <i class="fa fa-microphone fa-fw" aria-hidden="true"></i> &nbsp;
+                            Sesiones
+                        </a>
+                        <a href="https://ali-bhtty.web.app/mixtape/" class="menu-item">
+                            <i class="fa fa-podcast fa-fw" aria-hidden="true"></i> &nbsp;
+                            Mixtape
+                        </a>
+                        <a href="../../menu/index.html" class="menu-item" class="menu-item">
+                            <i class="fa fa-cog fa-fw" aria-hidden="true"></i> &nbsp;
+                            Menú
+                        </a> -->
+                    </ul>
+
+
+                    <!-- BUSCADOR -->
+                    <div class="container">
+                        <!-- Main Content-->
+                        <div class="masthead">
+                          
+                        <!-- aqui va el input buscar -->
+                          
+                          <div class="table-responsive">
+                            <table class="table" id="tabla" data-sort="table">
+                              <thead style="display: none;">
+                                <tr>
+                                  <th>Item</th>
+                                  <th>Name</th>
+                                  <th>Description</th>
+                                  <th>Date</th>
+                                  <th>Price</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope=row>1</th>
+                                  <td>First Last</td>
+                                  <td>Two Items</td>
+                                  <td>01/01/2015</td>
+                                  <td>$200</td>
+                                </tr>
+                                <tr>
+                                  <th scope=row>2</th>
+                                  <td>Firstname Lastname</td>
+                                  <td>One Item</td>
+                                  <td>06/01/2015</td>
+                                  <td>$100</td>
+                                </tr>
+                                <tr>
+                                  <th scope=row>3</th>
+                                  <td>Name Another</td>
+                                  <td>One Item</td>
+                                  <td>12/15/2014</td>
+                                  <td>$100</td>
+                                </tr>
+                                <tr>
+                                  <th scope=row>4</th>
+                                  <td>One More</td>
+                                  <td>Three Items</td>
+                                  <td>01/20/2016</td>
+                                  <td>$300</td>
+                                </tr>
+                                <tr>
+                                  <th scope=row>5</th>
+                                  <td>Name Right Here</td>
+                                  <td>Two Items</td>
+                                  <td>01/20/2016</td>
+                                  <td>$200</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <!-- ball -->
+                          <!-- <div class="view">
+                            <div class="plane main">
+                              <div class="circle"></div>
+                              <div class="circle"></div>
+                              <div class="circle"></div>
+                              <div class="circle"></div>
+                              <div class="circle"></div>
+                              <div class="circle"></div>
+                            </div>
+                          </div> -->
+
+                        </div>
+                      </div>
+                </div>
+
+                <div id="bluetooth-devices" class="menu">
+                    <span class="close-btn"><!-- <span>&times;</span> --> BACK</span>
+                    <h3>NEXT</h3>
+
+                    <!-- eventos -->
+                    <div class="mobile-header z-depth-1">
+
+                        <div class="row">
+                          <div class="col-2">
+                            <a href="#" data-activates="sidebar" class="button-collapse">
+                              <i class="material-icons">Fechas</i>
+                            </a>
+                          </div>
+                          <!-- <div class="col">
+                            <h4>   </h4>
+                          </div> -->
+                        </div>
+                  
+                      </div>
+                  
+                      <div class="main-wrapper">
+                  
+                        <div class="sidebar-wrapper z-depth-2 side-nav fixed" id="sidebar">
+                  
+                          <div class="sidebar-title">
+                            <h4>Eventos</h4>
+                            <h5 id="eventDayName">Fechas</h5>
+                          </div>
+                          <div class="sidebar-events" id="sidebarEvents">
+                            <div class="empty-message">Sorry, no hay eventos hasta esa fecha</div>
+                          </div>
+                  
+                        </div>
+                  
+                        <div class="content-wrapper ">
+                          <div class="container">
+                  
+                            <div class="calendar-wrapper z-depth-2">
+                  
+                              <div class="header-background">
+                                <div class="calendar-header">
+                  
+                                  <a class="prev-button" id="prev">
+                                    <i class="material-icons"> x </i>
+                                  </a>
+                                  <a class="next-button" id="next">
+                                    <i class="material-icons"> x </i>
+                                  </a>
+                  
+                                  <div class="row header-title">
+                  
+                                    <div class="header-text">
+                                      <h3 id="month-name">February</h3>
+                                      <h5 id="todayDayName">Today is Friday 7 Feb</h5>
+                                    </div>
+                  
+                                  </div>
+                                </div>
+                              </div>
+                  
+                              <div class="calendar-content">
+                                <div id="calendar-table" class="calendar-cells">
+                  
+                                  <div id="table-header">
+                                    <div class="row">
+                                      <div class="col">Lun</div>
+                                      <div class="col">Mar</div>
+                                      <div class="col">Mie</div>
+                                      <div class="col">Jue</div>
+                                      <div class="col">Vie</div>
+                                      <div class="col">Sab</div>
+                                      <div class="col">Dom</div>
+                                    </div>
+                                  </div>
+                  
+                                  <div id="table-body" class="">
+                  
+                                  </div>
+                  
+                                </div>
+                              </div>
+                  
+                              <div class="calendar-footer">
+                                <div class="emptyForm" id="emptyForm">
+                                  <h4 id="emptyFormTitle">Ahora no hay eventos</h4>
+                                  <a class="addEvent" id="changeFormButton">Add new</a>
+                                </div>
+                                <div class="addForm" id="addForm">
+                                  <h4>Añadir nuevo</h4>
+                  
+                                  <div class="row">
+                                    <div class="input-field col s6">
+                                      <input id="eventTitleInput" type="text" class="validate">
+                                      <label for="eventTitleInput">Título</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                      <input id="eventDescInput" type="text" class="validate">
+                                      <label for="eventDescInput">Descripción</label>
+                                    </div>
+                                  </div>
+                  
+                                  <div class="addEventButtons">
+                                    <a class="waves-effect waves-light btn blue lighten-2" id="addEventButton">Listo</a>
+                                    <a class="waves-effect waves-light btn grey lighten-2" id="cancelAdd">Cancelar</a>
+                                  </div>
+                  
+                                </div>
+                              </div>
+                  
+                            </div>
+                  
+                          </div>
+                        </div>
+                  
+                    </div>
+
+
+
+                    <!-- <ul>
+                        <li class="connected">
+                            <img id="headphones-icon" class="svg menu-icons"
+                                src="./assets/icons/calendario.svg" alt=""> <!-- https://emilcarlsson.se/assets/svg/headphone.svg - ->
+                            <p>
+                                Featuring post
+                                <span>En proceso</span>
+                            </p>
+                        </li>
+                        <li>
+                            <img id="headphones-icon" class="svg menu-icons"
+                                src="./assets/icons/calendario.svg" alt=""> <!-- https://emilcarlsson.se/assets/svg/loudspeaker.svg - ->
+                            <p>
+                                Remix #04
+                                <span>Disponible
+                                    <span style="margin: .5rem; margin-top: 1rem; background-color: rgba(0,0,0,.3); border-radius: 8px;">
+                                        <img style="width: 30%; height: 30%; margin: .5rem; border-radius: 4px;" src="./assets/img/remix/calling.jpg" alt=""></span>
+                                </span>
+                            </p>
+                        </li>
+                        <li>
+                            <img id="headphones-icon" class="svg menu-icons"
+                                src="./assets/icons/calendario.svg" alt=""> <!-- https://emilcarlsson.se/assets/svg/car.svg - ->
+                            <p>
+                                2B2
+                                <span>En proceso</span>
+                            </p>
+                        </li>
+                    </ul>
+                    <p class="info-text">
+                        Make sure your bluetooth device is turned on and in range.
+                    </p> <br><br> -->
+
+                    <!-- calendario -->
+                    <!-- <div id="app"></div> -->
+                    
+                </div>
+
+                <div id="song-options" class="menu">
+                    <span class="close-btn"><!-- <span>&times;</span> --> BACK</span>
+                    <div id="song-info">
+                        <img style="border-radius: 4px;" src="./assets/img/remix/calling.jpg" alt="">
+                        <div class="artist-wrap">
+                            <p>
+                                <span class="title">Calling</span>
+                                <span class="artist">Jalen & Ali Bhtty</span>
+                                <span class="studio">4bstudio</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- djs -->
+                    <section class="mb-normal mb-desktop-large mixtape" style="padding: 0;">
+                        <div class="roster-lane roster-mini" id="artist-scrollable">
+                            <div id="imagen" class="opacy">
+                                <a class="buttons aspect-2-3 aspect-2-3-mini" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3 aspect-2-3-mini"
+                                        style="background:url('./dj/russt/img/russt.jpg') no-repeat; background-size: cover; background-position: center center;">
+                    
+                                        <div id="cont2">
+                                            <a id="alibhtty015" href="#">
+                                                <img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                                <h3 class="dj-name header-section fs-desktop-medium fs-xsmall"><a>Russt</a></h3>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <a class="buttons aspect-2-3 aspect-2-3-mini" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3 aspect-2-3-mini"
+                                        style="background:url('./dj/licks/img/cyborg.jpg') no-repeat; background-size: cover; background-position: center center;">
+                    
+                                        <div id="cont2">
+                                            <a id="alibhtty014" href="#">
+                                                <img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                </a>
+                                <h3 class="dj-name header-section fs-desktop-medium fs-xsmall"><a>Licks</a></h3>
+                            </div>
+                    
+                            <div class="opacy">
+                                <a class="buttons aspect-2-3 aspect-2-3-mini" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3 aspect-2-3-mini"
+                                        style="background:url('./dj/orbinary/img/orbinay.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty013" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                    
+                                </a>
+                                <h3 class="dj-name header-section fs-desktop-medium fs-xsmall"><a>orbinary</a></h3>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <a class="buttons aspect-2-3 aspect-2-3-mini" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3 aspect-2-3-mini"
+                                        style="background:url('./dj/cobbalt/img/cobbalt.png') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty012" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                    
+                                </a>
+                                <h3 class="dj-name header-section fs-desktop-medium fs-xsmall"><a>Cobbalt</a></h3>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <a class="buttons aspect-2-3 aspect-2-3-mini" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3 aspect-2-3-mini"
+                                        style="background:url('../assets/img/011.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty011" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                    
+                                </a>
+                                <h3 class="dj-name header-section fs-desktop-medium fs-xsmall"><a>Ep.011</a></h3>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <a class="buttons aspect-2-3 aspect-2-3-mini" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3 aspect-2-3-mini"
+                                        style="background:url('../assets/img/010.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty010" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                    
+                                </a>
+                                <h3 class="dj-name header-section fs-desktop-medium fs-xsmall"><a>Ep.010</a></h3>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <a class="buttons aspect-2-3 aspect-2-3-mini" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3 aspect-2-3-mini"
+                                        style="background:url('../assets/img/009.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty009" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                    
+                                </a>
+                                <h3 class="dj-name header-section fs-desktop-medium fs-xsmall"><a>Ep.009</a></h3>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <a class="buttons aspect-2-3 aspect-2-3-mini" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3 aspect-2-3-mini"
+                                        style="background:url('../assets/img/008.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty008" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                    
+                                </a>
+                                <h3 class="dj-name header-section fs-desktop-medium fs-xsmall"><a>Ep.008</a></h3>
+                            </div>
+                    
+                        </div>
+                    </section>
+                    <!-- RANKING -->
+                    <section class="mb-normal mb-desktop-large mixtape">
+                        <div class="roster-lane roster-mini" id="artist-scrollable">
+                            <div id="imagen" class="opacy">
+                                <h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.015</a></h3>
+                                <a class="buttons aspect-2-3" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3"
+                                        style="background:url('../assets/img/015.jpg') no-repeat; background-size: cover; background-position: center center;">
+                    
+                                        <div id="cont2">
+                                            <a id="alibhtty02" href="#">
+                                                <img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.014</a></h3>
+                                <a class="buttons aspect-2-3" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3"
+                                        style="background:url('../assets/img/014.jpg') no-repeat; background-size: cover; background-position: center center;">
+                    
+                                        <div id="cont2">
+                                            <a id="alibhtty03" href="#">
+                                                <img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.013</a></h3>
+                                <a class="buttons aspect-2-3" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3"
+                                        style="background:url('../assets/img/013.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty04" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.012</a></h3>
+                                <a class="buttons aspect-2-3" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3"
+                                        style="background:url('../assets/img/012.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty05" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.011</a></h3>
+                                <a class="buttons aspect-2-3" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3"
+                                        style="background:url('../assets/img/011.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty06" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.010</a></h3>
+                                <a class="buttons aspect-2-3" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3"
+                                        style="background:url('../assets/img/010.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty7" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.009</a></h3>
+                                <a class="buttons aspect-2-3" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3"
+                                        style="background:url('../assets/img/009.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty009" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.008</a></h3>
+                                <a class="buttons aspect-2-3" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3"
+                                        style="background:url('../assets/img/008.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty08" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.007</a></h3>
+                                <a class="buttons aspect-2-3" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3"
+                                        style="background:url('../assets/img/007.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty09" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.006</a></h3>
+                                <a class="buttons aspect-2-3" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3"
+                                        style="background:url('../assets/img/006.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty0000" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.005</a></h3>
+                                <a class="buttons aspect-2-3" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3"
+                                        style="background:url('../assets/img/005.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty0001" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.004</a></h3>
+                                <a class="buttons aspect-2-3" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3"
+                                        style="background:url('../assets/img/013.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty0002" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.003</a></h3>
+                                <a class="buttons aspect-2-3" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3"
+                                        style="background:url('../assets/img/003.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty0003" href="#"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.002</a></h3>
+                                <a class="buttons aspect-2-3" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3"
+                                        style="background:url('../assets/img/002.jpg') no-repeat; background-size: cover; background-position: center center;">
+                                    
+                                        <div id="cont2">
+                                            <a id="alibhtty0004" href="sesiones/index.html"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                            <div id="imagen" class="opacy">
+                                <h3 class="header-section fs-desktop-medium fs-xsmall"><a>Ep.001</a></h3>
+                                <a class="buttons aspect-2-3" style="height: 100%;">
+                                    <div id="cont1" class="aspect-2-3"
+                                        style="background:url('../assets/img/001.jpg') no-repeat; background-size: cover; background-position: center center;">
+                    
+                                        <div id="cont2">
+                                            <a id="alibhtty0005" href="sesiones/index.html"><img style="filter: invert(100%) contrast(5);" src="../../assets/icons/play.svg" alt=""></a>
+                                        </div>
+                                        <!-- <div id="info" style="height: 100%;">
+                                            <a href="https://www.mixcloud.com/alibhtty/dirty-house-mix-ali-bhtty-2014/" id="mas-info" target="_blank"></a>
+                                            <div id="player-containers">
+                                                <div id="play-pauses" class="pausa">
+                                                </div>
+                                            </div>
+                    
+                                            <div class="iframe" style="background:transparent; position: absolute; bottom: 0; left: 0; pointer-events: none;">
+                                                <h4 class="iframe-text">	
+                                                    Dirty House <br> by Ali&nbsp;Bhtty
+                                                </h4>
+                                            </div>
+                                            <!-- <iframe style="border-radius:18px; position: absolute; bottom: 0; padding-top: 10px;opacity: .1%;" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&hide_artwork=1&feed=%2Falibhtty%2Fep-011-blackouts-ali-bhtty-live-set%2F" loading="lazy" frameborder="0" ></iframe> - ->
+                                        </div> -->
+                                    </div>
+                                </a>
+                            </div>
+                    
+                        </div>
+                    </section>
+
+                    <!-- <ul>
+                        <li>
+                            <i class="fa fa-music fa-fw add" aria-hidden="true"></i>
+                            Add to playlist
+                        </li>
+                        <li>
+                            <i class="fa fa-microphone fa-fw" aria-hidden="true"></i>
+                            View Artist
+                        </li>
+                        <li>
+                            <img id="album-icon" class="svg menu-icons"
+                                src="./assets/icons/compact-disc.svg" alt="">
+                                &nbsp; View Album
+                        </li>
+                        <li>
+                            <i class="fa fa-share-square-o fa-fw" aria-hidden="true"></i>
+                            Share
+                        </li>
+                    </ul> -->
+                </div>
+
+            </div>
+            <!-- <div id="home-btn"></div> -->
+        </div>
+    </div>
+
+
+<!-- general -->
+    <!-- <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://use.fontawesome.com/15af25ac7b.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.1/jquery.jcarousel.min.js'></script>
+    <script id="rendered-js">
+        /* $(document).ready(function () {
+            var songs = [
+                {
+                    title: "Calling",
+                    artist: "Ali Bhtty, Jalen",
+                    cover: "https://ali-bhtty.web.app/cyborg/player/calling.jpg",
+                    audioFile: "https://dl.dropbox.com/s/f2rsaxbus9vh81q/Calling%20-%20Jalen%20%28Ali%20Bhtty%20Remix%29.mp3?dl=0",
+                    color: "#ff6600"
+                },
+
+                {
+                    title: "Rockstar",
+                    artist: "Post Malone, 21 Savage",
+                    cover: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/308622/rockstar-album-cover.jpg",
+                    audioFile: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/308622/Post%20Malone%20-%20rockstar%20ft.%2021%20Savage%20(1).mp3",
+                    color: "#c3af50"
+                },
+
+                {
+                    title: "Ep. 015 House Sause",
+                    artist: "alibhtty",
+                    cover: "set/ep015.jpg",
+                    audioFile: "https://dl.dropbox.com/s/m7a1g134s3c76r8/Ep.%20015%20House%20Sause%20-%20Ali%20Bhtty.mp3?dl=0",
+                    color: "#25323b"
+                },
+
+                {
+                    title: "Ep. 014 Ravehovse",
+                    artist: "alibhtty",
+                    cover: "set/ep014.jpg",
+                    audioFile: "https://dl.dropbox.com/s/v2yaesqtlrs337q/Ep.%20014%20Rave%20House.mp3?dl=0",
+                    color: "#c1c1c1"
+                },
+
+                {
+                    title: "I Fall Apart",
+                    artist: "Post Malone",
+                    cover: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/308622/stoney-cover-album.jpg",
+                    audioFile: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/308622/Post%20Malone%20-%20I%20Fall%20Apart.mp3",
+                    color: "#cd4829"
+                },
+
+                {
+                    title: "Ep. 013 Cy-BORED",
+                    artist: "alibhtty",
+                    cover: "set/ep013.jpg",
+                    audioFile: "https://dl.dropbox.com/s/bs3rezop8r4iewt/Ep.%20013%20Cy-bored%20-%20Ali%20Bhtty.mp3?dl=0",
+                    color: "#5d0126"
+                }];
+
+
+
+            for (let song of songs) {
+                $("#songs").append('<li class="song" data-audio="' + song.audioFile + '" data-color="' + song.color + '">' +
+                    '<img src="' + song.cover + '">' +
+                    '<p class="song-title">' + song.title + '</p>' +
+                    '<p class="song-artist">' + song.artist + '</p>' +
+                    '</li>');
+            }
+
+            $('.jcarousel').jcarousel({
+                wrap: 'circular'
+            });
+
+        }); */
+
+        /*
+         * Replace all SVG images with inline SVG
+         */
+        jQuery('img[src$=".svg"]').each(function () {
+            var $img = jQuery(this);
+            var imgID = $img.attr('id');
+            var imgClass = $img.attr('class');
+            var imgURL = $img.attr('src');
+
+            jQuery.get(imgURL, function (data) {
+                // Get the SVG tag, ignore the rest
+                var $svg = jQuery(data).find('svg');
+
+                // Add replaced image's ID to the new SVG
+                if (typeof imgID !== 'undefined') {
+                    $svg = $svg.attr('id', imgID);
+                }
+                // Add replaced image's classes to the new SVG
+                if (typeof imgClass !== 'undefined') {
+                    $svg = $svg.attr('class', imgClass + ' replaced-svg');
+                }
+
+                // Remove any invalid XML tags as per http://validator.w3.org
+                $svg = $svg.removeAttr('xmlns:a');
+
+                // Replace image with new SVG
+                $img.replaceWith($svg);
+
+            }, 'xml');
+
+        });
+
+        // Current slide
+        /* $('.jcarousel').on('jcarousel:visiblein', 'li', function (event, carousel) {
+            let cover = $(this).find("img").attr("src");
+            let songTitle = $(this).find("p.song-title").html();
+            let songArtist = $(this).find("p.song-artist").html();
+            let audioSrc = $(this).attr("data-audio");
+            let backgroundColor = $(this).attr("data-color");
+            $("body").css('background', backgroundColor);
+            $("#background").css('background-image', 'url(' + cover + ')');
+            $("audio").find("source").attr("src", "" + audioSrc + "");
+            player.load();
+            player.currentTime = 0;
+            $("#song-info").find("img").attr("src", cover);
+            $("#song-info .artist-wrap p").find("span.title").html(songTitle);
+            $("#song-info .artist-wrap p").find("span.artist").html(songArtist);
+        });
+
+        // Previous slide
+        $('#previous-btn').click(function () {
+            $('.jcarousel').jcarousel('scroll', '-=1');
+            $('#play-btn i').removeClass('fa-pause');
+            player.pause();
+        });
+
+        // Next slide
+        $('#next-btn').click(function () {
+            if ($(".fa-random").hasClass('active')) {
+                let songs = $("#songs li").length - 1;
+                let randomSong = Math.floor(Math.random() * songs) + 1;
+                $('.jcarousel').jcarousel('scroll', '+=' + randomSong);
+            } else {
+                $('.jcarousel').jcarousel('scroll', '+=1');
+            }
+            $('#play-btn i').removeClass('fa-pause');
+            player.pause();
+        }); */
+
+        // Play Icon Switcher
+        $('#play-btn').click(function () {
+            $(this).find('i').toggleClass('fa-pause');
+        });
+
+
+        // Menu
+        $("#menu-btn").click(function () {
+            $("#content-wrap").addClass('inactive');
+            $("#sidemenu").addClass('active');
+        });
+
+        // Zoomtouch
+        /* $("#float-ban").click(function () {
+            $("#wrapper").addClass('inactive');
+            $(".float-ban").addClass('active');
+        }); */
+
+        // Home Button
+        $("#home-btn").click(function () {
+            $("#home-screen").addClass('active');
+            $(".menu").removeClass('active');
+            $("#content-wrap").addClass('minimized');
+        });
+
+        // App
+        $(".app-icon").click(function () {
+            $("#content-wrap").removeClass('minimized');
+            setTimeout(function () { $("#home-screen").removeClass('active'); }, 300);
+        });
+
+        // Overlay
+        $("#overlay").click(function () {
+            $("#content-wrap").removeClass('inactive');
+            $("#sidemenu").removeClass('active');
+        });
+
+        // Options
+        $("#options-btn").click(function () {
+            $("#song-options").addClass('active');
+        });
+
+        // Bluetooth
+        $("#bluetooth-btn").click(function () {
+            $("#bluetooth-devices").addClass('active');
+        });
+
+        // Bluetooth Menu
+        $("#bluetooth-devices ul li").click(function () {
+            $(this).toggleClass('connected');
+            $(this).siblings().removeClass('connected');
+
+            if ($("#bluetooth-devices ul li").hasClass('connected')) {
+                $("#sub-controls i.fa-bluetooth-b").addClass('active');
+            } else {
+                $("#sub-controls i.fa-bluetooth-b").removeClass('active');
+            }
+        });
+
+        // Close Menu
+        $(".close-btn").click(function () {
+            $(".menu").removeClass('active');
+        });
+
+        $('#sub-controls i').click(function () {
+            if (!$(this).hasClass('fa-bluetooth-b')) {
+                $(this).toggleClass('active');
+            }
+
+            if ($("#heart-icon").hasClass('active')) {
+                $("#heart-icon").removeClass('fa-heart-o');
+                $("#heart-icon").addClass('fa-heart');
+            } else {
+                $("#heart-icon").removeClass('fa-heart');
+                $("#heart-icon").addClass('fa-heart-o');
+            }
+        });
+
+        /*
+         * Music Player
+         * By Greg Hovanesyan
+         * https://codepen.io/gregh/pen/NdVvbm
+         */
+
+        /* var audioPlayer = document.querySelector('#content');
+        var playpauseBtn = audioPlayer.querySelector('#play-btn');
+        var progress = audioPlayer.querySelector('.progress');
+        var sliders = audioPlayer.querySelectorAll('.slider');
+        var player = audioPlayer.querySelector('audio');
+        var currentTime = audioPlayer.querySelector('#current-time');
+        var totalTime = audioPlayer.querySelector('#total-time');
+
+        var draggableClasses = ['pin'];
+        var currentlyDragged = null;
+
+        window.addEventListener('mousedown', function (event) {
+
+            if (!isDraggable(event.target)) return false;
+
+            currentlyDragged = event.target;
+            let handleMethod = currentlyDragged.dataset.method;
+
+            this.addEventListener('mousemove', window[handleMethod], false);
+
+            window.addEventListener('mouseup', () => {
+                currentlyDragged = false;
+                window.removeEventListener('mousemove', window[handleMethod], false);
+            }, false);
+        });
+
+        playpauseBtn.addEventListener('click', togglePlay);
+        player.addEventListener('timeupdate', updateProgress);
+        player.addEventListener('loadedmetadata', () => {
+            totalTime.textContent = formatTime(player.duration);
+        });
+        player.addEventListener('ended', function () {
+            player.currentTime = 0;
+
+            if ($(".fa-refresh").hasClass('active')) {
+                togglePlay();
+            } else {
+                if ($(".fa-random").hasClass('active')) {
+                    let songs = $("#songs li").length - 1;
+                    let randomSong = Math.floor(Math.random() * songs) + 1;
+                    $('.jcarousel').jcarousel('scroll', '+=' + randomSong);
+                } else {
+                    $('.jcarousel').jcarousel('scroll', '+=1');
+                }
+                togglePlay();
+            }
+        });
+
+        sliders.forEach(slider => {
+            let pin = slider.querySelector('.pin');
+            slider.addEventListener('click', window[pin.dataset.method]);
+        });
+
+        function isDraggable(el) {
+            let canDrag = false;
+            let classes = Array.from(el.classList);
+            draggableClasses.forEach(draggable => {
+                if (classes.indexOf(draggable) !== -1)
+                    canDrag = true;
+            });
+            return canDrag;
+        }
+
+        function inRange(event) {
+            let rangeBox = getRangeBox(event);
+            let direction = rangeBox.dataset.direction;
+            let screenOffset = document.querySelector("#screen").offsetLeft + 26;
+            var min = screenOffset - rangeBox.offsetLeft;
+            var max = min + rangeBox.offsetWidth;
+            if (event.clientX < min || event.clientX > max) { return false; };
+            return true;
+        }
+
+        function updateProgress() {
+            var current = player.currentTime;
+            var percent = current / player.duration * 100;
+            progress.style.width = percent + '%';
+
+            currentTime.textContent = formatTime(current);
+        }
+
+        function getRangeBox(event) {
+            let rangeBox = event.target;
+            let el = currentlyDragged;
+            if (event.type == 'click' && isDraggable(event.target)) {
+                rangeBox = event.target.parentElement.parentElement;
+            }
+            if (event.type == 'mousemove') {
+                rangeBox = el.parentElement.parentElement;
+            }
+            return rangeBox;
+        }
+
+        function getCoefficient(event) {
+            let slider = getRangeBox(event);
+            let screenOffset = document.querySelector("#screen").offsetLeft + 26;
+            let K = 0;
+            let offsetX = event.clientX - screenOffset;
+            let width = slider.clientWidth;
+            K = offsetX / width;
+            return K;
+        }
+
+        function rewind(event) {
+            if (inRange(event)) {
+                player.currentTime = player.duration * getCoefficient(event);
+            }
+        }
+
+        function formatTime(time) {
+            var min = Math.floor(time / 60);
+            var sec = Math.floor(time % 60);
+            return min + ':' + (sec < 10 ? '0' + sec : sec);
+        }
+
+        function togglePlay() {
+            player.volume = 0.5;
+
+            if (player.paused) {
+                player.play();
+            } else {
+                player.pause();
+            }
+        } */
+//# sourceURL=pen.js
+    </script>
+
+<!-- audiplay -->
+    <script src="./assets/js/audiplay.js"></script>
+
+<!-- agenda -->
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-with-addons.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.7/uuid.min.js'></script>
+    <script src="./agenda/app.js"></script>
+
+<!-- buscador -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script id="rendered-js" >
+/* W3 Example */
+function busqueda() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("buscar");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("tabla");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {if (window.CP.shouldStopExecution(0)) break;
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }window.CP.exitedLoop(0);
+}
+
+function busquedaJQsimple() {
+  var filtro = $("#buscar").val().toUpperCase();
+
+  $("#tabla tbody tr").each(function () {
+    texto = $(this).children("td:eq(0)").text().toUpperCase();
+
+    if (texto.indexOf(filtro) < 0) {
+      $(this).hide();
+    } else {
+      $(this).show();
+    }
+
+
+  });
+
+}
+
+function buscar() {
+
+  var filtro = $("#buscar").val().toUpperCase();
+
+  $("#tabla td").each(function () {
+    var textoEnTd = $(this).text().toUpperCase();
+    if (textoEnTd.indexOf(filtro) >= 0) {
+      $(this).addClass("existe");
+    } else {
+      $(this).removeClass("existe");
+    }
+  });
+
+  $("#tabla tbody tr").each(function () {
+    if ($(this).children(".existe").length > 0) {
+      $(this).show();
+    } else {
+      $(this).hide();
+    }
+  });
+
+}
+
+function busquedaJQmultiple() {
+  var filtro = $("#buscar").val().toUpperCase();
+
+  $("#tabla tbody tr").each(function () {
+
+    $(this).children("td").each(function () {
+      var texto = $(this).text().toUpperCase();
+
+      if (texto.indexOf(filtro) < 0) {
+        $(this).addClass("sin");
+      } else {
+        $(this).removeClass("sin");
+      }
+    });
+
+    // nTds = la cantidad de <td> en el <tr> evaluado
+    nTds = $(this).children("td").length;
+    // nTdsSin = la cantidad de <td> con la clase ".sin" en el <tr> evaluado
+    nTdsSin = $(this).children(".sin").length;
+
+    if (nTdsSin == nTds) {
+      //$(this).hide()
+      $(this).addClass("noTiene");
+    } else {
+      //$(this).show()
+      $(this).removeClass("noTiene");
+    }
+
+  });
+
+}
+//# sourceURL=pen.js
+    </script>
+
+
+<!-- ball -->
+    <!-- <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+    <script id="rendered-js" >
+            (function() {
+            }).call(this);
+    </script>
+     <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script> -->
+
+<!-- cambios html -->
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script> -->
+<script type="text/javascript" src="./assets/js/chunks.js"></script>
+
+<!-- agenda -->
+    <script src="./agenda/agenda.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script>
+          $(".button-collapse").sideNav();
+        </script>
+    </html>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
