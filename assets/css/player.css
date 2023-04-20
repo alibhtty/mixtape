@@ -218,7 +218,7 @@ h1, h2, h3, h4, h5, h6 {
             /* border: 2px solid #f2f2f2; */
             /* border-radius: 4px; */
             height: 100vh; /* 400px */
-            /* overflow: hidden; */
+            overflow: hidden;
             position: relative;
             width: 100vw; /* 225px */
             z-index: 1;
@@ -1852,6 +1852,7 @@ h1, h2, h3, h4, h5, h6 {
             -ms-user-select: none;
             user-select: none;
             -webkit-tap-highlight-color:  rgba(255, 255, 255, 0.3);
+            -webkit-touch-callout: none
             }
           }
 
