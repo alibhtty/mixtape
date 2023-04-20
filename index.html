@@ -952,7 +952,7 @@
                                 <h3 class="dj-name header-section fs-desktop-medium fs-xsmall"><a>Licks</a></h3>
                             </div>
                     
-                            <div class="opacy">
+                            <div id="imagen" class="opacy">
                                 <a class="buttons aspect-2-3 aspect-2-3-mini" style="height: 100%;">
                                     <div id="cont1" class="aspect-2-3 aspect-2-3-mini"
                                         style="background:url('./dj/orbinary/img/orbinay.jpg') no-repeat; background-size: cover; background-position: center center;">
@@ -1282,6 +1282,22 @@
             <!-- <div id="home-btn"></div> -->
         </div>
         <div id="splash"></div>
+        
+            <!-- pwa install app popup start -->
+              <div class="offcanvas offcanvas-bottom addtohome-popup" tabindex="-1" id="offcanvas">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div class="offcanvas-body small">
+                  <div class="app-info">
+                    <img src="assets/images/logo/logo48.png" class="img-fluid" alt="">
+                    <div class="content">
+                      <h3>Mixtape App</h3>
+                      <a href="#">www.ali-bhtty.app</a>
+                    </div>
+                  </div>
+                  <a href="javascript:void(0)" class="btn btn-solid install-app" id="installApp">Añadir a la pantalla</a>
+                </div>
+              </div>
+            <!-- pwa install app popup end -->
     </div>
 
 
@@ -1774,6 +1790,7 @@ function busquedaJQmultiple() {
     <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
 
     <script src="./script.js"></script>
+    <script src="./assets/js/pwa.js"></script>
 
     <!-- fade-in -->
     <script>
