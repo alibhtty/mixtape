@@ -1,0 +1,4757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=0">
+    <meta name="apple-mobile-web-app-title" content="Mixtape">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Haga que el título de la aplicación sea diferente al título de la página. -->
+    <meta name="apple-mobile-web-app-title" content="Mixtape">
+    <!-- Habilitar la detección automática de números de teléfono. -->
+    <!-- <meta name="format-detection" content="telephone=yes"> -->
+
+    <title>Mixtape it's ready!</title>
+    <meta name="msapplication-TileColor" content="#42e0ff">
+    <meta name="referrer" content="always" />
+    <meta name="theme-color" content="#000000" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="applicable-device" content="pc,mobile">
+    <!-- FAVICON -->
+    <link rel="apple-touch-startup-image" href="./assets/icons/favicon/startup.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/favicon/icon_180w.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon/icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon/icon.png">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/icons/favicon/icon.png">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" as="style" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" />
+    <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+
+
+    <style>
+        @charset "UTF-8";
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+        @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+        html,
+        body {
+            color: #ffffff;
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px;
+            overflow: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+        }
+
+        h5 {
+            font-size: 1.5rem;
+        }
+
+        .content-wrapper {
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 0 0.5rem;
+        }
+
+        /*
+	Improved screen reader only CSS class
+	@author Gaël Poupard
+		@note Based on Yahoo!'s technique
+		@author Thierry Koblentz
+		@see https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html
+	* 1.
+		@note `clip` is deprecated but works everywhere
+		@see https://developer.mozilla.org/en-US/docs/Web/CSS/clip
+	* 2.
+		@note `clip-path` is the future-proof version, but not very well supported yet
+		@see https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path
+		@see http://caniuse.com/#search=clip-path
+		@author Yvain Liechti
+		@see https://twitter.com/ryuran78/status/778943389819604992
+	* 3.
+		@note preventing text to be condensed
+		author J. Renée Beach
+		@see https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+		@note Drupal 8 goes with word-wrap: normal instead
+		@see https://www.drupal.org/node/2045151
+		@see http://cgit.drupalcode.org/drupal/commit/?id=5b847ea
+	* 4.
+		@note !important is important
+		@note Obviously you wanna hide something
+		@author Harry Roberts
+		@see https://csswizardry.com/2016/05/the-importance-of-important/
+*/
+        .sr-only {
+            border: 0 !important;
+            clip: rect(1px, 1px, 1px, 1px) !important;
+            /* 1 */
+            -webkit-clip-path: inset(50%) !important;
+            clip-path: inset(50%) !important;
+            /* 2 */
+            height: 1px !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            padding: 0 !important;
+            position: absolute !important;
+            width: 1px !important;
+            white-space: nowrap !important;
+            /* 3 */
+        }
+
+        /*
+	Use in conjunction with .sr-only to only display content when it's focused.
+	@note Useful for skip links 
+	@see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+	@note Based on a HTML5 Boilerplate technique, included in Bootstrap
+	@note Fixed a bug with position: static on iOS 10.0.2 + VoiceOver
+		@author Sylvain Pigeard
+		@see https://github.com/twbs/bootstrap/issues/20732
+*/
+        .sr-only-focusable:focus,
+        .sr-only-focusable:active {
+            clip: auto !important;
+            -webkit-clip-path: none !important;
+            clip-path: none !important;
+            height: auto !important;
+            margin: auto !important;
+            overflow: visible !important;
+            width: auto !important;
+            white-space: normal !important;
+        }
+
+        .mp-app-controls {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .mp-app-controls__item:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+
+        .mp-app-controls__control {
+            background-color: transparent;
+            border: 0;
+            filter: drop-shadow(0 0 4px #303030);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            padding: 0;
+        }
+
+        .mp-app-info-modal__heading {
+            align-items: center;
+            display: flex;
+            font-size: 2.5rem;
+        }
+
+        .mp-app-info-modal__heading .mp-icon {
+            color: #26c6da;
+            margin-right: 0.5rem;
+        }
+
+        .mp-app-info-modal__disclaimer {
+            max-width: 396px;
+            padding: 2rem 0;
+            font-size: 0.875rem;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .mp-app-info-modal__disclaimer .mp-icon {
+            color: #ffd54f;
+            float: left;
+            height: 2rem;
+            margin-right: 0.5rem;
+        }
+
+        .mp-app-info-modal__item {
+            justify-content: space-between;
+            border-bottom: 1px solid #626262;
+            display: flex;
+            padding: 0.5rem 0;
+        }
+
+        .mp-app-info-modal__item:last-child {
+            border: 0;
+        }
+
+        .mp-app-info-modal__binding {
+            font-weight: 800;
+            font-style: italic;
+            padding-right: 0.375rem;
+        }
+
+        .mp-app-info-modal__btn-start {
+            width: 100%;
+        }
+
+        .mp-app-menu {
+            bottom: 0;
+            opacity: 0;
+            padding: 0.5rem 0;
+            pointer-events: none;
+            position: fixed;
+            transform: translateY(0.25rem);
+            transition: opacity 0.2s, transform 0.2s;
+            width: 100%;
+        }
+
+        .mp-app-menu--open {
+            opacity: 0.75;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .mp-app-menu--open:hover,
+        .mp-app-menu--open:focus-within {
+            opacity: 1;
+        }
+
+        .mp-app-menu__wrapper {
+            align-items: flex-end;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .mp-app-menu__wrapper>* {
+            flex: 1;
+        }
+
+        .mp-app-menu__wrapper .mp-audio-controls {
+            flex: 2;
+        }
+
+        .mp-audio-controls {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            margin: 0 0.5rem;
+            position: relative;
+            width: 100%;
+        }
+
+        .mp-audio-controls__items {
+            align-items: center;
+            display: flex;
+            margin-bottom: 0.5rem;
+            padding-left: 0.5rem;
+        }
+
+        .mp-audio-controls__item {
+            margin-right: 1rem;
+        }
+
+        .mp-audio-controls__item:last-child {
+            margin-right: 0;
+        }
+
+        .mp-audio-controls__control {
+            background-color: transparent;
+            border: 0;
+            filter: drop-shadow(0 0 4px #303030);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            padding: 0;
+        }
+
+        .mp-button {
+            border-radius: 4px;
+            border: 1px solid #00acc1;
+            color: #ffffff;
+            cursor: pointer;
+            font-family: "Open Sans", sans-serif;
+            font-weight: bold;
+            letter-spacing: 0.0625rem;
+            transition: background-color 0.2s;
+        }
+
+        .mp-button--s {
+            font-size: 0.875rem;
+            padding: 0.25rem 1rem;
+        }
+
+        .mp-button--m {
+            font-size: 1rem;
+            padding: 0.5rem 2rem;
+        }
+
+        .mp-button--l {
+            font-size: 1.5rem;
+            padding: 0.5rem 4rem;
+        }
+
+        .mp-button--primary {
+            background-color: #00acc1;
+        }
+
+        .mp-button--primary:hover {
+            background-color: #26c6da;
+        }
+
+        .mp-button--secondary {
+            background-color: transparent;
+        }
+
+        .mp-button--secondary:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .mp-button--inline {
+            background-color: transparent;
+            border: 0;
+            display: inline-flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mp-checkbox {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .mp-checkbox__label {
+            align-items: center;
+            display: flex;
+            outline: none;
+            position: relative;
+        }
+
+        .mp-checkbox__label::after,
+        .mp-checkbox__label::before {
+            content: "";
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .mp-checkbox__label::after {
+            border: solid #26c6da;
+            border-width: 0 0 2px 2px;
+            height: 4px;
+            left: 10px;
+            opacity: 0;
+            position: absolute;
+            transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+            transition: opacity 0.2s;
+            top: 7px;
+            width: 10px;
+            z-index: 100;
+        }
+
+        .mp-checkbox__label::before {
+            background: #515151;
+            border: 1px solid #626262;
+            border-radius: 0.125rem;
+            height: 1rem;
+            left: 0;
+            top: 0;
+            width: 1rem;
+        }
+
+        .mp-checkbox:focus-within .mp-checkbox__label::before {
+            filter: drop-shadow(0 0 4px #ffffff);
+        }
+
+        .mp-checkbox__label-text {
+            margin-left: 1rem;
+        }
+
+        .mp-checkbox--align-right .mp-checkbox__label-text {
+            margin-left: 0;
+            margin-right: auto;
+            order: 0;
+        }
+
+        .mp-checkbox--align-right .mp-checkbox__label:before {
+            margin-left: 1rem;
+            order: 1;
+        }
+
+        .mp-checkbox--align-right .mp-checkbox__label:after {
+            left: initial;
+            right: -3px;
+        }
+
+        .mp-checkbox__input {
+            margin: 0;
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .mp-checkbox__input:checked+.mp-checkbox__label::after {
+            opacity: 1;
+        }
+
+        .mp-delete-track-modal__message {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .mp-delete-track-modal .mp-button {
+            margin-right: 1rem;
+        }
+
+        .mp-dropdown__select {
+            background: #515151;
+            border: 1px solid #626262;
+            border-radius: 2px;
+            color: #ffffff;
+            display: block;
+            font-family: "Open Sans", sans-serif;
+            padding: 0.125rem;
+        }
+
+        .mp-dropdown option:hover {
+            background-color: #00838f;
+        }
+
+        .mp-file-error-modal__header {
+            border-bottom: 1px solid #949494;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.25rem;
+        }
+
+        .mp-file-error-modal__item {
+            display: flex;
+            font-size: 0.875rem;
+            justify-content: space-between;
+            margin-bottom: 0.125rem;
+        }
+
+        .mp-file-error-modal__item-name {
+            margin-right: 0.5rem;
+            text-align: left;
+        }
+
+        .mp-file-error-modal__item-type {
+            font-style: italic;
+            text-align: right;
+        }
+
+        .mp-file-error-modal .modal__body {
+            padding: 0.5rem;
+        }
+
+        .mp-icon--xs.material-icons {
+            font-size: 0.875rem;
+        }
+
+        .mp-icon--s.material-icons {
+            font-size: 1.125rem;
+        }
+
+        .mp-icon--m.material-icons {
+            font-size: 1.5rem;
+        }
+
+        .mp-icon--l.material-icons {
+            font-size: 2rem;
+        }
+
+        .mp-icon--xl.material-icons {
+            font-size: 3rem;
+        }
+
+        .mp-icon--2xl.material-icons {
+            font-size: 4.5rem;
+        }
+
+        .mp-icon--3xl.material-icons {
+            font-size: 6rem;
+        }
+
+        .mp-loader {
+            height: 2.5rem;
+            left: 50%;
+            position: fixed;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 0;
+            transition: opacity 0.6s;
+            width: 2.5rem;
+            z-index: 700;
+        }
+
+        .mp-loader--loading {
+            opacity: 1;
+        }
+
+        .mp-loader--loading .mp-loader__child {
+            -webkit-animation: rotateLoaderChild 4s infinite;
+            animation: rotateLoaderChild 4s infinite;
+        }
+
+        .mp-loader__child {
+            border-radius: 50%;
+            display: block;
+            filter: drop-shadow(0 0 4px rgba(0, 131, 143, 0.6));
+            left: 50%;
+            position: fixed;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            transform-origin: center center;
+        }
+
+        .mp-loader__child[data-index="1"] {
+            border: 2px solid;
+            border-color: #80deea #80deea #80deea transparent;
+            height: 12px;
+            transform: translateX(-50%) translateY(-50%);
+            width: 12px;
+            z-index: 1;
+        }
+
+        .mp-loader__child[data-index="2"] {
+            border: 2px solid;
+            border-color: #80deea #80deea #80deea transparent;
+            height: 24px;
+            transform: translateX(-50%) translateY(-50%);
+            width: 24px;
+            z-index: 2;
+        }
+
+        .mp-loader__child[data-index="3"] {
+            border: 2px solid;
+            border-color: #80deea #80deea #80deea transparent;
+            height: 36px;
+            transform: translateX(-50%) translateY(-50%);
+            width: 36px;
+            z-index: 3;
+        }
+
+        .mp-loader__child[data-index="4"] {
+            border: 2px solid;
+            border-color: #80deea #80deea #80deea transparent;
+            height: 48px;
+            transform: translateX(-50%) translateY(-50%);
+            width: 48px;
+            z-index: 4;
+        }
+
+        @-webkit-keyframes rotateLoaderChild {
+            to {
+                transform: translateX(-50%) translateY(-50%) rotate(360deg);
+            }
+        }
+
+        @keyframes rotateLoaderChild {
+            to {
+                transform: translateX(-50%) translateY(-50%) rotate(360deg);
+            }
+        }
+
+        .mp-modal--disable-close .mp-overlay__background {
+            pointer-events: none;
+        }
+
+        .mp-modal__body {
+            background-color: #303030;
+            border-radius: 0.25rem;
+            display: inline-block;
+            left: 50%;
+            opacity: 0.75;
+            padding: 1rem;
+            position: relative;
+            transform: translateX(-50%) translateY(0.5rem);
+            transition: transform 0.2s;
+            width: auto;
+        }
+
+        .mp-modal--open .mp-modal__body {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .mp-modal__close {
+            background-color: #515151;
+            border: 0;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            display: flex;
+            padding: 0.125rem;
+            position: absolute;
+            right: -0.5rem;
+            top: -0.5rem;
+        }
+
+        .mp-overlay {
+            height: 100vh;
+            position: absolute;
+            width: 100vw;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            z-index: 4;
+        }
+
+        .mp-overlay--open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .mp-overlay__background {
+            background-color: rgba(0, 0, 0, 0.25);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        .mp-overlay__content {
+            display: inline-block;
+            left: 50%;
+            padding: 0.5rem;
+            position: relative;
+            transform: translateX(-50%) translateY(-50%);
+            top: 50%;
+        }
+
+        .mp-drop-file-overlay {
+            pointer-events: none;
+        }
+
+        .mp-drop-file-overlay .mp-overlay__content {
+            height: 100vh;
+            position: absolute;
+            width: 100vw;
+        }
+
+        .mp-drop-file-overlay__droparea {
+            border: 2px dashed #00acc1;
+            border-radius: 0.25rem;
+            display: block;
+            height: calc(100% - 5rem);
+            left: 2.5rem;
+            pointer-events: none;
+            position: absolute;
+            top: 2.5rem;
+            width: calc(100% - 5rem);
+        }
+
+        .mp-drop-file-overlay__icon {
+            color: #00838f;
+            left: 50%;
+            pointer-events: none;
+            position: absolute;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .mp-slider-menu {
+            background: #303030;
+            border-bottom-left-radius: 4px;
+            max-height: calc(100vh - 4.5rem);
+            opacity: 0;
+            overflow: hidden;
+            padding: 0.5rem;
+            position: absolute;
+            pointer-events: none;
+            right: 0;
+            transform: translateX(5rem);
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .mp-slider-menu--open {
+            opacity: 0.75;
+            pointer-events: auto;
+            transform: translateX(0);
+        }
+
+        .mp-particle-menu {
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            font-size: 0.875rem;
+            padding: 0;
+        }
+
+        .mp-particle-menu.mp-slider-menu--open {
+            opacity: 1;
+        }
+
+        .mp-particle-menu__items {
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .mp-particle-menu__items::-webkit-scrollbar {
+            width: 0.5rem;
+        }
+
+        .mp-particle-menu__items::-webkit-scrollbar-track {
+            background-color: #303030;
+        }
+
+        .mp-particle-menu__items::-webkit-scrollbar-thumb {
+            border-radius: 0.25rem;
+            background-color: #737373;
+        }
+
+        .mp-particle-menu__item {
+            align-items: center;
+            background: #303030;
+            display: flex;
+            justify-content: space-between;
+            opacity: 0.75;
+            padding: 0.5rem 1rem;
+            transition: opacity 0.2s;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mp-particle-menu__item>* {
+            width: 100%;
+        }
+
+        .mp-particle-menu__item:not(:last-child) {
+            border-bottom: 1px solid #515151;
+        }
+
+        .mp-particle-menu__item:hover,
+        .mp-particle-menu__item:focus-within {
+            opacity: 1;
+        }
+
+        .mp-particle-menu__dropdown {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .mp-particle-menu__range {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            margin-right: 0.5rem;
+        }
+
+        .mp-particle-menu__range .mp-range__label {
+            margin-right: 1rem;
+        }
+
+        .mp-particle-menu__range .mp-range__track {
+            width: 120px;
+        }
+
+        .mp-particle-menu__label {
+            margin-right: 2rem;
+        }
+
+        .mp-particle-menu__value {
+            background: #515151;
+            border: 1px solid #626262;
+            border-radius: 2px;
+            padding: 0.25rem;
+            text-align: right;
+            width: 2.5rem;
+        }
+
+        .mp-canvas {
+            height: 100vh;
+            position: absolute;
+            transition: background-color 0.2s;
+            width: 100vw;
+        }
+
+        .mp-playlist-item {
+            align-items: center;
+            background-color: #303030;
+            display: flex;
+            opacity: 0.75;
+            padding: 0.5rem;
+            transition: opacity 0.2s;
+        }
+
+        .mp-playlist-item:hover,
+        .mp-playlist-item:focus-within {
+            opacity: 1;
+        }
+
+        .mp-playlist-item:not(:first-child) {
+            border-top: 1px solid #515151;
+        }
+
+        .mp-playlist-item__image {
+            border-radius: 2px;
+            margin-right: 0.5rem;
+            overflow: hidden;
+        }
+
+        .mp-playlist-item__image img {
+            display: block;
+            height: 3rem;
+            width: 3rem;
+        }
+
+        .mp-playlist-item__info {
+            font-size: 0.875rem;
+            margin-right: 2rem;
+        }
+
+        .mp-playlist-item__controls {
+            margin-left: auto;
+        }
+
+        .mp-playlist-item__btn {
+            background: transparent;
+            border: 0;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 0.125rem;
+        }
+
+        .mp-playlist-item__btn--playback {
+            margin-right: 0.5rem;
+        }
+
+        .mp-playlist-item__btn--edit {
+            margin-right: 0.125rem;
+        }
+
+        .mp-playlist-item__btn--highlight {
+            color: #26c6da;
+        }
+
+        .mp-playlist-item__btn .mp-icon {
+            display: block;
+        }
+
+        .mp-playlist-item__title {
+            margin-bottom: 0.25rem;
+        }
+
+        .mp-playlist-item__input {
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px solid #26c6da;
+            color: #ffffff;
+            display: block;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .mp-playlist-menu {
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            font-size: 0.875rem;
+            height: auto;
+            min-width: 360px;
+            padding: 0;
+        }
+
+        .mp-playlist-menu.mp-slider-menu--open {
+            opacity: 1;
+        }
+
+        .mp-playlist-menu__header {
+            background-color: #303030;
+            border-bottom: 1px solid #515151;
+            box-sizing: border-box;
+            display: flex;
+            opacity: 0.75;
+            padding: 0.5rem;
+            width: 100%;
+        }
+
+        .mp-playlist-menu__header:hover,
+        .mp-playlist-menu__header:focus-within {
+            opacity: 1;
+        }
+
+        .mp-playlist-menu__list {
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .mp-playlist-menu__list::-webkit-scrollbar {
+            width: 0.25rem;
+        }
+
+        .mp-playlist-menu__list::-webkit-scrollbar-track {
+            background-color: #303030;
+        }
+
+        .mp-playlist-menu__list::-webkit-scrollbar-thumb {
+            background-color: #737373;
+        }
+
+        .mp-playlist-menu__add-label {
+            cursor: pointer;
+            display: flex;
+            margin-left: auto;
+            outline: none;
+        }
+
+        .mp-playlist-menu__add-label:focus .mp-playlist-menu__add-icon {
+            filter: drop-shadow(0 0 4px #ffffff);
+        }
+
+        .mp-playlist-menu__add-msg {
+            margin: 0.375rem 0.5rem 0 0;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(0.125rem);
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .mp-playlist-menu__add-label:hover .mp-playlist-menu__add-msg {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateX(0);
+        }
+
+        .mp-playlist-menu__no-tracks {
+            padding: 1rem;
+        }
+
+        .mp-playlist-menu__message {
+            font-style: italic;
+            margin-bottom: 0.25rem;
+        }
+
+        .mp-range__input {
+            border-radius: 0.125rem;
+            cursor: pointer;
+            overflow: auto;
+            -ms-scroll-chaining: none;
+            overscroll-behavior: contain;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .mp-range__track {
+            background: #737373;
+            height: 0.125rem;
+            width: 100%;
+            pointer-events: none;
+            position: relative;
+        }
+
+        .mp-range__fill {
+            background-color: #00acc1;
+            height: 0.125rem;
+        }
+
+        .mp-range__thumb {
+            height: 0.625rem;
+            width: 0.625rem;
+            border-radius: 50%;
+            background: #ffffff;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            transform: translateX(-0.3125rem) translateY(calc(-0.5 * 0.625rem - 1px));
+            transition: opacity 0.2s;
+        }
+
+        .mp-range:hover .mp-range__thumb {
+            opacity: 1;
+        }
+
+        .mp-seekbar {
+            display: flex;
+            align-items: center;
+            max-width: 720px;
+            width: 100%;
+        }
+
+        .mp-seekbar__range {
+            flex: 1;
+            margin: 0 1rem;
+        }
+
+        .mp-seekbar__time {
+            filter: drop-shadow(0 0 2px #303030);
+            font-size: 0.875rem;
+        }
+
+        .mp-track-info {
+            align-items: center;
+            display: flex;
+            flex: 1;
+            margin-right: 0.25rem;
+        }
+
+        .mp-track-info__open {
+            border-radius: 2px;
+            display: block;
+            height: 3rem;
+            flex-shrink: 0;
+            margin-right: 0.5rem;
+            overflow: hidden;
+            width: 3rem;
+        }
+
+        .mp-track-info__image {
+            background-color: #515151;
+            cursor: pointer;
+            flex-shrink: 0;
+            pointer-events: none;
+            position: relative;
+        }
+
+        .mp-track-info__image img {
+            display: block;
+            height: 100%;
+            -o-object-fit: contain;
+            object-fit: contain;
+            transition: transform 0.2s;
+            width: 100%;
+        }
+
+        .mp-track-info__open:hover .mp-track-info__image img,
+        .mp-track-info__open:focus .mp-track-info__image img {
+            transform: scale(1.15);
+        }
+
+        .mp-track-info__title,
+        .mp-track-info__artist {
+            filter: drop-shadow(0 0 2px #303030);
+        }
+
+        .mp-track-info__title {
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .mp-track-info__artist {
+            font-size: 0.75rem;
+        }
+
+        .mp-track-info-modal .mp-modal__body {
+            max-width: 500px;
+        }
+
+        .mp-track-info-modal__image {
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .mp-track-info-modal__image img {
+            display: block;
+            height: auto;
+            -o-object-fit: contain;
+            object-fit: contain;
+            position: relative;
+            width: 100%;
+        }
+
+        .mp-volume-control {
+            align-items: center;
+            display: flex;
+            filter: drop-shadow(0 0 2px #303030);
+            position: relative;
+        }
+
+        .mp-volume-control__btn {
+            background-color: transparent;
+            border: 0;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            margin-right: 0.5rem;
+            padding: 0;
+        }
+
+        .mp-volume-control__range {
+            left: 100%;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(calc(-50%));
+            transition: opacity 0.2s;
+            width: 5rem;
+        }
+
+        .mp-volume-control:hover .mp-volume-control__range,
+        .mp-volume-control:focus-within .mp-volume-control__range {
+            opacity: 1;
+        }
+
+        .no-select {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mp-reactive-control {
+            cursor: pointer;
+        }
+
+        .mp-reactive-control:active {
+            transform: scale(0.85);
+        }
+
+        .mp-focus-highlight:focus {
+            filter: drop-shadow(0 0 4px #ffecb3);
+            outline: none;
+        }
+
+        .mp-github-tag {
+            color: white;
+            height: 1.5rem;
+            left: 0.5rem;
+            opacity: 0.4;
+            position: absolute;
+            top: 0.5rem;
+            transition: opacity 0.2s;
+            width: 2rem;
+            z-index: 10;
+        }
+
+        .mp-github-tag:hover {
+            opacity: 0.8;
+        }
+    </style>
+
+    <!-- <script>
+        window.console = window.console || function (t) { };
+    </script> -->
+
+
+
+</head>
+
+<body translate="no">
+    <!-- <a aria-label="View this project on GitHub" class="mp-github-tag"
+        href="https://github.com/SeanFree/musical-particles-v4" target="_blank" rel="noreferrer">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="mp-github-tag__icon">
+            <path fill="currentColor"
+                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+            </path>
+        </svg>
+    </a> -->
+    <script id="cnoise" type="x-shader/x-fragment">
+//
+// GLSL textureless classic 4D noise "cnoise",
+// with an RSL-style periodic variant "pnoise".
+// Author:  Stefan Gustavson (stefan.gustavson@liu.se)
+// Version: 2011-08-22
+//
+// Many thanks to Ian McEwan of Ashima Arts for the
+// ideas for permutation and gradient selection.
+//
+// Copyright (c) 2011 Stefan Gustavson. All rights reserved.
+// Distributed under the MIT license. See LICENSE file.
+// https://github.com/stegu/webgl-noise
+//
+
+vec4 mod289(vec4 x) {
+  return x - floor(x * (1.0 / 289.0)) * 289.0;
+}
+
+vec4 permute(vec4 x) {
+  return mod289(((x*34.0)+1.0)*x);
+}
+
+vec4 taylorInvSqrt(vec4 r) {
+  return 1.79284291400159 - 0.85373472095314 * r;
+}
+
+vec4 fade(vec4 t) {
+  return t*t*t*(t*(t*6.0-15.0)+10.0);
+}
+
+// Classic Perlin noise
+float cnoise(vec4 P) {
+  vec4 Pi0 = floor(P); // Integer part for indexing
+  vec4 Pi1 = Pi0 + 1.0; // Integer part + 1
+  Pi0 = mod289(Pi0);
+  Pi1 = mod289(Pi1);
+  vec4 Pf0 = fract(P); // Fractional part for interpolation
+  vec4 Pf1 = Pf0 - 1.0; // Fractional part - 1.0
+  vec4 ix = vec4(Pi0.x, Pi1.x, Pi0.x, Pi1.x);
+  vec4 iy = vec4(Pi0.yy, Pi1.yy);
+  vec4 iz0 = vec4(Pi0.zzzz);
+  vec4 iz1 = vec4(Pi1.zzzz);
+  vec4 iw0 = vec4(Pi0.wwww);
+  vec4 iw1 = vec4(Pi1.wwww);
+
+  vec4 ixy = permute(permute(ix) + iy);
+  vec4 ixy0 = permute(ixy + iz0);
+  vec4 ixy1 = permute(ixy + iz1);
+  vec4 ixy00 = permute(ixy0 + iw0);
+  vec4 ixy01 = permute(ixy0 + iw1);
+  vec4 ixy10 = permute(ixy1 + iw0);
+  vec4 ixy11 = permute(ixy1 + iw1);
+
+  vec4 gx00 = ixy00 * (1.0 / 7.0);
+  vec4 gy00 = floor(gx00) * (1.0 / 7.0);
+  vec4 gz00 = floor(gy00) * (1.0 / 6.0);
+  gx00 = fract(gx00) - 0.5;
+  gy00 = fract(gy00) - 0.5;
+  gz00 = fract(gz00) - 0.5;
+  vec4 gw00 = vec4(0.75) - abs(gx00) - abs(gy00) - abs(gz00);
+  vec4 sw00 = step(gw00, vec4(0.0));
+  gx00 -= sw00 * (step(0.0, gx00) - 0.5);
+  gy00 -= sw00 * (step(0.0, gy00) - 0.5);
+
+  vec4 gx01 = ixy01 * (1.0 / 7.0);
+  vec4 gy01 = floor(gx01) * (1.0 / 7.0);
+  vec4 gz01 = floor(gy01) * (1.0 / 6.0);
+  gx01 = fract(gx01) - 0.5;
+  gy01 = fract(gy01) - 0.5;
+  gz01 = fract(gz01) - 0.5;
+  vec4 gw01 = vec4(0.75) - abs(gx01) - abs(gy01) - abs(gz01);
+  vec4 sw01 = step(gw01, vec4(0.0));
+  gx01 -= sw01 * (step(0.0, gx01) - 0.5);
+  gy01 -= sw01 * (step(0.0, gy01) - 0.5);
+
+  vec4 gx10 = ixy10 * (1.0 / 7.0);
+  vec4 gy10 = floor(gx10) * (1.0 / 7.0);
+  vec4 gz10 = floor(gy10) * (1.0 / 6.0);
+  gx10 = fract(gx10) - 0.5;
+  gy10 = fract(gy10) - 0.5;
+  gz10 = fract(gz10) - 0.5;
+  vec4 gw10 = vec4(0.75) - abs(gx10) - abs(gy10) - abs(gz10);
+  vec4 sw10 = step(gw10, vec4(0.0));
+  gx10 -= sw10 * (step(0.0, gx10) - 0.5);
+  gy10 -= sw10 * (step(0.0, gy10) - 0.5);
+
+  vec4 gx11 = ixy11 * (1.0 / 7.0);
+  vec4 gy11 = floor(gx11) * (1.0 / 7.0);
+  vec4 gz11 = floor(gy11) * (1.0 / 6.0);
+  gx11 = fract(gx11) - 0.5;
+  gy11 = fract(gy11) - 0.5;
+  gz11 = fract(gz11) - 0.5;
+  vec4 gw11 = vec4(0.75) - abs(gx11) - abs(gy11) - abs(gz11);
+  vec4 sw11 = step(gw11, vec4(0.0));
+  gx11 -= sw11 * (step(0.0, gx11) - 0.5);
+  gy11 -= sw11 * (step(0.0, gy11) - 0.5);
+
+  vec4 g0000 = vec4(gx00.x,gy00.x,gz00.x,gw00.x);
+  vec4 g1000 = vec4(gx00.y,gy00.y,gz00.y,gw00.y);
+  vec4 g0100 = vec4(gx00.z,gy00.z,gz00.z,gw00.z);
+  vec4 g1100 = vec4(gx00.w,gy00.w,gz00.w,gw00.w);
+  vec4 g0010 = vec4(gx10.x,gy10.x,gz10.x,gw10.x);
+  vec4 g1010 = vec4(gx10.y,gy10.y,gz10.y,gw10.y);
+  vec4 g0110 = vec4(gx10.z,gy10.z,gz10.z,gw10.z);
+  vec4 g1110 = vec4(gx10.w,gy10.w,gz10.w,gw10.w);
+  vec4 g0001 = vec4(gx01.x,gy01.x,gz01.x,gw01.x);
+  vec4 g1001 = vec4(gx01.y,gy01.y,gz01.y,gw01.y);
+  vec4 g0101 = vec4(gx01.z,gy01.z,gz01.z,gw01.z);
+  vec4 g1101 = vec4(gx01.w,gy01.w,gz01.w,gw01.w);
+  vec4 g0011 = vec4(gx11.x,gy11.x,gz11.x,gw11.x);
+  vec4 g1011 = vec4(gx11.y,gy11.y,gz11.y,gw11.y);
+  vec4 g0111 = vec4(gx11.z,gy11.z,gz11.z,gw11.z);
+  vec4 g1111 = vec4(gx11.w,gy11.w,gz11.w,gw11.w);
+
+  vec4 norm00 = taylorInvSqrt(vec4(dot(g0000, g0000), dot(g0100, g0100), dot(g1000, g1000), dot(g1100, g1100)));
+  g0000 *= norm00.x;
+  g0100 *= norm00.y;
+  g1000 *= norm00.z;
+  g1100 *= norm00.w;
+
+  vec4 norm01 = taylorInvSqrt(vec4(dot(g0001, g0001), dot(g0101, g0101), dot(g1001, g1001), dot(g1101, g1101)));
+  g0001 *= norm01.x;
+  g0101 *= norm01.y;
+  g1001 *= norm01.z;
+  g1101 *= norm01.w;
+
+  vec4 norm10 = taylorInvSqrt(vec4(dot(g0010, g0010), dot(g0110, g0110), dot(g1010, g1010), dot(g1110, g1110)));
+  g0010 *= norm10.x;
+  g0110 *= norm10.y;
+  g1010 *= norm10.z;
+  g1110 *= norm10.w;
+
+  vec4 norm11 = taylorInvSqrt(vec4(dot(g0011, g0011), dot(g0111, g0111), dot(g1011, g1011), dot(g1111, g1111)));
+  g0011 *= norm11.x;
+  g0111 *= norm11.y;
+  g1011 *= norm11.z;
+  g1111 *= norm11.w;
+
+  float n0000 = dot(g0000, Pf0);
+  float n1000 = dot(g1000, vec4(Pf1.x, Pf0.yzw));
+  float n0100 = dot(g0100, vec4(Pf0.x, Pf1.y, Pf0.zw));
+  float n1100 = dot(g1100, vec4(Pf1.xy, Pf0.zw));
+  float n0010 = dot(g0010, vec4(Pf0.xy, Pf1.z, Pf0.w));
+  float n1010 = dot(g1010, vec4(Pf1.x, Pf0.y, Pf1.z, Pf0.w));
+  float n0110 = dot(g0110, vec4(Pf0.x, Pf1.yz, Pf0.w));
+  float n1110 = dot(g1110, vec4(Pf1.xyz, Pf0.w));
+  float n0001 = dot(g0001, vec4(Pf0.xyz, Pf1.w));
+  float n1001 = dot(g1001, vec4(Pf1.x, Pf0.yz, Pf1.w));
+  float n0101 = dot(g0101, vec4(Pf0.x, Pf1.y, Pf0.z, Pf1.w));
+  float n1101 = dot(g1101, vec4(Pf1.xy, Pf0.z, Pf1.w));
+  float n0011 = dot(g0011, vec4(Pf0.xy, Pf1.zw));
+  float n1011 = dot(g1011, vec4(Pf1.x, Pf0.y, Pf1.zw));
+  float n0111 = dot(g0111, vec4(Pf0.x, Pf1.yzw));
+  float n1111 = dot(g1111, Pf1);
+
+  vec4 fade_xyzw = fade(Pf0);
+  vec4 n_0w = mix(vec4(n0000, n1000, n0100, n1100), vec4(n0001, n1001, n0101, n1101), fade_xyzw.w);
+  vec4 n_1w = mix(vec4(n0010, n1010, n0110, n1110), vec4(n0011, n1011, n0111, n1111), fade_xyzw.w);
+  vec4 n_zw = mix(n_0w, n_1w, fade_xyzw.z);
+  vec2 n_yzw = mix(n_zw.xy, n_zw.zw, fade_xyzw.y);
+  float n_xyzw = mix(n_yzw.x, n_yzw.y, fade_xyzw.x);
+  return 2.2 * n_xyzw;
+}
+</script>
+
+    <script id="particle-frag" type="x-shader/x-fragment">
+uniform float u_hueRange;
+uniform float u_hueStart;
+uniform float u_bass;
+uniform float u_time;
+uniform sampler2D u_texture;
+
+varying float v_frequency;
+varying vec2 v_age;
+
+vec3 hsl2rgb(in vec3 c) { // credit anastadunbar @ shadertoy: https://www.shadertoy.com/view/XljGzV
+  vec3 rgb = clamp(abs(mod(c.x * 6. + vec3(0.0, 4., 2.), 6.) - 3.) - 1., 0., 1.);
+
+  return c.z + c.y * (rgb - .5) * (1. - abs(2. * c.z - 1.));
+}
+
+float fadeInOut(float t, float m) {
+  float h = .5 * m;
+
+  return abs(mod((t + h), m) - h) / h;
+}
+
+void main() {
+  float alpha = fadeInOut(v_age.s, v_age.t);
+
+  float mid = .5;
+  float rot = v_age.x * .01 + (v_frequency * 2.);
+
+  vec2 pointCoord =
+    vec2(
+      cos(rot) * (gl_PointCoord.x - mid) + sin(rot) * (gl_PointCoord.y - mid) + mid, 
+      -sin(rot) * (gl_PointCoord.x - mid) + cos(rot) * (gl_PointCoord.y - mid) + mid
+    );
+
+  float saturation = .25 + (.55 * v_frequency);
+  float luminosity = .35 + (.15 * u_bass);
+
+  float hue = fract(-u_hueStart + u_hueRange - (u_hueRange * v_frequency) + (u_bass + u_time * .01));
+
+  vec4 color = vec4(hsl2rgb(vec3(hue, saturation, luminosity)), alpha);
+
+  gl_FragColor = color * texture2D(u_texture, pointCoord);
+}
+</script>
+
+    <script id="particle-vert" type="x-shader/x-vertex">
+uniform float u_frequencyAvg;
+uniform float u_bass;
+uniform float u_time;
+uniform float u_frequencyScale;
+uniform float u_frequencyAvgScale;
+uniform float u_noiseScale;
+uniform float u_particleSizeMin;
+uniform float u_particleSizeScale;
+uniform bool u_applyNoise;
+uniform float u_displacementScale;
+uniform float u_particleDirection;
+uniform float u_particleSpeed;
+uniform float u_displacementDirection;
+
+attribute float frequency;
+attribute vec2 age;
+
+varying float v_frequency;
+varying vec2 v_age;
+
+void main() {
+  v_frequency = frequency;
+  v_age = age;
+
+  vec4 norm = vec4(normalize(position), 0.);
+
+  float noise = cnoise(
+    vec4(
+      norm.xyz *
+      (6. - u_noiseScale),
+      u_bass + u_time
+    )
+  );
+
+  vec4 displacement = (norm -
+    ((u_frequencyAvg * u_frequencyAvgScale) +
+      (frequency * u_frequencyScale))) *
+    u_displacementDirection;
+
+  if (u_applyNoise) displacement *= (pow(1. + noise, 2.) * .5);
+
+  vec4 newPosition = vec4(position, 1.) +
+    (displacement * (u_displacementScale * .1)) +
+    ((age.x / age.y) * (u_particleSpeed * .1) * u_particleDirection);
+  
+
+  vec4 mvPosition = modelViewMatrix * newPosition;
+
+  float size = u_particleSizeMin +
+    length(displacement) *
+    (u_particleSizeScale * 10.);
+
+  gl_PointSize = size * (size / -mvPosition.z);
+  gl_Position = projectionMatrix * mvPosition;
+}
+</script>
+
+    <div id="root"></div>
+    <script
+        src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.development.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.development.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.7.2/prop-types.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.3/jsmediatags.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r122/three.min.js'></script>
+    <script
+        src='https://cdn.jsdelivr.net/gh/mrdoob/three.js@55ac3f233ed300da711f12d50e10f8e2f96a8f0b/examples/js/controls/OrbitControls.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js'></script>
+    <script src='https://codepen.io/seanfree/pen/LvrJWz.js'></script>
+    <script id="rendered-js">
+        function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } ///////////////
+        // Constants //
+        ///////////////
+
+        const { createContext, useContext, useEffect, useMemo, useRef, useState } = React;
+        const { arrayOf, bool, func, number, oneOf, shape, string } = PropTypes;
+
+        // Audio Player Params
+
+        const MAX_DB = -10;
+        const MIN_DB = -140;
+        const SMOOTHING_TIME_CONSTANT = .91;
+        const FFT_SIZE = 4096;
+        const START_GAIN = .8;
+        const HOST_URL = 'https://mp-app-v4.s3.amazonaws.com/';
+
+
+        // Modal IDs
+
+        const FILE_ERROR_MODAL_ID = 'fileErrorModal';
+        const TRACK_INFO_MODAL_ID = 'trackInfoModal';
+        const DELETE_TRACK_MODAL_ID = 'deleteTrackModal';
+        const APP_INFO_MODAL_ID = 'appInfoModal';
+
+        const MODAL_IDS = [
+            FILE_ERROR_MODAL_ID,
+            TRACK_INFO_MODAL_ID,
+            DELETE_TRACK_MODAL_ID,
+            APP_INFO_MODAL_ID];
+
+
+
+        // Slider Menu IDs
+
+        const PARTICLE_MENU_ID = 'particleMenu';
+        const PLAYLIST_MENU_ID = 'trackMenu';
+
+        const SLIDER_MENU_IDS = [
+            PARTICLE_MENU_ID,
+            PLAYLIST_MENU_ID];
+
+
+
+        ///////////
+        // Utils //
+        ///////////
+
+        // https://codepen.io/seanfree/pen/LvrJWz
+
+
+        // Arrays
+
+        const shuffle = (arr) =>
+            arr.slice().sort(() => randRange(1));
+
+        const sortByAsc = (arr, key) =>
+            arr.slice().sort((a, b) => a[key] < b[key] ? -1 : 1);
+
+
+        // Audio
+
+        const getSpectrumWidth = (frequency, nyquist, domainLength) =>
+            floor(frequency / nyquist * domainLength);
+
+        const audioFileReader = {
+            validate(file) {
+                const audio = document.createElement('audio');
+
+                return audio.canPlayType(file.type);
+            },
+            parseFileData(file) {
+                return window.URL.createObjectURL(file);
+            },
+            getTrackDuration(data) {
+                return new Promise((resolve, reject) => {
+                    const audio = document.createElement('audio');
+
+                    audio.addEventListener('loadeddata', done);
+                    audio.src = data;
+
+                    function done() {
+                        const { duration } = audio;
+
+                        audio.removeEventListener('loadeddata', done);
+
+                        resolve(duration);
+                    }
+                });
+            },
+            getFileTags(file) {
+                return new Promise((resolve, reject) => {
+                    jsmediatags.read(file, {
+                        onSuccess(result) {
+                            const {
+                                tags: {
+                                    artist = 'Artist Unknown',
+                                    title = file.name,
+                                    picture = null,
+                                    album = 'Album Unknown',
+                                    year = 'Year Unknown',
+                                    genre = 'Genre Unknown' } } =
+
+                                result;
+
+                            const artwork = picture && bufferToObjectURL(picture.data, picture.format);
+
+                            resolve({
+                                artwork,
+                                artist,
+                                album,
+                                title,
+                                year,
+                                genre
+                            });
+
+                        },
+                        onError: reject
+                    });
+
+                });
+            },
+            async readFile(file) {
+                if (!this.validate(file)) {
+                    return Promise.reject(
+                        new TypeError(`Could not load file with type: ${file.type}`));
+
+                } else {
+                    const data = this.parseFileData(file);
+                    const duration = await this.getTrackDuration(data);
+                    const tags = await this.getFileTags(file);
+
+                    return {
+                        data,
+                        duration,
+                        ...tags
+                    };
+
+                }
+            }
+        };
+
+
+        const bufferToBlob = (buffer) =>
+            new Blob([new Uint8Array(buffer)]);
+
+        const bufferToObjectURL = (buffer, format) =>
+            window.URL.createObjectURL(bufferToBlob(buffer), { format });
+
+
+        // Components
+
+        const classNames = (classMap) =>
+            Object.entries(classMap).
+                reduce((classString, [className, condition]) =>
+                    classString.concat(condition ? ` ${className}` : ''),
+                    '').
+                trim();
+
+        const noop = () => { };
+
+
+        // Strings
+
+        const pad = (v, n, c) => `${c.toString().repeat(n)}${v}`.slice(-n);
+
+        const hhmmss = s => {
+            const m = s / 60 | 0;
+            const h = m / 60 | 0;
+            const HH = h ? `${pad(h, 2, '0')}:` : '';
+            const MM = pad(s / 60 | 0, h || m >= 10 ? 2 : 1, '0');
+            const SS = pad(s % 60 | 0, 2, '0');
+
+            return `${HH}${MM}:${SS}`;
+        };
+
+        const fetchFile = async fileName => {
+            try {
+                const { status, statusText, data } = await axios.get(
+                    `${HOST_URL}${fileName}`,
+                    {
+                        responseType: "blob"
+                    });
+
+
+
+                if (status === 200) {
+                    return data;
+                } else {
+                    console.error({ status, statusText });
+                    return null;
+                }
+            } catch (err) {
+                console.error(err);
+                return null;
+            }
+        };
+
+        ////////////////
+        // Components //
+        ////////////////
+
+        // AppControls
+
+        const AppControls = ({ tabIndex }) => {
+            const { isOpen, toggle } = useContext(MenuContext);
+
+            return /*#__PURE__*/(
+                React.createElement("ul", { className: "mp-app-controls" }, /*#__PURE__*/
+                    React.createElement("li", { className: "mp-app-controls__item" }, /*#__PURE__*/
+                        React.createElement(Button, {
+                            ariaExpanded: isOpen(APP_INFO_MODAL_ID),
+                            ariaHasPopup: true,
+                            ariaLabelText: "Open App Info",
+                            className: "mp-app-controls__control mp-reactive-control mp-focus-highlight",
+                            handleClick: () => toggle(APP_INFO_MODAL_ID),
+                            id: "btn-open-app-info",
+                            tabIndex: tabIndex,
+                            type: "inline"
+                        }, /*#__PURE__*/
+                            React.createElement(Icon, {
+                                name: "info",
+                                size: "m"
+                            }))), /*#__PURE__*/
+
+
+                    React.createElement("li", { className: "mp-app-controls__item" }, /*#__PURE__*/
+                        React.createElement(Button, {
+                            ariaExpanded: isOpen(PARTICLE_MENU_ID),
+                            ariaHasPopup: true,
+                            ariaLabelText: "Open Particle Menu",
+                            className: "mp-app-controls__control mp-reactive-control mp-focus-highlight",
+                            handleClick: () => toggle(PARTICLE_MENU_ID),
+                            id: "btn-open-particle-menu",
+                            tabIndex: tabIndex,
+                            type: "inline"
+                        }, /*#__PURE__*/
+                            React.createElement(Icon, {
+                                name: "bubble_chart",
+                                size: "m"
+                            }))), /*#__PURE__*/
+
+
+                    React.createElement("li", { className: "mp-app-controls__item" }, /*#__PURE__*/
+                        React.createElement(Button, {
+                            ariaExpanded: isOpen(PLAYLIST_MENU_ID),
+                            ariaHasPopup: true,
+                            ariaLabelText: "Open Playlist Menu",
+                            className: "mp-app-controls__control mp-reactive-control mp-focus-highlight",
+                            handleClick: () => toggle(PLAYLIST_MENU_ID),
+                            id: "btn-open-playlist-menu",
+                            tabIndex: tabIndex,
+                            type: "inline"
+                        }, /*#__PURE__*/
+                            React.createElement(Icon, {
+                                name: "playlist_play",
+                                size: "m"
+                            })))));
+
+
+
+
+        };
+
+        AppControls.propTypes = {
+            tabIndex: string
+        };
+
+
+        AppControls.defaultProps = {
+            tabIndex: '0'
+        };
+
+
+
+        // AppInfoModal
+
+        const appInfoItems = [
+            {
+                description: "Show / Hide App Controls",
+                binding: "alt + u"
+            },
+
+            {
+                description: "Play / Pause",
+                binding: "ctrl + Spacebar"
+            },
+
+            {
+                description: "Skip Next",
+                binding: "ctrl + Arrow Right"
+            },
+
+            {
+                description: "Skip Previous",
+                binding: "ctrl + Arrow Left"
+            },
+
+            {
+                description: "Volume Up / Down",
+                binding: "Hover + Mousewheel / Click"
+            },
+
+            {
+                description: "Change Playlist Order",
+                binding: "alt + t"
+            },
+
+            {
+                description: "Close Dialog / Menu",
+                binding: "esc"
+            },
+
+            {
+                description: "Show / Hide Player",
+                binding: "alt + m"
+            },
+
+            {
+                description: "Show / Hide Particle Menu",
+                binding: "alt + o"
+            },
+
+            {
+                description: "Show / Hide Track List",
+                binding: "alt + p"
+            },
+
+            {
+                description: "Show / Hide Track Info",
+                binding: "alt + i"
+            },
+
+            {
+                description: "Zoom Camera",
+                binding: "Mousewheel"
+            },
+
+            {
+                description: "Rotate Camera",
+                binding: "Hold Left-click + Drag"
+            },
+
+            {
+                description: "Pan Camera",
+                binding: "Hold Right-click + Drag"
+            }];
+
+
+
+
+        const AppInfoModal = () => {
+            const { open, toggle } = useContext(MenuContext);
+            const { isEditingTrack, userInitialized, setUserInitialized } = useContext(AudioPlayerContext);
+
+
+            const handleKeyDown = ({ altKey, key }) => {
+                switch (true) {
+                    case userInitialized && altKey && key === 'u':
+                        toggle(APP_INFO_MODAL_ID);
+                        break;
+                    case !userInitialized && key === 'Escape':
+                        setUserInitialized(true);
+                        break;
+                    default:
+                        break;
+                }
+
+            };
+
+            const handleClose = () => {
+                if (!userInitialized) {
+                    setUserInitialized(true);
+                }
+            };
+
+            useEffect(() => {
+                open(APP_INFO_MODAL_ID);
+            }, []);
+
+            useEffect(() => {
+                window.addEventListener('keydown', handleKeyDown);
+
+                return () => window.removeEventListener('keydown', handleKeyDown);
+            }, [toggle]);
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement(Modal, {
+                    className: "mp-app-info-modal",
+                    disableClose: !userInitialized,
+                    id: APP_INFO_MODAL_ID,
+                    handleClose: handleClose
+                }, /*#__PURE__*/
+                    React.createElement("header", { className: "mp-app-info-modal__header" }, /*#__PURE__*/
+                        React.createElement("h2", { className: "mp-app-info-modal__heading" }, /*#__PURE__*/
+                            React.createElement(Icon, { name: "bubble_chart", size: "xl" }), "Musical Particles IV")), /*#__PURE__*/
+
+
+                    React.createElement("ul", { className: "mp-app-info-modal__list" },
+                        appInfoItems.map(({ description, binding }, i) => /*#__PURE__*/
+                            React.createElement("li", { className: "mp-app-info-modal__item", key: i }, /*#__PURE__*/
+                                React.createElement("span", { className: "mp-app-info-modal__description" }, description), /*#__PURE__*/
+                                React.createElement("span", { className: "mp-app-info-modal__binding" }, binding)))), /*#__PURE__*/
+
+
+
+                    React.createElement("footer", { className: "mp-app-info-modal__footer" }, /*#__PURE__*/
+                        React.createElement("p", { className: "mp-app-info-modal__disclaimer" }, /*#__PURE__*/React.createElement(Icon, { name: "warning", size: "m" }), "This application may potentially trigger seizures for people with photosensitive epilepsy. User discretion is advised."),
+                        !userInitialized && /*#__PURE__*/
+                        React.createElement(Button, {
+                            ariaLabelText: "Start",
+                            className: "mp-app-info-modal__btn-start",
+                            id: "btn-start",
+                            type: "primary",
+                            size: "l",
+                            handleClick: handleClose
+                        }, "Start"))),
+
+
+
+                [isEditingTrack, userInitialized]);
+        };
+
+
+        // AppMenu
+
+        const AppMenu = () => {
+            const { isEditingTrack, userInitialized } = useContext(AudioPlayerContext);
+            const [isOpen, setIsOpen] = useState(false);
+            const tabIndex = isOpen ? '0' : '-1';
+            const handleKeyDown = ({ key, altKey }) => {
+                if (!isEditingTrack) {
+                    const _isOpen = !isOpen;
+
+                    altKey && key === 'm' && setIsOpen(_isOpen);
+                    !isOpen && window.focus();
+                }
+            };
+
+            const classList = classNames({
+                'mp-app-menu': true,
+                [`mp-app-menu--open`]: isOpen
+            });
+
+
+            useEffect(() => {
+                userInitialized && setIsOpen(true);
+            }, [userInitialized]);
+
+            useEffect(() => {
+                if (userInitialized) {
+                    window.addEventListener('keydown', handleKeyDown);
+
+                    return () => window.removeEventListener('keydown', handleKeyDown);
+                }
+            }, [userInitialized, isOpen]);
+
+            return /*#__PURE__*/(
+                React.createElement("aside", { className: classList, "aria-hidden": !isOpen }, /*#__PURE__*/
+                    React.createElement("div", { className: "mp-app-menu__wrapper content-wrapper" }, /*#__PURE__*/
+                        React.createElement(TrackInfo, { tabIndex: tabIndex }), /*#__PURE__*/
+                        React.createElement(AudioPlayerControls, { tabIndex: tabIndex }), /*#__PURE__*/
+                        React.createElement(AppControls, { tabIndex: tabIndex }))));
+
+
+
+        };
+
+
+        // AudioCore
+
+        const playthroughOptions = ['repeat', 'repeat_one', 'shuffle'];
+        const audioId = '#mp-audio-core';
+
+        const AudioPlayerContext = createContext();
+
+        const AudioCore = ({ children }) => {
+            const el = useRef();
+            const { current: ctx } = useRef(new AudioContext());
+            const { current: analyser } = useRef(
+                ctx.createAnalyser ?
+                    ctx.createAnalyser() :
+                    {
+                        connect: () => { }
+                    });
+
+            const { current: gainNode } = useRef(
+                ctx.createGain ?
+                    ctx.createGain() :
+                    {
+                        connect: () => { },
+                        gain: {
+                            value: 0
+                        }
+                    });
+
+
+
+            const { open } = useContext(MenuContext);
+            const [isPlaying, setIsPlaying] = useState(false);
+            const [isEditingTrack, setIsEditingTrack] = useState(false);
+            const [audioReady, setAudioReady] = useState(false);
+            const [playthroughType, setPlaythroughType] = useState(playthroughOptions[0]);
+            const [trackToDelete, setTrackToDelete] = useState(null);
+            const [gain, setGain] = useState(START_GAIN);
+            const [trackList, setTrackList] = useState([]);
+            const [isLoading, setIsLoading] = useState(false);
+            const [currentTime, setCurrentTime] = useState(0);
+            const [currentTrack, setCurrentTrack] = useState(null);
+            const [playlistIndex, setPlaylistIndex] = useState(0);
+            const [errorFiles, setErrorFiles] = useState([]);
+            const [userInitialized, setUserInitialized] = useState(false);
+
+            const setAudioSrc = src => {
+                el.current.src = src;
+            };
+
+            const play = () => {
+                if (currentTrack) {
+                    setIsPlaying(true);
+
+                    ctx.resume();
+                    el.current.play();
+                }
+            };
+
+            const pause = () => {
+                if (currentTrack) {
+                    setIsPlaying(false);
+
+                    el.current.pause();
+                }
+            };
+
+            const selectTrack = track => {
+                setIsLoading(true);
+                setCurrentTrack(track);
+
+                const onLoad = e => {
+                    ctx.resume();
+
+                    setIsPlaying(true);
+                    setIsLoading(false);
+
+                    el.current.play();
+                    el.current.removeEventListener('loadeddata', onLoad);
+                };
+
+                el.current.addEventListener('loadeddata', onLoad);
+
+                setAudioSrc(track.data);
+            };
+
+            const deleteTrack = () => {
+                trackToDelete.index === currentTrack.index && skipNext();
+                trackToDelete.index <= playlistIndex && setPlaylistIndex(playlistIndex - 1);
+
+                setTrackList((_trackList) =>
+                    _trackList.
+                        filter(({ index }) => index !== trackToDelete.index).
+                        map(track => ({
+                            ...track,
+                            index: track.index > trackToDelete.index ?
+                                --track.index :
+                                track.index
+                        })));
+
+
+            };
+
+            const addTracks = async files => {
+                setIsLoading(true);
+
+                let _errorFiles = [];
+
+                const newTracks = (await Promise.all(
+                    files.map((file) =>
+                        audioFileReader.
+                            readFile(file).
+                            catch(() => _errorFiles.push(file))))).
+
+                    filter(track => isNaN(track));
+
+                if (_errorFiles.length) {
+                    setErrorFiles(_errorFiles);
+                    open(FILE_ERROR_MODAL_ID);
+                }
+
+                if (newTracks.length) {
+                    setTrackList(_trackList => {
+                        newTracks.forEach((track, i) => {
+                            track.index = _trackList.length + i;
+                        });
+
+                        const [selectedTrack] = newTracks;
+                        const newTrackList = [..._trackList, ...newTracks];
+
+                        selectTrack(selectedTrack);
+                        setPlaylistIndex(newTrackList.indexOf(selectedTrack));
+
+                        return newTrackList;
+                    });
+                } else {
+                    setIsLoading(false);
+                }
+            };
+
+            const updateTrackInfo = (index, title, artist) =>
+                setTrackList(_trackList => _trackList.map(_track => {
+                    if (_track.index === index) {
+                        _track.artist = artist;
+                        _track.title = title;
+                    }
+
+                    return _track;
+                }));
+
+            const shuffleTrackList = () =>
+                setTrackList(_trackList => {
+                    const newTrackList = shuffle(_trackList);
+
+                    setPlaylistIndex(newTrackList.findIndex(({ index }) => index === currentTrack.index));
+
+                    return newTrackList;
+                });
+
+            const unshuffleTrackList = () =>
+                setTrackList(_trackList => {
+                    const newTrackList = sortByAsc(_trackList, 'index');
+                    const index = newTrackList.findIndex(({ index }) => index === currentTrack.index);
+
+                    setPlaylistIndex(index);
+
+                    return newTrackList;
+                });
+
+            const skip = index => {
+                if (trackList.length) {
+                    setPlaylistIndex(index);
+                    selectTrack(trackList[index]);
+                }
+            };
+
+            const skipNext = () => {
+                skip(
+                    playlistIndex === trackList.length - 1 ?
+                        0 :
+                        playlistIndex + 1);
+
+            };
+
+            const skipPrev = () => {
+                skip(
+                    playlistIndex === 0 ?
+                        trackList.length - 1 :
+                        playlistIndex - 1);
+
+            };
+
+            const changePlaythroughType = () => {
+                const currentIndex = playthroughOptions.indexOf(playthroughType);
+                const nextIndex = currentIndex === playthroughOptions.length - 1 ?
+                    0 :
+                    currentIndex + 1;
+                const playthroughSelection = playthroughOptions[nextIndex];
+
+                if (playthroughSelection === 'shuffle') {
+                    shuffleTrackList();
+                } else if (playthroughType === 'shuffle') {
+                    unshuffleTrackList();
+                }
+
+                setPlaythroughType(playthroughSelection);
+            };
+
+            const changeGain = (value = START_GAIN) => {
+                gainNode.gain.value = value;
+
+                setGain(value);
+            };
+
+            const changeTime = value => {
+                el.current.currentTime = value;
+                setCurrentTime(value);
+            };
+
+            const handleTimeUpdate = () => {
+                setCurrentTime(el.current.currentTime);
+            };
+
+            const handlePlaybackEnded = () =>
+                playthroughType === 'repeat_one' ?
+                    skip(playlistIndex) :
+                    skipNext();
+
+            useEffect(() => {
+                const src = ctx.createMediaElementSource ?
+                    ctx.createMediaElementSource(el.current) :
+                    {
+                        connect: () => { }
+                    };
+
+
+                gainNode.gain.value = START_GAIN;
+
+                analyser.fftSize = FFT_SIZE;
+                analyser.maxDb = MAX_DB;
+                analyser.minDb = MIN_DB;
+                analyser.smoothingTimeConstant = SMOOTHING_TIME_CONSTANT;
+
+                src.connect(gainNode);
+                gainNode.connect(analyser);
+                analyser.connect(ctx.destination);
+
+                ctx.resume && ctx.resume();
+
+                setAudioReady(true);
+            }, []);
+
+            const providerValue = {
+                analyser,
+                setIsLoading,
+                isLoading,
+                isPlaying,
+                audioReady,
+                play,
+                pause,
+                skip,
+                skipNext,
+                skipPrev,
+                playthroughType,
+                changePlaythroughType,
+                gain,
+                changeGain,
+                currentTime,
+                changeTime,
+                trackList,
+                currentTrack,
+                playlistIndex,
+                addTracks,
+                trackToDelete,
+                deleteTrack,
+                setTrackToDelete,
+                isEditingTrack,
+                setIsEditingTrack,
+                updateTrackInfo,
+                errorFiles,
+                setErrorFiles,
+                userInitialized,
+                setUserInitialized
+            };
+
+
+            return /*#__PURE__*/(
+                React.createElement(AudioPlayerContext.Provider, { value: providerValue },
+                    children, /*#__PURE__*/
+                    React.createElement("audio", {
+                        id: audioId,
+                        ref: el,
+                        onEnded: handlePlaybackEnded,
+                        onTimeUpdate: handleTimeUpdate
+                    })));
+
+
+
+        };
+
+
+        // AudioPlayerControls
+
+        const AudioPlayerControls = ({ tabIndex }) => {
+            return /*#__PURE__*/(
+                React.createElement("div", { className: "mp-audio-controls" }, /*#__PURE__*/
+                    React.createElement("ul", { className: "mp-audio-controls__items" }, /*#__PURE__*/
+                        React.createElement("li", { className: "mp-audio-controls__item" }, /*#__PURE__*/
+                            React.createElement(PlaythroughControl, {
+                                tabIndex: tabIndex
+                            })), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-audio-controls__item" }, /*#__PURE__*/
+                            React.createElement(SkipControl, { tabIndex: tabIndex, type: "previous" })), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-audio-controls__item" }, /*#__PURE__*/
+                            React.createElement(PlaybackControl, { tabIndex: tabIndex })), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-audio-controls__item" }, /*#__PURE__*/
+                            React.createElement(SkipControl, { tabIndex: tabIndex, type: "next" })), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-audio-controls__item" }, /*#__PURE__*/
+                            React.createElement(VolumeControl, { tabIndex: tabIndex }))), /*#__PURE__*/
+
+
+                    React.createElement(Seekbar, { tabIndex: tabIndex })));
+
+
+        };
+
+        AudioPlayerControls.propTypes = {
+            tabIndex: string
+        };
+
+
+        AudioPlayerControls.defaultProps = {
+            tabIndex: '0'
+        };
+
+
+
+        // Button
+
+        const Button = ({
+            ariaExpanded,
+            ariaHasPopup,
+            ariaLabelText,
+            children,
+            className,
+            handleClick,
+            handleKeyDown,
+            id,
+            name,
+            size,
+            tabIndex,
+            type }) => {
+            const classes = classNames({
+                'mp-button': true,
+                [`mp-button--${size}`]: true,
+                [`mp-button--${type}`]: true,
+                [className]: !!className
+            });
+
+            const btnRef = useRef(null);
+
+            return /*#__PURE__*/(
+                React.createElement("button", {
+                    "aria-expanded": ariaExpanded,
+                    "aria-haspopup": ariaHasPopup,
+                    "aria-label": ariaLabelText,
+                    className: classes,
+                    onClick: handleClick,
+                    id: id,
+                    name: name,
+                    onKeyDown: handleKeyDown,
+                    ref: btnRef,
+                    tabIndex: tabIndex
+                }, children));
+
+        };
+
+        Button.propTypes = {
+            ariaExpanded: bool,
+            ariaHasPopup: bool,
+            ariaLabelText: string.isRequired,
+            className: string,
+            handleClick: func,
+            handleKeyDown: func,
+            id: string.isRequired,
+            size: oneOf(['s', 'm', 'l']),
+            tabIndex: string,
+            type: oneOf(['primary', 'secondary', 'inline'])
+        };
+
+
+        Button.defaultProps = {
+            ariaExpanded: false,
+            ariaHasPopup: false,
+            handleClick: noop,
+            handleKeyDown: noop,
+            size: 'm',
+            tabIndex: '0',
+            type: 'primary'
+        };
+
+
+
+        // Checkbox
+
+        const Checkbox = ({
+            alignRight,
+            className,
+            handleChange,
+            hideLabel,
+            id,
+            isChecked,
+            labelText,
+            tabIndex }) => {
+            const checkboxClasses = classNames({
+                'mp-checkbox': true,
+                'mp-checkbox--align-right': alignRight,
+                [className]: !!className
+            });
+
+            const labelTextClasses = classNames({
+                'mp-checkbox__label-text': true,
+                'sr-only': hideLabel
+            });
+
+
+            const labelId = `lbl-${id}`;
+
+            return /*#__PURE__*/(
+                React.createElement("div", { className: checkboxClasses }, /*#__PURE__*/
+                    React.createElement("input", {
+                        className: "mp-checkbox__input",
+                        type: "checkbox",
+                        id: id,
+                        onChange: e => handleChange(e.target.checked),
+                        defaultChecked: isChecked
+                    }), /*#__PURE__*/
+                    React.createElement("label", {
+                        className: "mp-checkbox__label",
+                        id: labelId,
+                        htmlFor: id,
+                        tabIndex: tabIndex
+                    }, /*#__PURE__*/
+                        React.createElement("span", {
+                            className: labelTextClasses,
+                            onClick: e => e.preventDefault()
+                        }, labelText))));
+
+
+
+        };
+
+        Checkbox.propTypes = {
+            alignRight: bool,
+            className: string,
+            handleChange: func,
+            hideLabel: bool,
+            id: string.isRequired,
+            isChecked: bool,
+            labelText: string.isRequired,
+            tabIndex: string
+        };
+
+
+        Checkbox.defaultProps = {
+            alignRight: false,
+            handleChange: noop,
+            hideLabel: false,
+            isChecked: false,
+            tabIndex: '0'
+        };
+
+
+
+        // DeleteTrackModal
+
+        const DeleteTrackModal = () => {
+            const { deleteTrack, trackToDelete } = useContext(AudioPlayerContext);
+            const { isOpen, open } = useContext(MenuContext);
+            const { title } = trackToDelete || { title: 'Title Unknown' };
+            const tabIndex = isOpen(DELETE_TRACK_MODAL_ID) ? '0' : '-1';
+            const confirmId = "btn-confirm-delete";
+
+            const handleConfirm = () => {
+                deleteTrack();
+                open(PLAYLIST_MENU_ID);
+            };
+
+            const handleCancel = () => {
+                open(PLAYLIST_MENU_ID);
+            };
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement(Modal, {
+                    className: "mp-delete-track-modal",
+                    id: DELETE_TRACK_MODAL_ID
+                }, /*#__PURE__*/
+                    React.createElement("p", { className: "mp-delete-track-modal__message" }, "Are you sure you want to delete ", title, "?"), /*#__PURE__*/
+                    React.createElement("footer", { className: "mp-delete-track-modal__footer" }, /*#__PURE__*/
+                        React.createElement(Button, {
+                            ariaLabelText: "Yes",
+                            className: "mp-focus-highlight",
+                            id: confirmId,
+                            tabIndex: tabIndex,
+                            type: "primary",
+                            handleClick: handleConfirm
+                        }, "Yes"), /*#__PURE__*/
+                        React.createElement(Button, {
+                            ariaLabelText: "No",
+                            className: "mp-focus-highlight",
+                            id: "btn-cancel-delete",
+                            tabIndex: tabIndex,
+                            type: "secondary",
+                            handleClick: handleCancel
+                        }, "No"))),
+
+
+                [tabIndex, trackToDelete]);
+        };
+
+
+        // Dropdown
+
+        const Dropdown = ({
+            className,
+            handleChange,
+            hideLabel,
+            id,
+            labelText,
+            name,
+            options,
+            tabIndex }) => {
+            const dropdownClasses = classNames({
+                'mp-dropdown': true,
+                [className]: !!className
+            });
+
+            const labelClasses = classNames({
+                'mp-dropdown__label': true,
+                'sr-only': hideLabel
+            });
+
+
+            return /*#__PURE__*/(
+                React.createElement("div", { className: dropdownClasses }, /*#__PURE__*/
+                    React.createElement("label", {
+                        className: labelClasses,
+                        htmlFor: id
+                    }, labelText), /*#__PURE__*/
+                    React.createElement("select", {
+                        className: "mp-dropdown__select mp-focus-highlight",
+                        id: id,
+                        onChange: e => handleChange(e.target.value),
+                        name: name || id,
+                        tabIndex: tabIndex
+                    },
+                        options.map(({ id, text, value }) => /*#__PURE__*/
+                            React.createElement("option", {
+                                key: id,
+                                id: id,
+                                value: value
+                            }, text || value)))));
+
+
+
+
+        };
+
+        Dropdown.propTypes = {
+            className: string,
+            handleChange: func,
+            id: string.isRequired,
+            name: string,
+            options: arrayOf(shape({
+                id: string.isRequired,
+                text: string,
+                value: string.isRequired
+            })),
+
+            tabIndex: string
+        };
+
+
+        Dropdown.defaultProps = {
+            tabIndex: '0'
+        };
+
+
+
+        // DropFileOverlay
+
+        const DropFileOverlay = () => {
+            const { addTracks, userInitialized } = useContext(AudioPlayerContext);
+            const [isDragging, setIsDragging] = useState(false);
+            const classList = classNames({
+                'mp-drop-file-overlay': true,
+                'mp-drop-file--open': isDragging
+            });
+
+            const stopDefault = e => {
+                e.preventDefault();
+                e.stopPropagation();
+            };
+            const onDragEnter = e => {
+                stopDefault(e);
+                setIsDragging(true);
+            };
+            const onDragLeave = e => {
+                stopDefault(e);
+                setIsDragging(false);
+            };
+            const onDrop = e => {
+                stopDefault(e);
+                setIsDragging(false);
+                addTracks([...e.dataTransfer.files]);
+            };
+
+            useEffect(() => {
+                if (userInitialized) {
+                    window.addEventListener('dragenter', onDragEnter, false);
+                    window.addEventListener('dragleave', onDragLeave, false);
+                    window.addEventListener('dragover', stopDefault, false);
+                    window.addEventListener('drop', onDrop, false);
+
+                    return () => {
+                        window.removeEventListener('dragenter', onDragEnter, false);
+                        window.removeEventListener('dragleave', onDragLeave, false);
+                        window.removeEventListener('dragover', stopDefault, false);
+                        window.removeEventListener('drop', onDrop, false);
+                    };
+                }
+            }, [userInitialized]);
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement(Overlay, {
+                    className: classList,
+                    isOpen: isDragging
+                }, /*#__PURE__*/
+                    React.createElement("div", { className: "mp-drop-file-overlay__droparea" }), /*#__PURE__*/
+                    React.createElement(Icon, {
+                        className: "mp-drop-file-overlay__icon",
+                        name: "file_copy",
+                        size: "3xl"
+                    })),
+
+                [isDragging, userInitialized]);
+        };
+
+
+        // FileErrorModal
+
+        const FileErrorModal = () => {
+            const { errorFiles, setErrorFiles } = useContext(AudioPlayerContext);
+            const handleClose = () => setTimeout(() => setErrorFiles([]), 200);
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement(Modal, {
+                    className: "mp-file-error-modal",
+                    id: FILE_ERROR_MODAL_ID,
+                    handleClose: handleClose
+                }, /*#__PURE__*/
+                    React.createElement("header", { className: "mp-file-error-modal__header" }, /*#__PURE__*/
+                        React.createElement("h4", { className: "mp-file-error-modal__heading" }, "Oops!"), /*#__PURE__*/
+                        React.createElement("p", { className: "mp-file-error-modal__info" }, "Couldn't load these files:")), /*#__PURE__*/
+
+                    React.createElement("ul", { className: "mp-file-error-modal__list" },
+                        errorFiles.map((file, index) => /*#__PURE__*/
+                            React.createElement("li", { className: "mp-file-error-modal__item", key: `error-file--${index}` }, /*#__PURE__*/
+                                React.createElement("span", { className: "mp-file-error-modal__item-name" }, file.name), /*#__PURE__*/
+                                React.createElement("span", { className: "mp-file-error-modal__item-type" }, file.type))))),
+
+
+
+
+                [errorFiles]);
+        };
+
+
+        // Icon
+
+        const Icon = ({ className, name, size }) => {
+            const classList = classNames({
+                'material-icons': true,
+                'mp-icon': true,
+                [`mp-icon--${size}`]: true,
+                [`mp-icon--${name}`]: true,
+                [className]: !!className
+            });
+
+
+            return /*#__PURE__*/(
+                React.createElement("i", { className: classList, "aria-hidden": "true" }, name));
+
+        };
+
+        Icon.propTypes = {
+            name: string.isRequired,
+            size: oneOf([
+                'xs',
+                's',
+                'm',
+                'l',
+                'xl',
+                '2xl',
+                '3xl'])
+        };
+
+
+
+        Icon.defaultProps = {
+            size: 'm'
+        };
+
+
+
+        // Loader
+
+        const Loader = () => {
+            const { isLoading } = useContext(AudioPlayerContext);
+            const classList = classNames({
+                'mp-loader': true,
+                'mp-loader--loading': isLoading
+            });
+
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement("span", { className: classList }, /*#__PURE__*/
+                    React.createElement("span", { className: "mp-loader__child", "data-index": "1" }, /*#__PURE__*/
+                        React.createElement("span", { className: "mp-loader__child", "data-index": "2" }, /*#__PURE__*/
+                            React.createElement("span", { className: "mp-loader__child", "data-index": "3" }, /*#__PURE__*/
+                                React.createElement("span", { className: "mp-loader__child", "data-index": "4" }))))),
+
+
+
+
+                [isLoading]);
+        };
+
+
+        // MenuProvider
+
+        const MenuContext = createContext();
+
+        const MenuProvider = ({ children, ids }) => {
+            const initialState = ids.reduce((state, id) => ({
+                ...state,
+                [id]: false
+            }),
+                {});
+            const [registry, updateRegistry] = useState(initialState);
+
+            const isOpen = id => registry[id];
+            const open = id => updateRegistry({
+                ...initialState,
+                [id]: true
+            });
+
+            const close = id => updateRegistry(_registry => ({ ..._registry, [id]: false }));
+            const closeAll = () => updateRegistry(initialState);
+            const toggle = (id) =>
+                isOpen(id) ?
+                    close(id) :
+                    open(id);
+
+            useEffect(() => {
+                const handleKeyDown = ({ key }) => key === 'Escape' && closeAll();
+
+                window.addEventListener('keydown', handleKeyDown);
+
+                return () => handleKeyDown;
+            }, []);
+
+            return /*#__PURE__*/(
+                React.createElement(MenuContext.Provider, {
+                    value: {
+                        isOpen,
+                        open,
+                        close,
+                        closeAll,
+                        toggle
+                    }
+                },
+
+                    children));
+
+
+        };
+
+        MenuProvider.propTypes = {
+            ids: arrayOf(string).isRequired
+        };
+
+
+
+        // Modal
+
+        const Modal = ({
+            className,
+            children,
+            disableClose,
+            id,
+            handleClose }) => {
+            const { close, isOpen } = useContext(MenuContext);
+            const closeRef = useRef(null);
+            const _isOpen = isOpen(id);
+            const classList = classNames({
+                'mp-modal': true,
+                'mp-modal--open': _isOpen,
+                [className]: !!className,
+                'mp-modal--disable-close': disableClose
+            });
+
+
+            const handleClick = () => {
+                handleClose();
+                close(id);
+            };
+
+            useEffect(() => {
+                _isOpen ?
+                    closeRef.current && closeRef.current.focus() :
+                    document.activeElement.blur();
+            }, [_isOpen]);
+
+            return /*#__PURE__*/(
+                React.createElement(Overlay, {
+                    className: classList,
+                    isModal: true,
+                    isOpen: _isOpen,
+                    handleClick: handleClick
+                }, /*#__PURE__*/
+                    React.createElement("div", { className: "mp-modal__body" },
+                        !disableClose && /*#__PURE__*/
+                        React.createElement("button", {
+                            className: "mp-modal__close mp-reactive-control mp-focus-highlight",
+                            onClick: handleClick,
+                            ref: closeRef,
+                            tabIndex: _isOpen ? '0' : '-1'
+                        }, /*#__PURE__*/
+                            React.createElement(Icon, {
+                                className: "mp-modal__icon",
+                                name: "close",
+                                size: "s"
+                            })),
+
+
+                        children)));
+
+
+
+        };
+
+        Modal.propTypes = {
+            className: string,
+            disableClose: bool,
+            id: string.isRequired,
+            isOpen: bool,
+            handleClose: func
+        };
+
+
+        Modal.defaultProps = {
+            disableClose: false,
+            isOpen: false,
+            handleClose: noop
+        };
+
+
+
+        // Overlay
+
+        const Overlay = ({
+            className,
+            children,
+            handleClick,
+            isModal,
+            isOpen }) => {
+            const classList = classNames({
+                'mp-overlay': true,
+                'mp-overlay--open': isOpen,
+                [className]: !!className
+            });
+
+
+            return /*#__PURE__*/(
+                React.createElement("aside", _extends({
+                    className: classList,
+                    "aria-hidden": !isOpen
+                },
+                    isModal ? { role: 'dialog' } : {}), /*#__PURE__*/
+                    React.createElement("div", { className: "mp-overlay__background", onClick: handleClick }), /*#__PURE__*/
+                    React.createElement("div", { className: "mp-overlay__content" },
+                        children)));
+
+
+
+        };
+
+        Overlay.propTypes = {
+            className: string,
+            handleClick: func,
+            isOpen: bool,
+            isModal: bool
+        };
+
+
+        Overlay.defaultProps = {
+            isOpen: false,
+            isModal: false
+        };
+
+
+
+        // menuOptions
+
+        const positioningOptions = [{
+            id: 'opt-pos-random',
+            value: 'random',
+            text: 'Random'
+        },
+        {
+            id: 'opt-pos-net',
+            value: 'net',
+            text: 'Net'
+        },
+        {
+            id: 'opt-pos-banded',
+            value: 'banded',
+            text: 'Banded'
+        },
+        {
+            id: 'opt-pos-swirl',
+            value: 'swirl',
+            text: 'Swirl'
+        },
+        {
+            id: 'opt-pos-ring',
+            value: 'ring',
+            text: 'Ring'
+        },
+        {
+            id: 'opt-pos-ring2',
+            value: 'ring2',
+            text: 'Ring 2'
+        },
+        {
+            id: 'opt-pos-ribbons',
+            value: 'ribbons',
+            text: 'Ribbons'
+        }];
+
+
+        const particleTextureOptions = [{
+            id: 'opt-text-1',
+            value: 'as-tex-1',
+            text: 'Texture 1'
+        },
+        {
+            id: 'opt-text-2',
+            value: 'as-tex-2',
+            text: 'Texture 2'
+        },
+        {
+            id: 'opt-text-3',
+            value: 'as-tex-3',
+            text: 'Texture 3'
+        },
+        {
+            id: 'opt-text-4',
+            value: 'as-tex-4',
+            text: 'Texture 4'
+        },
+        {
+            id: 'opt-text-5',
+            value: 'as-tex-5',
+            text: 'Texture 5'
+        },
+        {
+            id: 'opt-text-6',
+            value: 'as-tex-6',
+            text: 'Texture 6'
+        }];
+
+
+        const particleDirectionOptions = [{
+            id: 'opt-p-dir-outward',
+            value: '-1',
+            text: 'Outward'
+        },
+        {
+            id: 'opt-p-dir-inward',
+            value: '1',
+            text: 'Inward'
+        }];
+
+
+        const displacementDirectionOptions = [{
+            id: 'opt-d-dir-outward',
+            value: '1',
+            text: 'Outward'
+        },
+        {
+            id: 'opt-d-dir-inward',
+            value: '-1',
+            text: 'Inward'
+        }];
+
+
+        // ParticleMenu
+
+        const fovSelector = '#rng-fov .mp-range__input';
+
+        const ParticleMenu = () => {
+            const { toggle, isOpen } = useContext(MenuContext);
+            const { options, setOption } = useContext(ParticleContext);
+            const { isEditingTrack, userInitialized } = useContext(AudioPlayerContext);
+            const _isOpen = isOpen(PARTICLE_MENU_ID);
+            const tabIndex = _isOpen ? '0' : '-1';
+
+            const handleKeyDown = ({ key, altKey }) =>
+                !isEditingTrack &&
+                altKey &&
+                key === 'o' &&
+                toggle(PARTICLE_MENU_ID);
+
+            useEffect(() => {
+                _isOpen ?
+                    document.querySelector(fovSelector).focus() :
+                    document.activeElement.blur();
+            }, [_isOpen]);
+
+            useEffect(() => {
+                if (userInitialized) {
+                    window.addEventListener('keydown', handleKeyDown);
+
+                    return () => window.removeEventListener('keydown', handleKeyDown);
+                }
+            }, [userInitialized, toggle]);
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement(SliderMenu, {
+                    className: "mp-particle-menu",
+                    id: PARTICLE_MENU_ID
+                }, /*#__PURE__*/
+                    React.createElement("ul", { className: "mp-particle-menu__items" }, /*#__PURE__*/
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('fov', floor(value)),
+                                id: "rng-fov",
+                                labelText: "Field of View",
+                                step: 1,
+                                value: options.fov,
+                                minValue: 10,
+                                maxValue: 100,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, options.fov)), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Dropdown, {
+                                className: "mp-particle-menu__dropdown",
+                                handleChange: value => setOption('particleTexture', value),
+                                id: "particleTexture",
+                                labelText: "Particle Texture",
+                                options: particleTextureOptions,
+                                tabIndex: tabIndex
+                            })), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Dropdown, {
+                                className: "mp-particle-menu__dropdown",
+                                handleChange: value => setOption('positioning', value),
+                                id: "positioning",
+                                labelText: "Particle Positioning",
+                                options: positioningOptions,
+                                tabIndex: tabIndex
+                            })), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Dropdown, {
+                                className: "mp-particle-menu__dropdown",
+                                handleChange: value => setOption('particleDirection', +value),
+                                id: "particleDirection",
+                                labelText: "Particle Direction",
+                                options: particleDirectionOptions,
+                                tabIndex: tabIndex
+                            })), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('particleSpeed', value),
+                                id: "rng-particle-speed",
+                                labelText: "Particle Speed",
+                                step: .1,
+                                value: options.particleSpeed,
+                                minValue: 0,
+                                maxValue: 5,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, options.particleSpeed.toFixed(2))), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('spawnRadius', value),
+                                id: "rng-spawn-radius",
+                                labelText: "Spawn Radius",
+                                step: 1,
+                                value: options.spawnRadius,
+                                minValue: 10,
+                                maxValue: 1000,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, floor(options.spawnRadius))), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('spawnSpread', value),
+                                id: "rng-spawn-spread",
+                                labelText: "Spawn Spread",
+                                step: 1,
+                                value: options.spawnSpread,
+                                minValue: 0,
+                                maxValue: 400,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, floor(options.spawnSpread))), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('bassRotation', value),
+                                id: "rng-bass-rotation",
+                                labelText: "Bass Rotation",
+                                step: 0.01,
+                                value: options.bassRotation,
+                                minValue: 0,
+                                maxValue: 1,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, options.bassRotation.toFixed(2))), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('midRotation', value),
+                                id: "rng-mid-rotation",
+                                labelText: "Mid Rotation",
+                                step: 0.01,
+                                value: options.midRotation,
+                                minValue: 0,
+                                maxValue: 1,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, options.midRotation.toFixed(2))), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('trebleRotation', value),
+                                id: "rng-treble-rotation",
+                                labelText: "Treble Rotation",
+                                step: 0.01,
+                                value: options.trebleRotation,
+                                minValue: 0,
+                                maxValue: 1,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, options.trebleRotation.toFixed(2))), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('hueRange', +value),
+                                id: "rng-hue-range",
+                                labelText: "Hue Range",
+                                step: 0.1,
+                                value: options.hueRange,
+                                minValue: 0,
+                                maxValue: 4,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, options.hueRange.toFixed(1))), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('particleLifeMin', +value),
+                                id: "rng-particle-life-min",
+                                labelText: "Particle Life Min",
+                                step: 1,
+                                value: options.particleLifeMin,
+                                minValue: 50,
+                                maxValue: 500,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, options.particleLifeMin.toFixed(0))), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('particleLifeMax', +value),
+                                id: "rng-particle-life-max",
+                                labelText: "Particle Life Max",
+                                step: 1,
+                                value: options.particleLifeMax,
+                                minValue: 100,
+                                maxValue: 2000,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, options.particleLifeMax.toFixed(0))), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('particleSizeMin', +value),
+                                id: "rng-particle-size-min",
+                                labelText: "Particle Size Min",
+                                step: 1,
+                                value: options.particleSizeMin,
+                                minValue: 1,
+                                maxValue: 100,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, options.particleSizeMin.toFixed(0))), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('particleSizeScale', +value),
+                                id: "rng-particle-size-scale",
+                                labelText: "Particle Size Scale",
+                                step: 0.05,
+                                value: options.particleSizeScale,
+                                minValue: 0.05,
+                                maxValue: 4,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, options.particleSizeScale.toFixed(2))), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Checkbox, {
+                                alignRight: true,
+                                className: "mp-particle-menu__checkbox",
+                                id: "chk-apply-noise",
+                                isChecked: options.applyNoise,
+                                labelText: "Apply Noise",
+                                handleChange: isChecked => setOption('applyNoise', isChecked),
+                                tabIndex: tabIndex
+                            })), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('noiseScale', +value),
+                                id: "rng-noise-scale",
+                                labelText: "Noise Scale",
+                                step: 0.05,
+                                value: options.noiseScale,
+                                minValue: 0.05,
+                                maxValue: 6,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, options.noiseScale.toFixed(2))), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('displacementScale', +value),
+                                id: "rng-displacement-scale",
+                                labelText: "Displacement Scale",
+                                step: 0.05,
+                                value: options.displacementScale,
+                                minValue: 0,
+                                maxValue: 1,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, options.displacementScale.toFixed(2))), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Dropdown, {
+                                className: "mp-particle-menu__dropdown",
+                                handleChange: value => setOption('displacementDirection', +value),
+                                id: "displacementDirection",
+                                labelText: "Displacement Direction",
+                                options: displacementDirectionOptions,
+                                tabIndex: tabIndex
+                            })), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('frequencyScale', +value),
+                                id: "rng-frequency-scale",
+                                labelText: "Frequency Scale",
+                                step: .1,
+                                value: options.frequencyScale,
+                                minValue: 0,
+                                maxValue: 8,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, options.frequencyScale.toFixed(2))), /*#__PURE__*/
+
+                        React.createElement("li", { className: "mp-particle-menu__item" }, /*#__PURE__*/
+                            React.createElement(Range, {
+                                className: "mp-particle-menu__range",
+                                handleChange: value => setOption('frequencyAvgScale', +value),
+                                id: "rng-frequency-avg-scale",
+                                labelText: "Frequency Avg Scale",
+                                step: .1,
+                                value: options.frequencyAvgScale,
+                                minValue: 0,
+                                maxValue: 10,
+                                activeUpdate: true,
+                                tabIndex: tabIndex,
+                                scrollable: true
+                            }), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-particle-menu__value" }, options.frequencyAvgScale.toFixed(2))))),
+
+
+
+                [options, _isOpen, isEditingTrack]);
+        };
+
+
+        // AnalyserReader
+
+        class AnalyserReader {
+            constructor(analyser) {
+                if (!(analyser instanceof AnalyserNode)) {
+                    throw new TypeError('AnalyserBridge: provided argument is not of type AnalyserNode');
+                }
+
+                this.analyser = analyser;
+                this.freqDomain = new Uint8Array(analyser.frequencyBinCount);
+                this.normFreqDomain = new Float32Array(analyser.frequencyBinCount);
+
+                this.nyquist = .5 * analyser.context.sampleRate;
+                this.bassSpectrum = [
+                    getSpectrumWidth(20, this.nyquist, analyser.frequencyBinCount),
+                    getSpectrumWidth(140, this.nyquist, analyser.frequencyBinCount) + 1];
+
+                this.bassSpectrumWidth = this.bassSpectrum[1] - this.bassSpectrum[0];
+
+                this.midSpectrum = [
+                    getSpectrumWidth(400, this.nyquist, analyser.frequencyBinCount),
+                    getSpectrumWidth(2600, this.nyquist, analyser.frequencyBinCount) + 1];
+
+                this.midSpectrumWidth = this.midSpectrum[1] - this.midSpectrum[0];
+
+                this.trebleSpectrum = [
+                    getSpectrumWidth(5200, this.nyquist, analyser.frequencyBinCount),
+                    getSpectrumWidth(14000, this.nyquist, analyser.frequencyBinCount) + 1];
+
+                this.trebleSpectrumWidth = this.trebleSpectrum[1] - this.trebleSpectrum[0];
+            }
+            get binCount() {
+                return this.analyser.frequencyBinCount;
+            }
+            update() {
+                this.analyser.getByteFrequencyData(this.freqDomain);
+                this.normalize();
+            }
+            get frequencyAvg() {
+                return this.freqDomain.reduce((a, b) => a + b, 0) / this.freqDomain.length;
+            }
+            getFrequency(i) {
+                return this.freqDomain[i / this.nyquist * this.freqDomain.length | 0];
+            }
+            get bass() {
+                return this.freqDomain.slice(...this.bassSpectrum).reduce((a, b) => a + b) / this.bassSpectrumWidth;
+            }
+            get mid() {
+                return this.freqDomain.slice(...this.midSpectrum).reduce((a, b) => a + b) / this.midSpectrumWidth;
+            }
+            get treble() {
+                return this.freqDomain.slice(...this.trebleSpectrum).reduce((a, b) => a + b) / this.trebleSpectrumWidth;
+            }
+            async *readValues() {
+                let i = 0;
+
+                for (; i < this.freqDomain.length; i++) {
+                    yield this.freqDomain[i];
+                }
+            }
+            async *readNormValues() {
+                let i = 0;
+
+                for (; i < this.freqDomain.length; i++) {
+                    yield this.normalizedFrequencyData[i];
+                }
+            }
+            async normalize() {
+                let f;
+                let i = 0;
+
+                for await (f of this.readValues()) {
+                    this.normFreqDomain[i] = clamp(norm(f, this.analyser.minDb, this.analyser.maxDb), 0, 1);
+
+                    i++;
+                }
+            }
+        }
+
+
+
+        // ParticleProvider
+
+        const defaultOptions = {
+            fov: 70,
+            positioning: 'random',
+            particleTexture: 'as-tex-1',
+            particleDirection: -1,
+            particleSpeed: 3,
+            spawnRadius: 700,
+            spawnSpread: 200,
+            bassRotation: .12,
+            midRotation: .20,
+            trebleRotation: .35,
+            hueRange: .7,
+            particleLifeMin: 200,
+            particleLifeMax: 500,
+            particleSizeMin: 40,
+            particleSizeScale: 2,
+            applyNoise: true,
+            noiseScale: 4,
+            displacementScale: .5,
+            displacementDirection: 1,
+            frequencyScale: 4.25,
+            frequencyAvgScale: 3.5
+        };
+
+
+        const cNoiseLibShader = document.querySelector('#cnoise').textContent;
+        const particlesVertexShader = document.querySelector('#particle-vert').textContent;
+        const particlesFragmentShader = document.querySelector('#particle-frag').textContent;
+
+        const ParticleContext = createContext();
+
+        const ParticleProvider = ({ children }) => {
+            const id = 'mp-canvas';
+            const { analyser, audioReady } = useContext(AudioPlayerContext);
+            const [options, setOptions] = useState(defaultOptions);
+            const renderer = useRef(null);
+            const canvasRef = useRef(null);
+
+            const updateOptions = (key, value) =>
+                setOptions(_options => ({
+                    ..._options,
+                    [key]: value
+                }));
+
+
+            const setOption = (key, value) => {
+                renderer.current.setOption(key, value);
+                updateOptions(key, value);
+            };
+
+            const providerValue = {
+                options,
+                setOption
+            };
+
+
+            useEffect(() => {
+                const blurActiveElement = () => document.activeElement.blur();
+
+                canvasRef.current.addEventListener('mousedown', blurActiveElement);
+
+                return () => canvasRef.current.removeEventListener('mousedown', blurActiveElement);
+            }, [audioReady]);
+
+            useEffect(() => {
+                if (audioReady) {
+                    renderer.current = new ParticleRenderer(
+                        canvasRef.current,
+                        new AnalyserReader(analyser),
+                        options,
+                        cNoiseLibShader +
+                        particlesVertexShader,
+                        particlesFragmentShader);
+
+                }
+            }, [audioReady]);
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement(ParticleContext.Provider, { value: providerValue }, /*#__PURE__*/
+                    React.createElement("canvas", {
+                        id: id,
+                        className: "mp-canvas",
+                        ref: canvasRef
+                    }),
+                    children),
+
+                [options, renderer.current]);
+        };
+
+
+        // ParticleRenderer
+
+        const particleAssetUrl = 'https://assets.codepen.io/544318/';
+
+        class ParticleRenderer {
+            constructor(el, reader, options, vertexShader, fragmentShader) {
+                this.el = el;
+                this.reader = reader;
+                this.options = options;
+                this.vertexShader = vertexShader;
+                this.fragmentShader = fragmentShader;
+                this.textureLoader = new THREE.TextureLoader();
+
+                this.setup();
+            }
+            setUniform(name, value) {
+                this.uniforms[name].value = value;
+            }
+            setOption(name, value) {
+                this.options[name] = value;
+
+                switch (name) {
+                    case 'fov':
+                        this.camera.fov = value;
+                        this.camera.updateProjectionMatrix();
+                        break;
+                    case 'particleTexture':
+                        this.currentTexture =
+                            this.textureLoader.load(`${particleAssetUrl}${value}.png`);
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+            setup() {
+                this._run = this.run.bind(this);
+                this.clock = new THREE.Clock();
+
+                this.createScene();
+                this.createCamera();
+                this.createRenderer();
+                this.createParticles();
+                this.createMesh();
+
+                this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
+
+                this.resize();
+                window.addEventListener('resize', this.resize.bind(this));
+
+                this.run();
+            }
+            createScene() {
+                this.scene = new THREE.Scene();
+            }
+            createCamera() {
+                this.camera = new THREE.PerspectiveCamera(
+                    this.options.fov,
+                    this.el.width / this.el.height,
+                    0.1,
+                    100000);
+
+                this.camera.position.z = 500;
+            }
+            createRenderer() {
+                this.renderer = new THREE.WebGLRenderer({
+                    alpha: true,
+                    canvas: this.el
+                });
+
+                this.renderer.setClearColor(0x000000);
+            }
+            createParticles() {
+                this.particleCount = this.reader.binCount * 4;
+
+                this.positions = new PropsArray(this.particleCount, ['x', 'y', 'z']);
+                this.frequencyValues = new PropsArray(this.particleCount, ['f']);
+                this.ages = new PropsArray(this.particleCount, ['age', 'life']);
+            }
+            createPosition(v, i) {
+                let r, p, t, td, x, y, z;
+
+                r = this.options.spawnRadius + randRange(0.5 * this.options.spawnSpread);
+
+                switch (this.options.positioning) {
+                    case 'random':
+
+                        t = rand(TAU),
+                            z = randRange(1),
+                            p = sqrt(1 - z * z),
+                            x = r * p * cos(t),
+                            y = r * p * sin(t);
+
+                        break;
+                    case 'net':
+
+                        t = i / this.particleCount * TAU,
+                            td = i * .01,
+                            z = sin(td),
+                            p = sqrt(1 - z * z),
+                            x = r * p * cos(t + td),
+                            y = r * p * sin(t + td);
+
+                        break;
+                    case 'banded':
+
+                        t = i / this.particleCount * TAU,
+                            td = i * .01,
+                            z = sin(td),
+                            p = sqrt(1 - z * z),
+                            x = r * p * cos(t),
+                            y = r * p * sin(t);
+
+                        break;
+                    case 'swirl':
+
+                        t = i / this.particleCount * TAU,
+                            td = tan(t * 16),
+                            z = atan(td),
+                            p = sqrt(1 - z * z),
+                            x = r * p * cos(t + td),
+                            y = r * p * sin(t + td);
+
+                        break;
+                    case 'ring':
+
+                        t = i / this.particleCount * TAU,
+                            td = i * .05,
+                            z = cos(td) * sin(td),
+                            p = sqrt(1 - z * z),
+                            x = r * p * cos(t),
+                            y = r * p * sin(t);
+
+                        break;
+                    case 'ring2':
+
+                        t = i / this.particleCount * TAU,
+                            td = i * .02,
+                            z = cos(td) * sin(td),
+                            p = sqrt(1 - z * z),
+                            x = r * p * cos(t + td),
+                            y = r * p * sin(t + td);
+
+                        break;
+                    case 'ribbons':
+
+                        t = i / this.particleCount * TAU,
+                            td = sin(2 * t * cos(6 * t)),
+                            z = cos(4 * t * sin(3 * t)),
+                            p = sqrt(1 - z * z),
+                            x = r * p * cos(t + td),
+                            y = r * p * sin(t + td);
+
+                        break;
+                    default:
+                        break;
+                }
+
+
+                z *= r;
+
+                return [x, y, z];
+            }
+            createAge() {
+                let age, life;
+
+                age = 0;
+                life = clamp(rand(this.options.particleLifeMax - this.options.particleLifeMin) + this.options.particleLifeMin, 0, this.options.particleLifeMax) | 0;
+
+                return [age, life];
+            }
+            createMesh() {
+                const self = this;
+
+                this.currentTexture = this.textureLoader.load(`${particleAssetUrl}${this.options.particleTexture}.png`);
+                this.uniforms = {
+                    u_bass: { value: 0. },
+                    u_mid: { value: 0. },
+                    u_treble: { value: 0. },
+                    u_frequencyAvg: { value: 0. },
+                    u_time: { value: 0.0 },
+                    get u_frequencyScale() {
+                        return { value: self.options.frequencyScale };
+                    },
+                    get u_frequencyAvgScale() {
+                        return { value: self.options.frequencyAvgScale };
+                    },
+                    get u_hueRange() {
+                        return { value: self.options.hueRange };
+                    },
+                    get u_hueStart() {
+                        return { value: .2 };
+                    },
+                    get u_noiseScale() {
+                        return { value: self.options.noiseScale };
+                    },
+                    get u_texture() {
+                        return { value: self.currentTexture };
+                    },
+                    get u_particleSizeMin() {
+                        return { value: self.options.particleSizeMin };
+                    },
+                    get u_particleSizeScale() {
+                        return { value: self.options.particleSizeScale };
+                    },
+                    get u_applyNoise() {
+                        return { value: self.options.applyNoise };
+                    },
+                    get u_displacementScale() {
+                        return { value: self.options.displacementScale };
+                    },
+                    get u_particleDirection() {
+                        return { value: self.options.particleDirection };
+                    },
+                    get u_particleSpeed() {
+                        return { value: self.options.particleSpeed };
+                    },
+                    get u_displacementDirection() {
+                        return { value: self.options.displacementDirection };
+                    }
+                };
+
+
+                this.material = new THREE.ShaderMaterial({
+                    vertexShader: this.vertexShader,
+                    fragmentShader: this.fragmentShader,
+                    blending: THREE.AdditiveBlending,
+                    depthTest: false,
+                    depthWrite: false,
+                    transparent: true,
+                    uniforms: this.uniforms
+                });
+
+                this.geometry = new THREE.BufferGeometry();
+
+                this.geometry.setAttribute('position', new THREE.BufferAttribute(this.positions.values, this.positions.spread));
+                this.geometry.setAttribute('frequency', new THREE.BufferAttribute(this.frequencyValues.values, this.frequencyValues.spread));
+                this.geometry.setAttribute('age', new THREE.BufferAttribute(this.ages.values, this.ages.spread));
+
+                this.mesh = new THREE.Points(this.geometry, this.material);
+                this.mesh.frustumCulled = false;
+                this.mesh.rotation.x = .15 * PI;
+
+                this.camera.lookAt(this.mesh.position);
+
+                this.scene.add(this.mesh);
+            }
+            resize() {
+                this.el.width = window.innerWidth;
+                this.el.height = window.innerHeight;
+
+                this.camera.aspect = window.innerWidth / window.innerHeight;
+                this.camera.updateProjectionMatrix();
+
+                this.renderer.setSize(window.innerWidth, window.innerHeight);
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+            }
+            resetParticle(i) {
+                this.positions.set(this.createPosition(null, i), i * this.positions.spread);
+                this.ages.set(this.createAge(), i * this.ages.spread);
+            }
+            updateParticles() {
+                let i, fv, age, life;
+
+                for (i = 0; i < this.particleCount; i++) {
+                    [age, life] = this.ages.get(i * this.ages.spread);
+
+                    if (age > life) {
+                        this.resetParticle(i);
+                    } else {
+                        fv = norm(this.reader.freqDomain[i / 24 | 0], 0, 255);
+
+                        this.frequencyValues.set([fv], i * this.frequencyValues.spread);
+                        this.ages.set([++age], i * this.ages.spread);
+                    }
+                }
+            }
+            sortPositions() {// https://github.com/mrdoob/three.js/blob/master/examples/webgl_custom_attributes_points2.html#L166
+                let vector = new THREE.Vector3();
+                let matrix = new THREE.Matrix4();
+
+                matrix.multiplyMatrices(this.camera.projectionMatrix, this.camera.matrixWorldInverse);
+                matrix.multiply(this.mesh.matrixWorld);
+
+                let index = this.geometry.getIndex();
+                let positions = this.geometry.getAttribute('position').array;
+                let length = positions.length / 3;
+
+                if (index === null) {
+                    let i = 0;
+                    let array = new Uint16Array(Array.from({ length }, () => i++));
+
+                    index = new THREE.BufferAttribute(array, 1);
+
+                    this.geometry.setIndex(index);
+                }
+
+                let sortArray = [];
+
+                for (let i = 0; i < length; i++) {
+                    vector.fromArray(positions, i * 3);
+                    vector.applyMatrix4(matrix);
+
+                    sortArray.push([vector.z, i]);
+                }
+
+                sortArray.sort((a, b) => b[0] - a[0]);
+
+                let indices = index.array;
+
+                for (let i = 0; i < length; i++) {
+                    indices[i] = sortArray[i][1];
+                }
+
+                this.geometry.index.needsUpdate = true;
+            }
+            run() {
+                this.frame = window.requestAnimationFrame(this._run);
+
+                try {
+                    this.reader.update();
+
+                    const _bass = this.reader.bass / 255;
+                    const _mid = this.reader.mid / 255;
+                    const _treb = this.reader.treble / 255;
+
+                    this.mesh.rotation.x += (pow(2 * _mid, 2) + .0001) * (this.options.midRotation * .01);
+                    this.mesh.rotation.y += (pow(2 * _bass, 2) + .0001) * (this.options.bassRotation * .01);
+                    this.mesh.rotation.z += (pow(2 * _treb, 2) + .0001) * (this.options.trebleRotation * .01);
+
+                    this.uniforms.u_bass.value = _bass;
+                    this.uniforms.u_mid.value = _mid;
+                    this.uniforms.u_treble.value = _treb;
+                    this.uniforms.u_frequencyAvg.value = norm(this.reader.frequencyAvg, 0, 255) || 0;
+                    // this.uniforms.u_time.value = this.clock.getElapsedTime()
+                    this.uniforms.u_time.value += this.uniforms.u_treble.value * .03 + .001;
+
+                    this.geometry.attributes.position.needsUpdate = true;
+                    this.geometry.attributes.frequency.needsUpdate = true;
+                    this.geometry.attributes.age.needsUpdate = true;
+
+                    this.updateParticles();
+                    this.sortPositions();
+
+                    this.renderer.render(this.scene, this.camera);
+                } catch (e) {
+                    console.error(e);
+                    window.cancelAnimationFrame(this.frame);
+                }
+            }
+        }
+
+
+
+        // PlaybackControl
+
+        const PlaybackControl = ({ tabIndex }) => {
+            const { isPlaying, play, pause, userInitialized } = useContext(AudioPlayerContext);
+            const btnRef = useRef(null);
+            const handleKeyDown = (e) =>
+                (
+                    [window, document.body].includes(document.activeElement) ||
+                    btnRef.current.contains(e.target)) &&
+
+                e.ctrlKey &&
+                e.key === ' ' &&
+                (isPlaying ? pause : play)();
+
+            useEffect(() => {
+                if (userInitialized) {
+                    window.addEventListener('keydown', handleKeyDown);
+
+                    return () => window.removeEventListener('keydown', handleKeyDown);
+                }
+            }, [userInitialized, isPlaying]);
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement("button", {
+                    "aria-label": isPlaying ? 'Pause' : 'Play',
+                    onKeyDown: e => e.stopPropagation(),
+                    className: "mp-audio-controls__control mp-audio-controls__control--playback mp-reactive-control mp-focus-highlight",
+                    onClick: isPlaying ? pause : play,
+                    id: "btn-playback",
+                    ref: btnRef,
+                    tabIndex: tabIndex,
+                    type: "inline"
+                }, /*#__PURE__*/
+                    React.createElement(Icon, {
+                        name: isPlaying ? 'pause' : 'play_arrow',
+                        size: "m"
+                    })),
+
+                [isPlaying, tabIndex]);
+        };
+
+        PlaybackControl.propTypes = {
+            tabIndex: string
+        };
+
+
+        PlaybackControl.defaultProps = {
+            tabIndex: '0'
+        };
+
+
+
+        // PlaylistItem
+
+        const PlaylistItem = ({
+            album,
+            artist,
+            artwork,
+            index,
+            tabIndex,
+            title }) => {
+            const [isEditing, setIsEditing] = useState(false);
+            const [formData, setFormData] = useState({
+                artist,
+                title
+            });
+
+            const {
+                currentTrack,
+                isPlaying,
+                pause,
+                play,
+                setTrackToDelete,
+                skip,
+                trackList,
+                isEditingTrack,
+                setIsEditingTrack,
+                updateTrackInfo } =
+                useContext(AudioPlayerContext);
+            const { isOpen, open } = useContext(MenuContext);
+            const titleInputRef = useRef(null);
+            const deleteModalOpen = isOpen(DELETE_TRACK_MODAL_ID);
+            const isCurrentTrack = currentTrack && currentTrack.index === index;
+            const playbackIcon = isPlaying && isCurrentTrack ? 'pause' : 'play_arrow';
+            const editIcon = isEditing ? 'check' : 'edit';
+
+            const toggleEdit = () => {
+                setIsEditing(!isEditing);
+                setIsEditingTrack(!isEditing);
+            };
+
+            const cancelEdits = () => {
+                setIsEditing(false);
+                setIsEditingTrack(false);
+                setFormData({
+                    artist,
+                    title
+                });
+
+            };
+
+            const handleInputKeyDown = ({ key }) => {
+                key === 'Escape' && cancelEdits();
+                key === 'Enter' && toggleEdit();
+            };
+
+            const handlePlaybackClick = () =>
+                !isCurrentTrack ?
+                    skip(index) :
+                    isPlaying ?
+                        pause() :
+                        play();
+
+            const handleTitleChange = (e) =>
+                setFormData(_formData => ({
+                    ..._formData,
+                    title: e.target.value
+                }));
+
+
+            const handleArtistChange = (e) =>
+                setFormData(_formData => ({
+                    ..._formData,
+                    artist: e.target.value
+                }));
+
+
+            const handleDeleteClick = () => {
+                setTrackToDelete({ artist, title, index });
+                open(DELETE_TRACK_MODAL_ID);
+            };
+
+            const playbackButtonClasses = classNames({
+                'mp-playlist-item__btn': true,
+                'mp-playlist-item__btn--playback': true,
+                'mp-playlist-item__btn--highlight': isCurrentTrack,
+                'mp-reactive-control': true,
+                'mp-focus-highlight': true
+            });
+
+
+            const editButtonClasses = classNames({
+                'mp-playlist-item__btn': true,
+                'mp-playlist-item__btn--edit': true,
+                'mp-playlist-item__btn--highlight': isEditing,
+                'mp-reactive-control': true,
+                'mp-focus-highlight': true
+            });
+
+
+            useEffect(() => {
+                isEditing && titleInputRef.current.focus();
+                !isEditing && updateTrackInfo(index, formData.title || title, formData.artist || artist);
+            }, [isEditing]);
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement("li", { className: "mp-playlist-item" }, /*#__PURE__*/
+                    React.createElement(Button, {
+                        ariaLabelText: `Play ${title} by ${artist}`,
+                        className: playbackButtonClasses,
+                        id: `btn-play-${index}`,
+                        handleClick: handlePlaybackClick,
+                        tabIndex: tabIndex,
+                        type: "inline"
+                    }, /*#__PURE__*/
+                        React.createElement(Icon, {
+                            name: playbackIcon,
+                            size: "s"
+                        })), /*#__PURE__*/
+
+                    React.createElement("figure", { className: "mp-playlist-item__image" },
+                        artwork ? /*#__PURE__*/
+                            React.createElement("img", {
+                                height: "auto",
+                                width: "auto",
+                                src: artwork,
+                                alt: album ? `Artwork for ${album}` : ''
+                            }) : /*#__PURE__*/
+                            React.createElement(Icon, {
+                                name: "insert_photo",
+                                size: "xl"
+                            })), /*#__PURE__*/
+
+                    React.createElement("div", { className: "mp-playlist-item__info" },
+                        isEditing ? /*#__PURE__*/
+
+                            React.createElement(React.Fragment, null, /*#__PURE__*/
+                                React.createElement("input", {
+                                    className: "mp-playlist-item__title mp-playlist-item__input mp-focus-highlight",
+                                    type: "text",
+                                    name: "title",
+                                    value: formData.title,
+                                    placeholder: title,
+                                    onChange: handleTitleChange,
+                                    onKeyDown: handleInputKeyDown,
+                                    tabIndex: tabIndex,
+                                    ref: titleInputRef
+                                }), /*#__PURE__*/
+                                React.createElement("input", {
+                                    className: "mp-playlist-item__artist mp-playlist-item__input mp-focus-highlight",
+                                    type: "text",
+                                    name: "artist",
+                                    value: formData.artist,
+                                    placeholder: artist,
+                                    onChange: handleArtistChange,
+                                    onKeyDown: handleInputKeyDown,
+                                    tabIndex: tabIndex
+                                })) : /*#__PURE__*/
+
+
+                            React.createElement(React.Fragment, null, /*#__PURE__*/
+                                React.createElement("p", { className: "mp-playlist-item__title" }, title), /*#__PURE__*/
+                                React.createElement("p", { className: "mp-playlist-item__artist" }, artist))), /*#__PURE__*/
+
+
+
+
+                    React.createElement("div", { className: "mp-playlist-item__controls" }, /*#__PURE__*/
+                        React.createElement(Button, {
+                            ariaLabelText: `${isEditing ? 'Save changes to' : 'Edit'} ${title} by ${artist}`,
+                            className: editButtonClasses,
+                            handleClick: toggleEdit,
+                            id: `btn-edit-${index}`,
+                            tabIndex: tabIndex,
+                            type: "inline"
+                        }, /*#__PURE__*/
+                            React.createElement(Icon, {
+                                alignRight: true,
+                                name: editIcon,
+                                size: "s"
+                            })), /*#__PURE__*/
+
+                        React.createElement(Button, {
+                            ariaExpanded: deleteModalOpen,
+                            ariaHasPopup: true,
+                            ariaLabelText: `Delete ${title} by ${artist}`,
+                            className: "mp-playlist-item__btn mp-playlist-item__btn--delete mp-reactive-control mp-focus-highlight",
+                            handleClick: handleDeleteClick,
+                            id: `btn-delete-${index}`,
+                            tabIndex: tabIndex,
+                            type: "inline"
+                        }, /*#__PURE__*/
+                            React.createElement(Icon, {
+                                alignRight: true,
+                                name: "delete",
+                                size: "s"
+                            })))),
+
+
+
+                [
+                    currentTrack,
+                    deleteModalOpen,
+                    isEditing,
+                    isEditingTrack,
+                    tabIndex,
+                    trackList,
+                    playbackIcon,
+                    editIcon,
+                    formData]);
+
+        };
+
+        PlaylistItem.propTypes = {
+            artist: string,
+            artwork: string,
+            index: number,
+            tabIndex: string,
+            title: string
+        };
+
+
+        PlaylistItem.defaultProps = {
+            tabIndex: '0'
+        };
+
+
+
+        // PlaylistMenu
+
+        const starterTrackFileNames = [
+            'In+the+Atmosphere+-+Bad+Snacks.mp3',
+            'Tea+Time+-+Ofshane.mp3',
+            'Treat+Yourself+-+Dyalla.mp3',
+            'Evergreen+-+Geographer.mp3',
+            'Milky+Way+-+Ramzoid.mp3'];
+
+
+        const PlaylistMenu = () => {
+            const {
+                isOpen,
+                close,
+                open,
+                toggle } =
+                useContext(MenuContext);
+            const {
+                addTracks,
+                isEditingTrack,
+                isPlaying,
+                setIsLoading,
+                trackList,
+                userInitialized } =
+                useContext(AudioPlayerContext);
+            const _isOpen = isOpen(PLAYLIST_MENU_ID);
+            const tabIndex = _isOpen ? '0' : '-1';
+            const trackInput = useRef(null);
+            const trackLabel = useRef(null);
+            const handleKeyDown = ({ key, altKey }) =>
+                !isEditingTrack &&
+                altKey &&
+                key === 'p' &&
+                toggle(PLAYLIST_MENU_ID);
+
+            const handleFileInput = (e) =>
+                addTracks([...e.target.files]);
+
+            const loadStarterTracks = () => {
+                setIsLoading(true);
+
+                Promise.all(
+                    starterTrackFileNames.map(async fileName => {
+                        const blob = await fetchFile(fileName);
+
+                        blob.name = fileName;
+                        blob.lastModifiedDate = new Date();
+
+                        return blob;
+                    })).
+
+                    then(addTracks).
+                    then(() => open(PLAYLIST_MENU_ID));
+            };
+
+            const handleLabelKeyDown = e => {
+                if ([' ', 'Enter'].includes(e.key)) {
+                    e.stopPropagation();
+
+                    trackInput.current.click();
+                }
+            };
+
+            useEffect(() => {
+                _isOpen ?
+                    trackLabel.current && trackLabel.current.focus() :
+                    document.activeElement.blur();
+            }, [_isOpen]);
+
+            useEffect(() => {
+                if (userInitialized) {
+                    window.addEventListener('keydown', handleKeyDown);
+
+                    return () => window.removeEventListener('keydown', handleKeyDown);
+                }
+            }, [userInitialized, toggle]);
+
+            useEffect(() => {
+                if (userInitialized) {
+                    close(APP_INFO_MODAL_ID);
+                    !trackList.length && loadStarterTracks();
+                }
+            }, [trackList, userInitialized]);
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement(SliderMenu, {
+                    className: "mp-playlist-menu",
+                    id: PLAYLIST_MENU_ID
+                }, /*#__PURE__*/
+                    React.createElement("header", { className: "mp-playlist-menu__header" }, /*#__PURE__*/
+                        React.createElement("input", {
+                            className: "mp-playlist-menu__add-input sr-only",
+                            type: "file",
+                            name: "tracks",
+                            id: "tracks",
+                            accept: "audio/*",
+                            multiple: true,
+                            onChange: handleFileInput,
+                            ref: trackInput,
+                            tabIndex: "-1"
+                        }), /*#__PURE__*/
+                        React.createElement("label", {
+                            className: "mp-playlist-menu__add-label",
+                            htmlFor: "tracks",
+                            tabIndex: tabIndex,
+                            ref: trackLabel,
+                            onKeyDown: handleLabelKeyDown
+                        }, /*#__PURE__*/
+                            React.createElement("p", { className: "mp-playlist-menu__add-msg" }, "Add track(s)"), /*#__PURE__*/
+                            React.createElement(Icon, {
+                                className: "mp-playlist-menu__add-icon",
+                                name: "playlist_add",
+                                size: "m"
+                            }))),
+
+
+                    trackList.length ? /*#__PURE__*/
+
+                        React.createElement("ul", { className: "mp-playlist-menu__list" },
+                            trackList.map((track) => /*#__PURE__*/
+                                React.createElement(PlaylistItem, _extends({ key: track.index }, track, { tabIndex: tabIndex })))) : /*#__PURE__*/
+
+
+
+
+                        React.createElement("div", { className: "mp-playlist-menu__no-tracks" }, /*#__PURE__*/
+                            React.createElement("p", { className: "mp-playlist-menu__message" }, "No tracks have been added yet."), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-playlist-menu__message" }, "Click the icon above or drop files anywhere on the screen."))),
+
+
+
+
+                [_isOpen, trackList, isPlaying, userInitialized]);
+        };
+
+
+        // PlaythroughControl
+
+        const PlaythroughControl = ({ tabIndex }) => {
+            const {
+                changePlaythroughType,
+                currentTrack,
+                isEditingTrack,
+                playthroughType,
+                userInitialized } =
+                useContext(AudioPlayerContext);
+            const handleKeyDown = ({ key, ctrlKey }) =>
+                !isEditingTrack &&
+                ctrlKey &&
+                key === 't' &&
+                changePlaythroughType();
+
+            useEffect(() => {
+                if (userInitialized) {
+                    window.addEventListener('keydown', handleKeyDown);
+
+                    return () => window.removeEventListener('keydown', handleKeyDown);
+                }
+            }, [userInitialized, playthroughType]);
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement("button", {
+                    onKeyDown: e => e.stopPropagation(),
+                    className: "mp-audio-controls__control mp-reactive-control mp-focus-highlight",
+                    onClick: changePlaythroughType,
+                    tabIndex: tabIndex
+                }, /*#__PURE__*/
+                    React.createElement(Icon, {
+                        name: playthroughType,
+                        size: "s"
+                    })),
+
+                [currentTrack, playthroughType, tabIndex]);
+        };
+
+        PlaythroughControl.propTypes = {
+            tabIndex: string
+        };
+
+
+        PlaythroughControl.defaultProps = {
+            tabIndex: '0'
+        };
+
+
+
+        // Range
+
+        const Range = ({
+            activeUpdate,
+            className,
+            handleChange,
+            hideLabel,
+            id,
+            labelText,
+            value,
+            maxValue,
+            minValue,
+            scrollable,
+            step,
+            tabIndex }) => {
+            const [isMouseDown, setIsMouseDown] = useState(false);
+            const inputRef = useRef(null);
+            const percentage = `${(fadeIn(value, maxValue) || 0) * 100}%`;
+            const rangeClasses = classNames({
+                'mp-range': true,
+                [className]: !!className
+            });
+
+            const labelClasses = classNames({
+                'mp-range__label': true,
+                'sr-only': hideLabel
+            });
+
+
+            const handleMouseEventChange = ({ clientX, target }, shouldUpdate) => {
+                if (shouldUpdate) {
+                    const { offsetWidth } = target;
+                    const { x } = target.getBoundingClientRect();
+                    const offsetX = clientX - x;
+
+                    handleChange(
+                        clamp(
+                            nearestMultiple(offsetX / offsetWidth * maxValue, step),
+                            minValue,
+                            maxValue));
+
+
+                }
+            };
+
+            const handleMouseEnter = () => setIsMouseDown(false);
+
+            const handleMouseDown = e => {
+                setIsMouseDown(true);
+                handleMouseEventChange(e, activeUpdate);
+            };
+
+            const handleMouseUp = e => {
+                setIsMouseDown(false);
+                handleMouseEventChange(e, true);
+            };
+
+            const handleMouseLeave = e => {
+                setIsMouseDown(false);
+                handleMouseEventChange(e, isMouseDown);
+            };
+
+            const handleMouseMove = e => handleMouseEventChange(e, activeUpdate && isMouseDown);
+
+            const handleWheel = ({ deltaY }) => {
+                const valueDelta = deltaY > 0 ? -step : step;
+
+                inputRef.current.focus();
+
+                handleChange(clamp(value + valueDelta, minValue, maxValue));
+            };
+
+            const handleKeyDown = e => {
+                switch (e.key) {
+                    case 'Escape':
+                        inputRef.current.blur();
+                        break;
+                    case 'ArrowRight':
+                    case 'ArrowUp':
+                        e.stopPropagation();
+                        handleChange(clamp(value + step, minValue, maxValue));
+                        break;
+                    case 'ArrowLeft':
+                    case 'ArrowDown':
+                        e.stopPropagation();
+                        handleChange(clamp(value - step, minValue, maxValue));
+                        break;
+                    case 'Enter':
+                    case ' ':
+                        e.stopPropagation();
+                        break;
+                    default:
+                        break;
+                }
+
+            };
+
+            const labelId = `lbl-${id}`;
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement("div", {
+                    className: rangeClasses,
+                    id: id
+                }, /*#__PURE__*/
+                    React.createElement("label", {
+                        id: labelId,
+                        className: labelClasses,
+                        onClick: () => inputRef.current && inputRef.current.focus()
+                    }, labelText), /*#__PURE__*/
+                    React.createElement("div", {
+                        className: "mp-range__input mp-focus-highlight",
+                        "aria-valuemin": minValue,
+                        "aria-valuemax": maxValue,
+                        "aria-valuenow": value,
+                        "aria-labelledby": labelId,
+                        onKeyDown: handleKeyDown,
+                        onMouseDown: handleMouseDown,
+                        onMouseUp: handleMouseUp,
+                        onMouseMove: handleMouseMove,
+                        onMouseLeave: handleMouseLeave,
+                        onMouseEnter: handleMouseEnter,
+                        onWheel: scrollable ? handleWheel : noop,
+                        tabIndex: tabIndex,
+                        ref: inputRef,
+                        role: "slider"
+                    }, /*#__PURE__*/
+                        React.createElement("div", { className: "mp-range__track" }, /*#__PURE__*/
+                            React.createElement("div", {
+                                className: "mp-range__fill",
+                                style: { width: percentage }
+                            }), /*#__PURE__*/
+                            React.createElement("div", {
+                                className: "mp-range__thumb",
+                                style: { left: percentage }
+                            })))),
+
+
+
+                [isMouseDown, tabIndex, value]);
+        };
+
+        Range.propTypes = {
+            activeUpdate: bool,
+            className: string,
+            handleChange: func,
+            hideLabel: bool,
+            id: string.isRequired,
+            labelText: string.isRequired,
+            scrollable: bool,
+            step: number,
+            tabIndex: string,
+            minValue: number,
+            maxValue: number,
+            value: number
+        };
+
+
+        Range.defaultProps = {
+            activeUpdate: false,
+            hideLabel: false,
+            minValue: 0,
+            maxValue: 1,
+            scrollable: false,
+            step: 0.1,
+            tabIndex: '0',
+            value: 0
+        };
+
+
+
+        // Seekbar
+
+        const Seekbar = ({ className, tabIndex }) => {
+            const classList = classNames({
+                'mp-seekbar': true,
+                [className]: !!className
+            });
+
+            const { currentTime, currentTrack, changeTime } = useContext(AudioPlayerContext);
+            const { duration = 0 } = currentTrack || {};
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement("div", { className: classList }, /*#__PURE__*/
+                    React.createElement("p", { className: "mp-seekbar__time mp-seekbar__time--current" }, hhmmss(currentTime)), /*#__PURE__*/
+                    React.createElement("label", { id: "lbl-current-time", className: "sr-only" }, "Current Time"), /*#__PURE__*/
+                    React.createElement(Range, {
+                        className: "mp-seekbar__range",
+                        hideLabel: true,
+                        id: "rng-current-time",
+                        labelText: "Current Time",
+                        value: currentTime,
+                        minValue: 0,
+                        maxValue: duration,
+                        step: 1,
+                        handleChange: changeTime,
+                        tabIndex: tabIndex
+                    }), /*#__PURE__*/
+                    React.createElement("p", { className: "mp-seekbar__time mp-seekbar__time--total" }, hhmmss(duration))),
+
+                [currentTime, currentTrack, tabIndex]);
+        };
+
+        Seekbar.propTypes = {
+            className: string,
+            tabIndex: string
+        };
+
+
+        Seekbar.defaultProps = {
+            tabIndex: '0'
+        };
+
+
+
+        // SkipControl
+
+        const SkipControl = ({ tabIndex, type }) => {
+            const iconName = `skip_${type}`;
+            const { playlistIndex, skipPrev, skipNext, trackList, userInitialized } = useContext(AudioPlayerContext);
+            const handleKeyDown = type === 'previous' ?
+                ({ key, ctrlKey }) => ctrlKey && key === 'ArrowLeft' && skipPrev() :
+                ({ key, ctrlKey }) => ctrlKey && key === 'ArrowRight' && skipNext();
+
+            useEffect(() => {
+                if (userInitialized) {
+                    window.addEventListener('keydown', handleKeyDown);
+
+                    return () => window.removeEventListener('keydown', handleKeyDown);
+                }
+            }, [userInitialized, playlistIndex]);
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement("button", {
+                    className: "mp-audio-controls__control mp-reactive-control mp-focus-highlight",
+                    onClick: type === 'previous' ? skipPrev : skipNext,
+                    tabIndex: tabIndex
+                }, /*#__PURE__*/
+                    React.createElement(Icon, {
+                        name: iconName,
+                        size: "m"
+                    })),
+
+                [playlistIndex, tabIndex, trackList]);
+        };
+
+        SkipControl.propTypes = {
+            tabIndex: string,
+            type: oneOf(['previous', 'next'])
+        };
+
+
+        SkipControl.defaultProps = {
+            tabIndex: '0'
+        };
+
+
+
+        // SliderMenu
+
+        const SliderMenu = ({ className, children, id }) => {
+            const { isOpen } = useContext(MenuContext);
+            const _isOpen = isOpen(id);
+            const classList = classNames({
+                'mp-slider-menu': true,
+                'mp-slider-menu--open': _isOpen,
+                [className]: !!className
+            });
+
+
+            return /*#__PURE__*/(
+                React.createElement("aside", {
+                    "aria-hidden": !isOpen,
+                    className: classList,
+                    role: "menu"
+                },
+                    children));
+
+
+        };
+
+        SliderMenu.propTypes = {
+            id: string.isRequired
+        };
+
+
+
+        // TrackInfo
+
+        const TrackInfo = ({ tabIndex }) => {
+            const { currentTrack, isEditingTrack, trackList, userInitialized } = useContext(AudioPlayerContext);
+            const { open, isOpen, toggle } = useContext(MenuContext);
+            const _isOpen = isOpen(TRACK_INFO_MODAL_ID);
+            const handleKeyDown = ({ key, altKey }) =>
+                altKey &&
+                key === 'i' &&
+                toggle(TRACK_INFO_MODAL_ID);
+
+            useEffect(() => {
+                if (userInitialized) {
+                    window.addEventListener('keydown', handleKeyDown);
+
+                    return () => window.removeEventListener('keydown', handleKeyDown);
+                }
+            }, [userInitialized, toggle]);
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement("div", { className: "mp-track-info" }, /*#__PURE__*/
+                    React.createElement(Button, {
+                        ariaExpanded: _isOpen,
+                        ariaHasPopup: true,
+                        ariaLabelText: "Open Track Info",
+                        className: "mp-track-info__open mp-focus-highlight",
+                        handleClick: () => open(TRACK_INFO_MODAL_ID),
+                        id: "btn-open-track-info",
+                        type: "inline",
+                        tabIndex: tabIndex
+                    }, /*#__PURE__*/
+                        React.createElement("figure", { className: "mp-track-info__image" },
+                            currentTrack && currentTrack.artwork ? /*#__PURE__*/
+                                React.createElement("img", {
+                                    height: "54",
+                                    width: "54",
+                                    src: currentTrack.artwork,
+                                    alt: `Album art for ${currentTrack.album}`
+                                }) : /*#__PURE__*/
+                                React.createElement(Icon, {
+                                    name: "insert_photo",
+                                    size: "xl"
+                                }))), /*#__PURE__*/
+
+
+                    React.createElement("div", { className: "mp-track-info__metadata" }, /*#__PURE__*/
+                        React.createElement("p", { className: "mp-track-info__title" }, currentTrack && currentTrack.title), /*#__PURE__*/
+                        React.createElement("p", { className: "mp-track-info__artist" }, currentTrack && currentTrack.artist))),
+
+
+                [currentTrack, isEditingTrack, _isOpen, tabIndex, trackList]);
+        };
+
+        TrackInfo.propTypes = {
+            tabIndex: string
+        };
+
+
+        TrackInfo.defaultProps = {
+            tabIndex: '0'
+        };
+
+
+
+        // TrackInfoModal
+
+        const TrackInfoModal = () => {
+            const { currentTrack } = useContext(AudioPlayerContext);
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement(Modal, {
+                    className: "mp-track-info-modal",
+                    id: TRACK_INFO_MODAL_ID
+                }, /*#__PURE__*/
+                    React.createElement("figure", { className: "mp-track-info-modal__image" },
+                        currentTrack && currentTrack.artwork ? /*#__PURE__*/
+                            React.createElement("img", {
+                                height: "auto",
+                                width: "auto",
+                                src: currentTrack.artwork,
+                                alt: `Artwork for ${currentTrack.album}`
+                            }) : /*#__PURE__*/
+                            React.createElement(Icon, {
+                                name: "insert_photo",
+                                size: "xl"
+                            })),
+
+
+                    currentTrack ? /*#__PURE__*/
+
+                        React.createElement(React.Fragment, null, /*#__PURE__*/
+                            React.createElement("h4", { className: "mp-track-info-modal__heading" }, currentTrack.artist, " - ", currentTrack.title), /*#__PURE__*/
+                            React.createElement("p", { className: "mp-track-info-modal__subtext" }, currentTrack.album, ", ", currentTrack.year)) : /*#__PURE__*/
+
+
+                        React.createElement(React.Fragment, null)),
+
+
+                [currentTrack]);
+        };
+
+
+        // VolumeControl
+
+        const volumeOptions = [
+            'volume_off',
+            'volume_mute',
+            'volume_down',
+            'volume_up'];
+
+
+        const VolumeControl = ({ tabIndex }) => {
+            const previousVolume = useRef(0);
+            const { gain, changeGain } = useContext(AudioPlayerContext);
+            const onClick = () =>
+                previousVolume.current === 0 && gain === 0 ? (
+
+                    changeGain(START_GAIN),
+                    previousVolume.current = 0) : (
+
+
+                    changeGain(previousVolume.current),
+                    previousVolume.current = gain);
+
+
+            const handleChange = _gain => {
+                previousVolume.current = 0;
+                changeGain(_gain);
+            };
+
+            return useMemo(() => /*#__PURE__*/
+                React.createElement("div", { className: "mp-volume-control" }, /*#__PURE__*/
+                    React.createElement("button", {
+                        onKeyDown: e => e.stopPropagation(),
+                        className: "mp-volume-control__btn mp-reactive-control mp-focus-highlight",
+                        onClick: onClick,
+                        tabIndex: tabIndex
+                    }, /*#__PURE__*/
+                        React.createElement(Icon, {
+                            name: volumeOptions[ceil(gain * (volumeOptions.length - 1)) | 0],
+                            size: "s"
+                        })), /*#__PURE__*/
+
+                    React.createElement("label", { id: "lbl-volume", className: "sr-only" }, "Volume"), /*#__PURE__*/
+                    React.createElement(Range, {
+                        className: "mp-volume-control__range",
+                        handleChange: handleChange,
+                        hideLabel: true,
+                        id: "rng-volume",
+                        labelText: "Volume",
+                        step: 0.05,
+                        value: gain,
+                        activeUpdate: true,
+                        scrollable: true,
+                        tabIndex: tabIndex
+                    })),
+
+                [gain, tabIndex]);
+        };
+
+        VolumeControl.propTypes = {
+            className: string,
+            handleChange: func,
+            tabIndex: string,
+            value: number
+        };
+
+
+        VolumeControl.defautProps = {
+            tabIndex: '0'
+        };
+
+
+
+        // App
+
+        const App = () => {
+            return /*#__PURE__*/(
+                React.createElement(React.Fragment, null, /*#__PURE__*/
+                    React.createElement("header", { className: "sr-only" }, /*#__PURE__*/
+                        React.createElement("h1", null, "Musical Particles 4")), /*#__PURE__*/
+
+                    React.createElement("main", { role: "main" }, /*#__PURE__*/
+                        React.createElement(MenuProvider, { ids: [...MODAL_IDS, ...SLIDER_MENU_IDS] }, /*#__PURE__*/
+                            React.createElement(AudioCore, null, /*#__PURE__*/
+                                React.createElement(ParticleProvider, null, /*#__PURE__*/
+                                    React.createElement(ParticleMenu, null)), /*#__PURE__*/
+
+                                React.createElement(PlaylistMenu, null), /*#__PURE__*/
+                                React.createElement(AppMenu, null), /*#__PURE__*/
+                                React.createElement(DropFileOverlay, null), /*#__PURE__*/
+                                React.createElement(FileErrorModal, null), /*#__PURE__*/
+                                React.createElement(TrackInfoModal, null), /*#__PURE__*/
+                                React.createElement(DeleteTrackModal, null), /*#__PURE__*/
+                                React.createElement(AppInfoModal, null), /*#__PURE__*/
+                                React.createElement(Loader, null))))));
+
+
+
+
+
+        };
+
+        ReactDOM.render( /*#__PURE__*/React.createElement(App, null), document.getElementById('root'));
+//# sourceURL=pen.js
+    </script>
+
+
+</body>
+
+</html>
