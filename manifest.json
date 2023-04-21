@@ -3,7 +3,7 @@
     "short_name":"Mixtape",
     "description":"Welcomte to Mixtape by alibhtty",
     "background_color":"#000000",
-    "theme_color":"#FF6600",
+    "theme_color":"#C1C1EC",
     "orientation":"portrait",
     "display":"standalone",
     "start_url":"https://alibhtty.github.io/mixtape/",

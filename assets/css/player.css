@@ -1882,9 +1882,9 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* --------------------------- */
-/* --------- INSTALL --------- */
+/* ------ INSTALL pwa -------- */
 /* --------------------------- */
-           .install{
+           /* .install{
             display: block;
             width: 100%;
             position: absolute;
@@ -1894,7 +1894,7 @@ h1, h2, h3, h4, h5, h6 {
             z-index: 9;
             background-color: black;
             border-top: solid 1px #6d6d9e;
-           }
+           } */
 
 /* -------------------------- */
 /* ----------- DJS ---------- */
