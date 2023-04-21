@@ -1881,7 +1881,20 @@ h1, h2, h3, h4, h5, h6 {
           }
 
 
-
+/* --------------------------- */
+/* --------- INSTALL --------- */
+/* --------------------------- */
+           .install{
+            display: block;
+            width: 100%;
+            position: absolute;
+            bottom: 10rem;
+            padding: 0 2rem;
+            line-height: 15px;
+            z-index: 9;
+            background-color: black;
+            border-top: solid 1px #6d6d9e;
+           }
 
 /* -------------------------- */
 /* ----------- DJS ---------- */
