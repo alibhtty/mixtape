@@ -1044,7 +1044,7 @@
             },
             le = 640,
             oe = [{
-                title: "Ana sayfa",
+                title: "User",
                 path: "/",
                 icon: Object(O.jsx)(w, {}),
                 iconSelected: Object(O.jsx)(_, {})
@@ -1726,7 +1726,7 @@
                             children: [Object(O.jsx)("div", {
                                 className: Nt.a.SectionTitle,
                                 children: Object(O.jsx)(mt, {
-                                    children: "\u0130yi g\xfcnler"
+                                    children: "Buenos días"
                                 })
                             }), Object(O.jsx)("div", {
                                 className: Nt.a.SectionCards,
