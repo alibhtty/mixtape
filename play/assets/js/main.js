@@ -307,7 +307,7 @@
             }, {
                 index: "2",
                 type: "playlist",
-                title: "T\xfcrk\xe7e Rock",
+                title: "Rock turco",
                 link: "turkcerock",
                 imgUrl: "https://i.scdn.co/image/ab67706f00000002ce3ed77553569a17b34b2b12",
                 hoverColor: "rgb(232, 24, 48)",
@@ -1044,48 +1044,48 @@
             },
             le = 640,
             oe = [{
-                title: "User",
+                title: "Inicio",
                 path: "/",
                 icon: Object(O.jsx)(w, {}),
                 iconSelected: Object(O.jsx)(_, {})
             }, {
-                title: "Ara",
+                title: "Buscar",
                 path: "/search",
                 icon: Object(O.jsx)(Q, {}),
                 iconSelected: Object(O.jsx)(R, {})
             }, {
-                title: "Kitapl\u0131\u011f\u0131n",
+                title: "Colección",
                 path: "/library",
                 icon: Object(O.jsx)(N, {}),
                 iconSelected: Object(O.jsx)(B, {})
             }],
             de = [{
-                title: "\xc7alma Listesi Olu\u015ftur",
+                title: "Crear lista de reproducción",
                 path: "/",
                 ImgName: "createPlaylist"
             }, {
-                title: "Be\u011fenilen \u015eark\u0131lar",
+                title: "Canciones favoritas",
                 path: "/",
                 ImgName: "popularSong"
             }],
             be = [{
-                title: "\xc7alma Listeleri",
+                title: "Listas de reproducción",
                 path: "/library"
             }, {
-                title: "Podcast'ler",
+                title: "Agenda",
                 path: "/library/podcasts"
             }, {
-                title: "Sanat\xe7\u0131lar",
+                title: "Djs",
                 path: "/library/artists"
             }, {
-                title: "Alb\xfcmler",
+                title: "Álbumes",
                 path: "/library/albums"
             }];
         var je = function() {
                 return Object(O.jsxs)("div", {
                     className: F.a.Playlist,
                     children: [Object(O.jsx)(X, {
-                        children: "\xc7alma Listeleri"
+                        children: "Listas de Reproducción"
                     }), Object(O.jsx)("div", {
                         children: de.map((function(e) {
                             return Object(O.jsx)(re, {
@@ -1740,7 +1740,7 @@
                             children: [Object(O.jsx)("div", {
                                 className: Nt.a.SectionTitle,
                                 children: Object(O.jsx)(ft, {
-                                    children: "Yak\u0131nda \xe7al\u0131nanlar"
+                                    children: "Reproducido recientemente"
                                 })
                             }), Object(O.jsx)("div", {
                                 className: Nt.a.SectionCardsMedium,
@@ -1805,7 +1805,7 @@
         function Et() {
             return Object(O.jsxs)("div", {
                 children: [Object(O.jsx)(ft, {
-                    children: "\xc7alma Listeleri"
+                    children: "Listas de reproducción"
                 }), Object(O.jsx)("div", {
                     className: Lt.a.Grid,
                     children: d.filter((function(e) {
@@ -1822,7 +1822,7 @@
         function Yt() {
             return Object(O.jsxs)("div", {
                 children: [Object(O.jsx)(ft, {
-                    children: "Podcast'ler"
+                    children: "Agenda"
                 }), Object(O.jsx)("div", {
                     className: Lt.a.Grid,
                     children: d.filter((function(e) {
@@ -1839,7 +1839,7 @@
         function Gt() {
             return Object(O.jsx)("div", {
                 children: Object(O.jsx)(ft, {
-                    children: "Sanat\xe7\u0131lar"
+                    children: "Djs"
                 })
             })
         }
@@ -1847,7 +1847,7 @@
         function Ht() {
             return Object(O.jsxs)("div", {
                 children: [Object(O.jsx)(ft, {
-                    children: "Alb\xfcmler"
+                    children: "Álbumes"
                 }), Object(O.jsx)("div", {
                     className: Lt.a.Grid,
                     children: d.filter((function(e) {
@@ -2016,7 +2016,7 @@
                                 children: [Object(O.jsx)(te, {
                                     children: "#"
                                 }), Object(O.jsx)(te, {
-                                    children: "BA\u015eLIK"
+                                    children: "Título de set"
                                 }), Object(O.jsx)(q, {})]
                             }), Object(O.jsx)("div", {
                                 className: Wt.a.PlaylistSongs,

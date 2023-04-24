@@ -178,8 +178,8 @@
 .icon-button_iconButton__3chxK {
     border: 0;
     background: transparent;
-    width: 32px;
-    height: 32px;
+    width: 62px;    /* 32px creo */
+    height: 62px;
     padding: 0;
     display: flex;
     align-items: center;
@@ -187,7 +187,7 @@
 }
 
 .icon-button_iconButton__3chxK svg {
-    font-size: 16px;
+    font-size: 26px;  /* 16px */
     fill: hsla(0, 0%, 100%, .7);
     color: hsla(0, 0%, 100%, .7)
 }
@@ -229,8 +229,8 @@
 
 @media screen and (max-width:640px) {
     .footer-left_imgBox__eXFAx {
-        width: 42px;
-        height: 42px
+        width: 62px;   /* 42px */
+        height: 62px   /* 42px */
     }
 
     .footer-left_footerLeft__3JtjI button:nth-child(3) {
@@ -239,9 +239,9 @@
 }
 
 .play-button_playBtn__3lkP1 {
-    width: 32px;
-    height: 32px;
-    border-radius: 32px;
+    width: 62px;  /* 32px */
+    height: 62px; /* 32px */
+    border-radius: 62px;
     color: #000;
     border: none;
     background-color: #fff;
@@ -258,7 +258,7 @@
 }
 
 .music-control-box_musicControl__2KYFo {
-    width: 224px;
+    width: 280px;   /* 224px */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -272,8 +272,8 @@
 .music-control-box_button__2qnJb {
     border: 0;
     background: transparent;
-    width: 32px;
-    height: 32px;
+    width: 32px;    /* 32px */
+    height: 32px;   /* 32px */
     padding: 0;
     display: flex;
     align-items: center;
@@ -281,7 +281,7 @@
 }
 
 .music-control-box_button__2qnJb svg {
-    font-size: 16px;
+    font-size: 26px;   /* 16px */
     fill: hsla(0, 0%, 100%, .7);
     color: hsla(0, 0%, 100%, .7)
 }
@@ -443,7 +443,7 @@
 
 @media screen and (max-width:640px) {
     .footer_footer__26u_S {
-        bottom: 45px
+        bottom: 45px   /* 45px */
     }
 
     .footer_nowplayingbar__fseJN {
@@ -1448,3 +1448,28 @@ p {
 }
 
 /*# sourceMappingURL=main.7d21c6e4.chunk.css.map */
+
+
+
+
+
+/* standalone */
+@media (display: standalone){
+    .mobile-navigation_MobileNav__2YnBJ {
+        /* position: fixed; */
+        z-index: 99;
+        background: #181818;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-top: 1px solid #000
+    }
+    .footer_footer__26u_S {
+        bottom: 25px;  /* 65px con nav abajo */
+    }
+    .navigation_navBtns__15Hbk {
+        display: flex;
+        justify-content: space-around;
+        padding: 15px 8px;
+    }
+}
