@@ -197,11 +197,11 @@
                 index: "0",
                 type: "Radioshow",
                 title: "#013 Cy-BORED",
-                link: "lafimagucenme",
-                imgUrl: "https://www.dropbox.com/s/8f12z5f5ob49l3n/RadioShow%202.jpg?raw=1",
-                hoverColor: "rgb(224, 112, 16)",
+                link: "Radioshow",  /* lafimagucenme */
+                imgUrl: "https://www.dropbox.com/s/mvffcwiug0blwrc/013-alibhtty.jpg?raw=1",
+                hoverColor: "rgb(245, 188, 159)",
                 artist: "Ali Bhtty",
-                playlistBg: "rgb(224, 112, 16)",
+                playlistBg: "rgb(245, 188, 159)",
                 playlistData: [{
                     index: "1",
                     songName: "#011 Backouts",
@@ -212,11 +212,11 @@
                 }, {
                     index: "2",
                     songName: "#013 Cy-BORED",
-                    songimg: "https://www.dropbox.com/s/8f12z5f5ob49l3n/RadioShow%202.jpg?raw=1",
+                    songimg: "https://www.dropbox.com/s/mvffcwiug0blwrc/013-alibhtty.jpg?raw=1",
                     songArtist: "Ari Barokos",
                     link: "https://dl.dropbox.com/s/bs3rezop8r4iewt/Ep.%20013%20Cy-bored%20-%20Ali%20Bhtty.mp3?dl=0",
                     trackTime: "14:55"
-                }, {
+                }, /* {
                     index: "3",
                     songName: "Yanl\u0131zl\u0131k Kan\u0131nda Var",
                     songimg: "https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
@@ -272,22 +272,22 @@
                     songArtist: "Ari Barokos",
                     link: "https://p.scdn.co/mp3-preview/a74af1d9813db16e08ffdcb52c0c3d43c1b15a61?cid=6d083ea30aaa46428fbf1590d31f6750",
                     trackTime: "0:30"
-                }]
+                } */ ]
             }, {
                 index: "1",
                 type: "playlist",
-                title: "Heavy Queens",
-                link: "heavyqueens",
-                imgUrl: "https://i.scdn.co/image/ab67706f000000021e117034167831d5574aba62",
-                hoverColor: "rgb(216, 24, 40)",
-                artist: "Music needs women #IWD2021.",
-                playlistBg: "rgb(216, 24, 40)",
+                title: "Mixtape Colection",
+                link: "colection", /* heavyqueens */
+                imgUrl: "https://www.dropbox.com/s/7hqaoxcth3uxr6t/mixtape.jpg?raw=1", /* https://i.scdn.co/image/ab67706f000000021e117034167831d5574aba62 */
+                hoverColor: "rgb(64, 74, 173)",
+                artist: "Electronic 4ever.",
+                playlistBg: "rgb(64, 74, 173)",
                 playlistData: [{
                     index: "1",
-                    songName: "Peacekeepers",
-                    songimg: "https://i.scdn.co/image/ab67616d0000485179927e37a012986bd320a183",
-                    songArtist: "Metalite",
-                    link: "https://p.scdn.co/mp3-preview/2a80c8096e1573c71c76c4f3839e6569098cbca4?cid=6d083ea30aaa46428fbf1590d31f6750",
+                    songName: "Nowhere (Odd Mob Remix)",
+                    songimg: "https://www.dropbox.com/s/j8jgvqo6yqc75z6/Nowhere%20%28Odd%20Mob%20Remix%29.jpg?raw=1",
+                    songArtist: "Otosan",
+                    link: "https://dl.dropbox.com/s/qfbat76durimxuf/Otosan%20-%20Nowhere%20%28Odd%20Mob%20Remix%29.mp3?dl=1",
                     trackTime: "0:30"
                 }, {
                     index: "2",
@@ -307,20 +307,20 @@
             }, {
                 index: "2",
                 type: "playlist",
-                title: "Rock turco",
-                link: "turkcerock",
-                imgUrl: "https://i.scdn.co/image/ab67706f00000002ce3ed77553569a17b34b2b12",
-                hoverColor: "rgb(232, 24, 48)",
-                artist: "Gitar ve davulu konu\u015fturanlar.",
-                playlistBg: "rgb(232, 24, 48)",
+                title: "Cage Script",
+                link: "cagescript",  /* turkcerock */
+                imgUrl: "https://www.dropbox.com/s/pi2ayo9h1t9ozue/cage-script.jpg?raw=1",  /* https://i.scdn.co/image/ab67706f00000002ce3ed77553569a17b34b2b12 */
+                hoverColor: "rgb(136, 157, 207)",
+                artist: "Future EDM for Kid.",
+                playlistBg: "rgb(136, 157, 207)",
                 playlistData: [{
                     index: "1",
-                    songName: "Ben Vard\u0131m",
-                    songimg: "https://i.scdn.co/image/ab67616d00004851ae2e7836c9072519d2632fc8",
-                    songArtist: "Fatma Turgut",
-                    link: "https://p.scdn.co/mp3-preview/774ecac56fa55a4a46f53756d2910a6d0cab2024?cid=6d083ea30aaa46428fbf1590d31f6750",
-                    trackTime: "0:30"
-                }, {
+                    songName: "Be Mine",
+                    songimg: "https://www.dropbox.com/s/fy4113c13p5x8vo/CAGE%20SCRIPT.jpg?raw=1",
+                    songArtist: "K?d",
+                    link: "https://dl.dropbox.com/s/bsxoax5xyoqcnfj/09%20-%20BE%20MINE.mp3?dl=1",
+                    trackTime: "4:57"
+                }, /* {
                     index: "2",
                     songName: "H\u0130\xc7",
                     songimg: "https://i.scdn.co/image/ab67616d0000485125a0ef43214acc52503903bc",
@@ -334,7 +334,7 @@
                     songArtist: "Umut Kaya",
                     link: "https://p.scdn.co/mp3-preview/4dd21e393d27556e57c46923557afed4ef1d32c7?cid=6d083ea30aaa46428fbf1590d31f6750",
                     trackTime: "0:30"
-                }]
+                } */]
             }, {
                 index: "3",
                 type: "playlist",
@@ -371,18 +371,18 @@
                 type: "playlist",
                 title: "Calling",
                 link: "alibhtty",
-                imgUrl: "https://www.dropbox.com/s/ieim8j0g4seu26p/Calling.jpg?raw=1",
-                hoverColor: "rgb(240, 56, 168)",
+                imgUrl: "https://www.dropbox.com/s/6xr6zlnlmm9ybbw/calling.jpg?raw=1",
+                hoverColor: "rgb(255, 102, 0)",
                 artist: "Ali Bhtty ft. Jalen",
-                playlistBg: "rgb(240, 56, 168)",
+                playlistBg: "rgb(255, 102, 0)",
                 playlistData: [{
                     index: "1",
-                    songName: "Ir\u0131e",
-                    songimg: "https://i.scdn.co/image/ab67616d000048515ac8e878a5af6bebbcd83cd8",
-                    songArtist: "Sattas",
-                    link: "https://p.scdn.co/mp3-preview/8b54586a78acbc69fb19bdcd3cb47914b3d3971b?cid=6d083ea30aaa46428fbf1590d31f6750",
-                    trackTime: "0:30"
-                }, {
+                    songName: "Calling",
+                    songimg: "https://www.dropbox.com/s/6xr6zlnlmm9ybbw/calling.jpg?raw=1",
+                    songArtist: "Ali Bhtty, Jalen",
+                    link: "https://dl.dropbox.com/s/67upkqw2hpgdz5w/Calling%20-%20Jalen%20%28Ali%20Bhtty%20Remix%29.mp3?dl=1",
+                    trackTime: "4:12"
+                }, /* {
                     index: "2",
                     songName: "I Shot The Sheriff",
                     songimg: "https://i.scdn.co/image/ab67616d00004851d752956b8a82ffa07baa835e",
@@ -396,7 +396,7 @@
                     songArtist: "Eric Clapton",
                     link: "https://p.scdn.co/mp3-preview/52cba5b168dae7b1d8e30d3873fc709fc2012a5f?cid=6d083ea30aaa46428fbf1590d31f6750",
                     trackTime: "0:30"
-                }]
+                } */]
             }, {
                 index: "5",
                 type: "alb\xfcm",
